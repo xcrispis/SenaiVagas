@@ -114,7 +114,8 @@ CREATE TABLE Vaga (
 	IdVaga	INT PRIMARY KEY IDENTITY
 	,Descricao	TEXT NOT NULL 
 	,Habilidades	TEXT NOT NULL
-	,IdEmpresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) 
+	,PlanoEstagio BIT NOT NULL
+	,FK_Empresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) 
 	,FK_FormaContratacao	INT FOREIGN KEY REFERENCES FormaContratacao (IdFormaContratacao) 
 	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 );
@@ -132,7 +133,6 @@ CREATE TABLE ContratoEstagio (
 	IdContratoEstagio	INT PRIMARY KEY IDENTITY
 	,DataInicio	DATETIME2 NOT NULL
 	,DataTermino	DATETIME2 NOT NULL
-	,PlanoEstagio BIT NOT NULL
 	,MotivoEvasao	VARCHAR(255) 
 	,Avaliacao1	VARBINARY(MAX) NOT NULL
 	,Avaliacao2	VARBINARY(MAX) NOT NULL
