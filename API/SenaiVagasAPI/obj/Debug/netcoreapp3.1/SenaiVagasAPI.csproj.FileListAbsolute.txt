@@ -59,4 +59,5 @@ C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\M
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.dll
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.pdb
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.genruntimeconfig.cache
-C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.csproj.CoreCompileInputs.cache
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.MvcApplicationPartsAssemblyInfo.cache
