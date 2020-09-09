@@ -6,17 +6,17 @@ GO
 
 CREATE TABLE TipoUsuario (
 	IdTipoUsuario	INT PRIMARY KEY IDENTITY
-	,TituloTipoUsuario	VARCHAR(255) NOT NULL UNIQUE 
+	,Titulo	VARCHAR(255) NOT NULL UNIQUE 
 );
 GO
 
-CREATE TABLE Cursos (
+CREATE TABLE Curso (
 	IdCursos	INT PRIMARY KEY IDENTITY 
-	,IdTituloCursos	VARCHAR(255) NOT NULL UNIQUE
+	,Titulo	VARCHAR(255) NOT NULL UNIQUE
 );
 GO
 
-CREATE TABLE Enderecos (
+CREATE TABLE Endereco (
 	IdEndereco	INT PRIMARY KEY IDENTITY 
 	,Cep		CHAR(8) NOT NULL
 	,Logradouro	VARCHAR(255) NOT NULL
@@ -30,31 +30,34 @@ GO
 
 CREATE TABLE PerfilComportamental (
 	IdPerfilComportamental	INT PRIMARY KEY IDENTITY
-	,TituloPerfilComportamental	VARCHAR(255) NOT NULL UNIQUE
+	,Gato		DECIMAL NOT NULL
+	,Aguia		DECIMAL NOT NULL
+	,Tubarao	DECIMAL NOT NULL
+	,Lobo		DECIMAL NOT NULL
 );
 GO 
 
 CREATE TABLE Situacao (
 	IdSituacao	INT PRIMARY KEY IDENTITY
-	,TituloSituacao	VARCHAR(255) NOT NULL UNIQUE
+	,Titulo	VARCHAR(255) NOT NULL UNIQUE
 );
 GO
 
 CREATE TABLE Dicas (
 	IdDica	INT PRIMARY KEY IDENTITY 
-	,TituloDica	VARCHAR(255) NOT NULL
+	,Titulo	VARCHAR(255) NOT NULL
 	,Descricao	TEXT NOT NULL
-	,Link	VARCHAR(255)
+	,Link	NVARCHAR(255)
 );
 GO
 
 CREATE TABLE FormaContratacao (
 	IdFormaContratacao	INT PRIMARY KEY IDENTITY
-	,TituloFormaContratacao	VARCHAR(255) NOT NULL UNIQUE
+	,Forma	VARCHAR(255) NOT NULL UNIQUE
 );
 GO
 
-CREATE TABLE Usuarios (
+CREATE TABLE Usuario (
 	IdUsuario	INT PRIMARY KEY IDENTITY
 	,Email		VARCHAR(255) NOT NULL UNIQUE
 	,Senha		VARCHAR(255) NOT NULL
@@ -66,33 +69,32 @@ CREATE TABLE Administrador (
 	IdAdministrador	INT PRIMARY KEY IDENTITY
 	,Nome			VARCHAR(255) NOT NULL
 	,Cpf			CHAR(11) NOT NULL UNIQUE
-	,FK_Usuario		INT FOREIGN KEY REFERENCES Usuarios (IdUsuario)
+	,FK_Usuario		INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
 GO
 
-CREATE TABLE Candidatos (
+CREATE TABLE Candidato (
 	IdCandidato	INT PRIMARY KEY IDENTITY 
 	,Nome		VARCHAR(255) NOT NULL
 	,Sobrenome	VARCHAR(255) NOT NULL
 	,Telefone	CHAR(11) NOT NULL 
-	,LinkedIn	VARCHAR(255) NOT NULL UNIQUE
-	,GitHub		VARCHAR(255) NOT NULL UNIQUE 
+	,LinkedIn	NVARCHAR(255) NOT NULL UNIQUE
+	,GitHub		NVARCHAR(255) NOT NULL UNIQUE 
 	,Apresentacao	TEXT NOT NULL 
-	,Situacao	BIT DEFAULT(1) NOT NULL
 	,CPF		CHAR(11) NOT NULL UNIQUE
 	,Foto		VARBINARY(MAX) 
-	,EmailContato	VARCHAR(255) NOT NULL 
-	,IdUsuario	INT FOREIGN KEY REFERENCES Usuarios (IdUsuario)
-	,FK_Curso	INT FOREIGN KEY REFERENCES Cursos (IdCursos)
+	,EmailContato	NVARCHAR(255) NOT NULL 
+	,IdUsuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+	,FK_Curso	INT FOREIGN KEY REFERENCES Curso (IdCursos)
 	,FK_PerfilComportamental	INT FOREIGN KEY REFERENCES PerfilComportamental (IdPerfilComportamental)
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Enderecos (IdEndereco)
+	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 	,FK_Situacao INT FOREIGN KEY REFERENCES Situacao (IdSituacao) 
 );
 GO 
 
-CREATE TABLE Empresas (
+CREATE TABLE Empresa (
 	IdEmpresa	INT PRIMARY KEY IDENTITY
-	,StatusEmpresa	BIT DEFAULT(1) NOT NULL
+	,StatusEmpresa	BIT NOT NULL
 	,RazaoSocial	VARCHAR(255) NOT NULL 
 	,Cnpj			CHAR(14) NOT NULL UNIQUE 
 	,Telefone		CHAR(11) NOT NULL 
@@ -102,27 +104,27 @@ CREATE TABLE Empresas (
 	,CargoExercido	VARCHAR(255) NOT NULL
 	/*NumeroFuncionarios	INT NOT NULL*/
 	,Logo		VARBINARY(MAX) NOT NULL
-	,EmailContato	VARCHAR(255) NOT NULL 
-	,FK_Usuario	INT FOREIGN KEY REFERENCES Usuarios (IdUsuario)
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Enderecos (IdEndereco)
+	,EmailContato	NVARCHAR(255) NOT NULL 
+	,FK_Usuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 );
 GO
 
-CREATE TABLE Vagas (
+CREATE TABLE Vaga (
 	IdVaga	INT PRIMARY KEY IDENTITY
 	,Descricao	TEXT NOT NULL 
 	,Habilidades	TEXT NOT NULL
-	,IdEmpresa	INT FOREIGN KEY REFERENCES Empresas (IdEmpresa) 
+	,IdEmpresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) 
 	,FK_FormaContratacao	INT FOREIGN KEY REFERENCES FormaContratacao (IdFormaContratacao) 
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Enderecos (IdEndereco)
+	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 );
 GO
 
-CREATE TABLE Inscricoes (
+CREATE TABLE Inscricao (
 	IdInscricao	INT PRIMARY KEY IDENTITY 
-	,StatusIncricao	BIT DEFAULT(1) NOT NULL
-	,IdVaga	INT FOREIGN KEY REFERENCES Vagas (IdVaga)
-	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidatos (IdCandidato)
+	,StatusIncricao	BIT NOT NULL
+	,IdVaga	INT FOREIGN KEY REFERENCES Vaga (IdVaga)
+	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 );
 GO
 
@@ -130,14 +132,14 @@ CREATE TABLE ContratoEstagio (
 	IdContratoEstagio	INT PRIMARY KEY IDENTITY
 	,DataInicio	DATETIME2 NOT NULL
 	,DataTermino	DATETIME2 NOT NULL
-	,StatusContrato	BIT DEFAULT(1) NOT NULL
-	,PlanoEstagio VARCHAR(255)
+	,PlanoEstagio BIT NOT NULL
 	,MotivoEvasao	VARCHAR(255) 
 	,Avaliacao1	VARBINARY(MAX) NOT NULL
 	,Avaliacao2	VARBINARY(MAX) NOT NULL
 	,Avaliacao3	VARBINARY(MAX) NOT NULL
 	,Avaliacao4	VARBINARY(MAX) NOT NULL
-	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidatos (IdCandidato)
-	,FK_Vaga		INT FOREIGN KEY REFERENCES Vagas (IdVaga)
+	,FK_StatusEstagio INT FOREIGN KEY REFERENCES Situacao(IdSituacao)
+	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
+	,FK_Vaga		INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );
 GO
