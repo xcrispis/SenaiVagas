@@ -20,7 +20,7 @@ namespace SenaiVagasAPI.Interfaces
         /// </summary>
         /// <param name="idContrato">id do contrato a ser atualizado</param>
         /// <param name="contrato">novos dados a serem implementados</param>
-        void Atualizar(int idContrato,ContratoEstagio contrato);
+        void Atualizar(int idContrato,ContratoEstagio contratoEstagio);
         /// <summary>
         /// Deleta um contrato
         /// </summary>
