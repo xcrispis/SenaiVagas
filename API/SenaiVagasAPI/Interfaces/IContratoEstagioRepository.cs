@@ -14,7 +14,7 @@ namespace SenaiVagasAPI.Interfaces
         /// <param name="DataTermino">Data de término do contrato</param>
         /// <param name="IdCandidato">id do candidato</param>
         /// <param name="IdVaga">id da vaga</param>
-        void Criar(DateTime DataTermino, int IdCandidato, int IdVaga);
+        void Criar(DateTime DataFinal, int Id, int IdVaga);
         /// <summary>
         /// Atualiza um contrato
         /// </summary>
