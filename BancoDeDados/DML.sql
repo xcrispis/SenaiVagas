@@ -12,10 +12,12 @@ VALUES ('Desenvolvimento de Sistemas')
 	  ,('Redes')
 	  ,('Multimidia');
 GO
-INSERT INTO Situacao(Titulo)
 VALUES ('Buscando')
 	  ,('Estagio')
-	  ,('Efetivo');
+	  ,('Efetivo')
+	  ,('Em andamento')
+	  ,('Concluido')
+	  ,('Evadido');
 GO
 INSERT INTO FormaContratacao(Forma)
 VALUES ('Estagio')
