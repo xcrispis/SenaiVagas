@@ -53,7 +53,7 @@ namespace SenaiVagasAPI.Repositories
 
         public List<ContratoEstagio> Listar()
         {
-            throw new NotImplementedException();
+            return _context.ContratoEstagio.ToList();
         }
     }
 }
