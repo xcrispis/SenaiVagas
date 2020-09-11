@@ -38,7 +38,7 @@ namespace SenaiVagasAPI.Repositories
             return _context.ContratoEstagio.FirstOrDefault(c => c.IdContratoEstagio == IdContrato);
         }
 
-        public void Criar(DateTime DataTermino, int IdCandidato, int IdVaga)
+        public void Criar(DateTime DataTermino, int? IdCandidato, int? IdVaga)
         {
             ContratoEstagio contrato = new ContratoEstagio(DataTermino,IdCandidato,IdVaga);
             _context.ContratoEstagio.Add(contrato);
