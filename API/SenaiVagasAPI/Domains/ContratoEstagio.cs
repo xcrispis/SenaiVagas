@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenaiVagasAPI.Enuns;
+using System;
 using System.Collections.Generic;
 
 namespace SenaiVagasAPI.Domains
@@ -9,8 +10,7 @@ namespace SenaiVagasAPI.Domains
         {
             DataInicio = DateTime.Now;
             DataTermino = dataTermino;
-            //criar o enum
-            //FkStatusEstagio = ;
+            FkStatusEstagio = (int?)EnumStatus.EmANDAMENTO;
             FkCandidato = fkCandidato;
             FkVaga = fkVaga;
         }
