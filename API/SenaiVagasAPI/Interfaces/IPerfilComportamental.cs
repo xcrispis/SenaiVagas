@@ -10,10 +10,10 @@ namespace SenaiVagasAPI.Interfaces
     {
         Task<List<PerfilComportamental>> Listar();
 
-        Task<PerfilComportamental> BuscarPorId(int id);
+        PerfilComportamental BuscarPorId(int id);
 
         Task<PerfilComportamental> Salvar(PerfilComportamental oferta);
 
-        Task<PerfilComportamental> Alterar(PerfilComportamental oferta);
+        PerfilComportamental Alterar(int id, PerfilComportamental oferta);
     }
 }

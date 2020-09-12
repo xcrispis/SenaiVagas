@@ -31,38 +31,24 @@ namespace SenaiVagasAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-
                 throw;
             }
             return perfil;
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, PerfilComportamental perfil)
-        {
-            if (id != perfil.IdPerfilComportamental)
-            {
-                return BadRequest();
-            }
+        [HttpPatch("{id}")]
+        public  IActionResult Patch(int id, PerfilComportamental perfil)
+        {         
             try
             {
-
-                await _repositorio.Alterar(perfil);
+                 _repositorio.Alterar(id, perfil);
+                return StatusCode(201);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception Error)
             {
-                var perfil_valido = await _repositorio.BuscarPorId(id);
-
-                if (perfil_valido == null)
-                {
-                    return NotFound(new { mensagem = "Nenhuma Oferta foi encontrada!" });
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest(Error);             
             }
-            return NoContent();
+            
         }
 
     }

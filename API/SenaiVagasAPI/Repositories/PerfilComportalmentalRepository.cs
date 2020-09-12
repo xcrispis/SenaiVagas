@@ -12,23 +12,30 @@ namespace SenaiVagasAPI.Repositories
     public class PerfilComportamentalRepository : IPerfilComportamental
     {
 
-        public async Task<PerfilComportamental> Alterar(PerfilComportamental perfil)
+        public  PerfilComportamental Alterar(int id, PerfilComportamental perfil)
         {
             using (ContextBd _contexto = new ContextBd())
             {
-                
-                _contexto.Entry(perfil).State = EntityState.Modified;
-                await _contexto.SaveChangesAsync();
+                 PerfilComportamental perfilComp = BuscarPorId(id);
+                if (perfil.Gato != null)
+                    perfilComp.Gato = perfil.Gato;
+                if (perfil.Lobo != null)
+                    perfilComp.Lobo = perfil.Lobo;
+                if (perfil.Tubarao != null)
+                    perfilComp.Tubarao = perfil.Tubarao;
+                if (perfil.Aguia != null)
+                    perfilComp.Aguia = perfil.Aguia;
+                _contexto.PerfilComportamental.Update(perfilComp);
+                _contexto.SaveChanges();
             }
             return perfil;
         }
 
-        public async Task<PerfilComportamental> BuscarPorId(int id)
+        public  PerfilComportamental BuscarPorId(int id)
         {
             using (ContextBd _contexto = new ContextBd())
             {
-                var perfil = await _contexto.PerfilComportamental.FirstOrDefaultAsync(o => o.IdPerfilComportamental == id);
-                return await _contexto.PerfilComportamental.FindAsync(id);
+                return  _contexto.PerfilComportamental.FirstOrDefault(p => p.IdPerfilComportamental == id);
             }
         }
 
