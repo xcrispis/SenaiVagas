@@ -11,5 +11,6 @@ namespace SenaiVagasAPI.Controllers
     [ApiController]
     public class CandidatoController : ControllerBase
     {
+        private ICandidatoRepository _
     }
 }

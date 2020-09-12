@@ -10,7 +10,7 @@ namespace SenaiVagasAPI.Repositories
 {
     public class CandidatoRepository : ICandidatoRepository
     {
-        private ContextBd _repository = new ContextBd();
+        private ContextBd _context = new ContextBd();
 
         public void Atualizar(int idCandidato, Candidato NovosDados)
         {
@@ -37,35 +37,35 @@ namespace SenaiVagasAPI.Repositories
                 AntigosDados.FkEndereco = NovosDados.FkEndereco;
             if (NovosDados.FkSituacao != null)
                 AntigosDados.FkSituacao = NovosDados.FkSituacao;
-            _repository.Candidato.Update(AntigosDados);
-            _repository.SaveChanges();
+            _context.Candidato.Update(AntigosDados);
+            _context.SaveChanges();
         }
 
         public Candidato BuscarPorCpf(string cpf)
         {
-            return _repository.Candidato.FirstOrDefault(C => C.Cpf == cpf);
+            return _context.Candidato.FirstOrDefault(C => C.Cpf == cpf);
         }
 
         public Candidato BuscarPorId(int idCandidato)
         {
-            return _repository.Candidato.FirstOrDefault(C => C.IdCandidato == idCandidato);
+            return _context.Candidato.FirstOrDefault(C => C.IdCandidato == idCandidato);
         }
 
         public void Criar(Candidato candidato)
         {
-            _repository.Candidato.Add(candidato);
-            _repository.SaveChanges();
+            _context.Candidato.Add(candidato);
+            _context.SaveChanges();
         }
 
         public void Deletar(int idCandidato)
         {
-            _repository.Candidato.Remove(BuscarPorId(idCandidato));
-            _repository.SaveChanges();
+            _context.Candidato.Remove(BuscarPorId(idCandidato));
+            _context.SaveChanges();
         }
 
         public List<Candidato> Listar()
         {
-            return _repository.Candidato.ToList();
+            return _context.Candidato.ToList();
         }
     }
 }
