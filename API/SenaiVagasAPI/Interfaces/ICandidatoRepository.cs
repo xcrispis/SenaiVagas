@@ -35,6 +35,11 @@ namespace SenaiVagasAPI.Interfaces
         /// </summary>
         /// <returns>Uma lista de candidatos</returns>
         List<Candidato> Listar();
-
+        /// <summary>
+        /// Busca um candidato por seu cpf
+        /// </summary>
+        /// <param name="cpf">cpf a ser buscado</param>
+        /// <returns>o candidato referente ao cpf informado</returns>
+        Candidato BuscarPorCpf(string cpf);
     }
 }

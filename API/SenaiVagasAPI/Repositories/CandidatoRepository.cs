@@ -41,6 +41,11 @@ namespace SenaiVagasAPI.Repositories
             _repository.SaveChanges();
         }
 
+        public Candidato BuscarPorCpf(string cpf)
+        {
+            return _repository.Candidato.FirstOrDefault(C => C.Cpf == cpf);
+        }
+
         public Candidato BuscarPorId(int idCandidato)
         {
             return _repository.Candidato.FirstOrDefault(C => C.IdCandidato == idCandidato);
