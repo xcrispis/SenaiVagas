@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -86,6 +87,28 @@ namespace SenaiVagasAPI.Controllers
                     _usuarioRepository.Atualizar(id, usuarioAtualizado);
 
                     return StatusCode(204);
+                }
+
+                return NotFound($"O usuário {id} não foi encontrado");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(id);
+
+                if (usuarioBuscado != null)
+                {
+                    _usuarioRepository.Deletar(id);
+
+                    return StatusCode(202);
                 }
 
                 return NotFound($"O usuário {id} não foi encontrado");
