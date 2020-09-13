@@ -49,7 +49,20 @@ namespace SenaiVagasAPI.Repositories
 
         public List<Usuario> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Usuario
+                .Select(u => new Usuario()
+                {
+                    IdUsuario = u.IdUsuario,
+                    Email = u.Email,
+                    Senha = u.Senha,
+
+                    FkTipoUsuarioNavigation = new TipoUsuario()
+                    { 
+                        IdTipoUsuario = u.FkTipoUsuarioNavigation.IdTipoUsuario,
+                        Titulo = u.FkTipoUsuarioNavigation.Titulo
+                    }
+                })
+                .ToList();
         }
     }
 }
