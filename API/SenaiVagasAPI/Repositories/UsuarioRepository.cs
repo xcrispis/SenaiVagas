@@ -30,7 +30,7 @@ namespace SenaiVagasAPI.Repositories
 
         public Usuario BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Usuario.FirstOrDefault(u => u.IdUsuario == id);
         }
 
         public void Cadastrar(Usuario novoUsuario)
