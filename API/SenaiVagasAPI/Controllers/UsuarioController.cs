@@ -58,5 +58,20 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
+
+        [HttpPost]
+        public IActionResult Post(Usuario novoUsuario)
+        {
+            try
+            {
+                _usuarioRepository.Cadastrar(novoUsuario);
+
+                return StatusCode(201);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
     }
 }
