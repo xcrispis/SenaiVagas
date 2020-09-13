@@ -73,5 +73,27 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
+
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, Usuario usuarioAtualizado)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(id);
+
+                if (usuarioBuscado != null)
+                {
+                    _usuarioRepository.Atualizar(id, usuarioAtualizado);
+
+                    return StatusCode(204);
+                }
+
+                return NotFound($"O usuário {id} não foi encontrado");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
     }
 }

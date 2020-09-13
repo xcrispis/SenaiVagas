@@ -15,7 +15,7 @@ namespace SenaiVagasAPI.Repositories
         {
             Usuario usuarioBuscado = ctx.Usuario.Find(id);
 
-            if (usuarioBuscado != null)
+            if (usuarioBuscado != null)            
                 if (usuarioBuscado.Email != null)
                     usuarioBuscado.Email = usuarioAtualizado.Email;
                 if (usuarioBuscado.Senha != null)
@@ -23,9 +23,9 @@ namespace SenaiVagasAPI.Repositories
                 if (usuarioBuscado.FkTipoUsuario != null)
                     usuarioBuscado.FkTipoUsuario = usuarioAtualizado.FkTipoUsuario;
 
-            ctx.Usuario.Update(usuarioBuscado);
+                ctx.Usuario.Update(usuarioBuscado);
 
-            ctx.SaveChanges();
+                ctx.SaveChanges();            
         }
 
         public Usuario BuscarPorId(int id)
