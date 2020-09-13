@@ -42,7 +42,9 @@ namespace SenaiVagasAPI.Repositories
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            ctx.Usuario.Remove(BuscarPorId(id));
+
+            ctx.SaveChanges();
         }
 
         public List<Usuario> Listar()
