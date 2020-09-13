@@ -35,7 +35,9 @@ namespace SenaiVagasAPI.Repositories
 
         public void Cadastrar(Usuario novoUsuario)
         {
-            throw new NotImplementedException();
+            ctx.Usuario.Add(novoUsuario);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
