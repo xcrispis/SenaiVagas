@@ -51,5 +51,21 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
+
+        [HttpPost)]
+        public IActionResult Post (Empresa novaEmpresa)
+        {
+            try
+            {
+                _empresaRepository.Cadastrar(novaEmpresa);
+
+                return StatusCode(201);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
     }
 }
