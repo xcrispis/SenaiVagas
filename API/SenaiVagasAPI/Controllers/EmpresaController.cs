@@ -89,5 +89,27 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                Empresa empresaBuscada = _empresaRepository.BuscarPorId(id);
+
+                if (empresaBuscada != null)
+                {
+                    _empresaRepository.Deletar(id);
+
+                    return StatusCode(202);
+                }
+
+                return NotFound($"A Empresa {id} não foi encontrada");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
     }
 }
