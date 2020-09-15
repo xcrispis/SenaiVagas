@@ -66,7 +66,42 @@ namespace SenaiVagasAPI.Repositories
 
         public List<Empresa> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Empresa
+                .Select(e => new Empresa()
+                { 
+                    StatusEmpresa = e.StatusEmpresa,
+                    RazaoSocial = e.RazaoSocial,
+                    Cnpj = e.Cnpj,
+                    Telefone = e.Telefone,
+                    Cnae = e.Cnae,
+                    Apresentacao = e.Cnae,
+                    NomeResponsavel = e.NomeResponsavel,
+                    CargoExercido = e.CargoExercido,
+                    Logo = e.Logo,
+                    EmailContato = e.EmailContato,
+                    
+                    FkEnderecoNavigation = new Endereco()
+                    {
+                        Cep = e.FkEnderecoNavigation.Cep,
+                        Logradouro = e.FkEnderecoNavigation.Logradouro,
+                        Complemento = e.FkEnderecoNavigation.Complemento,
+                        Bairro = e.FkEnderecoNavigation.Bairro,
+                        Uf = e.FkEnderecoNavigation.Uf,
+                        Cidade = e.FkEnderecoNavigation.Cidade,
+                        Numero = e.FkEnderecoNavigation.Numero
+                    },
+
+                    FkUsuarioNavigation = new Usuario()
+                    {
+                        IdUsuario = e.FkUsuarioNavigation.IdUsuario,
+
+                        FkTipoUsuarioNavigation = new TipoUsuario()
+                        {
+                            Titulo = e.FkUsuarioNavigation.FkTipoUsuarioNavigation.Titulo
+                        }
+                    }
+                })
+                .ToList();
         }
     }
 }
