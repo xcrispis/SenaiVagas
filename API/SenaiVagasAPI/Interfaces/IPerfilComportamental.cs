@@ -12,8 +12,8 @@ namespace SenaiVagasAPI.Interfaces
 
         PerfilComportamental BuscarPorId(int id);
 
-        Task<PerfilComportamental> Salvar(PerfilComportamental oferta);
+        Task<PerfilComportamental> Salvar(PerfilComportamental perfil);
 
-        PerfilComportamental Alterar(int id, PerfilComportamental oferta);
+        PerfilComportamental Alterar(int id, PerfilComportamental perfil);
     }
 }
