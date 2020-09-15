@@ -17,5 +17,7 @@ namespace SenaiVagasAPI.Interfaces
         void Atualizar(int id, Usuario usuarioAtualizado);
 
         void Deletar(int id);
+
+        Usuario Login(string email, string senha);
     }
 }
