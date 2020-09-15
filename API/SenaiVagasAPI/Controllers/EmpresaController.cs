@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
+using SenaiVagasAPI.Interfaces;
 using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
@@ -14,7 +15,7 @@ namespace SenaiVagasAPI.Controllers
     [ApiController]
     public class EmpresaController : ControllerBase
     {
-        private EmpresaRepository _empresaRepository;
+        private IEmpresaRepository _empresaRepository;
 
         public EmpresaController()
         {
