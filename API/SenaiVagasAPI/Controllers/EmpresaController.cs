@@ -57,7 +57,6 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Empresa")]
         public IActionResult Post (Empresa novaEmpresa)
         {
             try

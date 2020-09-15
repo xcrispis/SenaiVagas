@@ -4,6 +4,7 @@ using System.Linq;
 using System.Resources;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
@@ -28,6 +29,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Get()
         {
             try
@@ -41,6 +43,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult GetById(int id)
         {
             try
@@ -76,6 +79,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpPatch("{id}")]
+        [Authorize(Roles = "Administrador,Candidato")]
         public IActionResult Patch(int id, Usuario usuarioAtualizado)
         {
             try
@@ -98,6 +102,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Delete(int id)
         {
             try
