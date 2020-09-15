@@ -1,4 +1,5 @@
-﻿using SenaiVagasAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SenaiVagasAPI.Contexts;
 using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Interfaces;
 using System;
@@ -63,6 +64,20 @@ namespace SenaiVagasAPI.Repositories
                     }
                 })
                 .ToList();
+        }
+
+        public Usuario Login(string email, string senha)
+        {
+            Usuario usuarioBuscado = ctx.Usuario
+                .Include(u => u.FkTipoUsuarioNavigation)
+                .FirstOrDefault(u => u.Email == email && u.Senha == senha);
+
+            if (usuarioBuscado != null)
+            {
+                return usuarioBuscado;
+            }
+
+            return null;
         }
     }
 }
