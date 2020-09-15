@@ -52,12 +52,16 @@ namespace SenaiVagasAPI.Repositories
 
         public void Cadastrar(Empresa novaEmpresa)
         {
-            throw new NotImplementedException();
+            ctx.Empresa.Add(novaEmpresa);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            ctx.Empresa.Remove(BuscarPorId(id));
+
+            ctx.SaveChanges();
         }
 
         public List<Empresa> Listar()
