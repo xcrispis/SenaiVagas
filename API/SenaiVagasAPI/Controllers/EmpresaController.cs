@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
@@ -33,18 +34,22 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
-        /*[HttpGet("{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             try
             {
+                Empresa empresaBuscada = _empresaRepository.BuscarPorId(id);
 
+                if (empresaBuscada != null)
+                    return Ok(empresaBuscada);
+
+                return NotFound($"A empresa {id} não foi encontrada");
             }
-            catch (Exception)
+            catch (Exception error)
             {
-
-                throw;
+                return BadRequest(error);
             }
-        }*/
+        }
     }
 }
