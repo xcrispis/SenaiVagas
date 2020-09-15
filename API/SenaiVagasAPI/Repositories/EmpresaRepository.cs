@@ -14,12 +14,12 @@ namespace SenaiVagasAPI.Repositories
         ContextBd ctx = new ContextBd();
         public void Atualizar(int id, Empresa empresaAtualizada)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Empresa BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Empresa.FirstOrDefault(e => e.IdEmpresa == id);
         }
 
         public void Cadastrar(Empresa novaEmpresa)
