@@ -53,7 +53,7 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
-        [HttpPost)]
+        [HttpPost]
         public IActionResult Post (Empresa novaEmpresa)
         {
             try
