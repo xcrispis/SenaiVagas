@@ -67,5 +67,27 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
+        [HttpPatch("{id")]
+        public IActionResult Patch(int id, Empresa empresaAtualizada)
+        {
+            try
+            {
+                Empresa empresaBuscada = _empresaRepository.BuscarPorId(id);
+
+                if (empresaBuscada != null)
+                {
+                    _empresaRepository.Atualizar(id, empresaAtualizada);
+
+                    return StatusCode(204);
+                }
+
+                return NotFound($"A empresa {id} não foi encontrada");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
     }
 }
