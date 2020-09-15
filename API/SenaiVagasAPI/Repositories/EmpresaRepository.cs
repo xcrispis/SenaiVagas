@@ -14,7 +14,35 @@ namespace SenaiVagasAPI.Repositories
         ContextBd ctx = new ContextBd();
         public void Atualizar(int id, Empresa empresaAtualizada)
         {
-            
+            Empresa empresaBuscada = ctx.Empresa.Find(id);
+
+            if (empresaBuscada != null)
+                if (empresaBuscada.StatusEmpresa != null)
+                    empresaBuscada.StatusEmpresa = empresaAtualizada.StatusEmpresa;
+                if (empresaBuscada.RazaoSocial != null)
+                    empresaBuscada.RazaoSocial = empresaAtualizada.RazaoSocial;
+                if (empresaBuscada.Cnpj != null)
+                    empresaBuscada.Cnpj = empresaAtualizada.Cnae;
+                if (empresaBuscada.Telefone != null)
+                    empresaBuscada.Telefone = empresaAtualizada.Telefone;
+                if (empresaBuscada.Cnae != null)
+                    empresaBuscada.Cnae = empresaAtualizada.Cnae;
+                if (empresaBuscada.Apresentacao != null)
+                    empresaBuscada.Apresentacao = empresaAtualizada.Apresentacao;
+                if (empresaBuscada.NomeResponsavel != null)
+                    empresaBuscada.CargoExercido = empresaAtualizada.CargoExercido;
+                if (empresaBuscada.Logo != null)
+                    empresaBuscada.Logo = empresaAtualizada.Logo;
+                if (empresaBuscada.EmailContato != null)
+                    empresaBuscada.EmailContato = empresaAtualizada.EmailContato;
+                if (empresaBuscada.FkUsuario != null)
+                    empresaBuscada.FkUsuario = empresaAtualizada.FkUsuario;
+                if (empresaBuscada.FkEndereco != null)
+                    empresaBuscada.FkEndereco = empresaAtualizada.FkEndereco;
+
+                ctx.Empresa.Update(empresaBuscada);
+
+                ctx.SaveChanges();
         }
 
         public Empresa BuscarPorId(int id)
