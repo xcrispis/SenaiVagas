@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
@@ -23,6 +24,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Get()
         {
             try
@@ -36,6 +38,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult GetById(int id)
         {
             try
@@ -54,6 +57,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Empresa")]
         public IActionResult Post (Empresa novaEmpresa)
         {
             try
@@ -68,7 +72,8 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
-        [HttpPatch("{id")]
+        [HttpPatch("{id}")]
+        [Authorize(Roles = "Administrador,Empresa")]
         public IActionResult Patch(int id, Empresa empresaAtualizada)
         {
             try
@@ -91,6 +96,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Delete(int id)
         {
             try
