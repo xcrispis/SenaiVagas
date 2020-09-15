@@ -61,3 +61,5 @@ C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\S
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.genruntimeconfig.cache
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.csproj.CoreCompileInputs.cache
 C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC\Documents\Thais\nova prof do senai\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.dll
+C:\Users\PC\Documents\Thais\nova prof do senai\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.pdb

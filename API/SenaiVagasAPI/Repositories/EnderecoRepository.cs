@@ -12,63 +12,78 @@ namespace SenaiVagasAPI.Repositories
     {
         ContextBd ctx = new ContextBd();
 
-        //Atualiza um endereco existente
+        /// <summary>
+        /// Busca o endereco através do ID atribui novos valores ao campos existentes atualiza o endereco que foi buscado e salva as informações para serem gravadas no banco
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="enderecoAtualizado"></param>
         public void Atualizar(int id, Endereco enderecoAtualizado)
         {
-            // Busca o endereco através do id
+   
             Endereco enderecoBuscado = ctx.Endereco.Find(id);
 
-            // Atribui os novos valores ao campos existentes
-            enderecoBuscado.IdEndereco = enderecoAtualizado.IdEndereco;
-            enderecoBuscado.Cep = enderecoAtualizado.Cep;
-            enderecoBuscado.Logradouro = enderecoAtualizado.Logradouro;
-            enderecoBuscado.Complemento = enderecoAtualizado.Complemento;
-            enderecoBuscado.Bairro = enderecoAtualizado.Bairro;
-            enderecoBuscado.Uf = enderecoAtualizado.Uf;
-            enderecoBuscado.Cidade = enderecoAtualizado.Cidade;
-            enderecoBuscado.Numero = enderecoAtualizado.Numero;
+            if (enderecoAtualizado.IdEndereco != null)
+                enderecoBuscado.IdEndereco = enderecoAtualizado.IdEndereco;
+            if (enderecoAtualizado.Cep != null)
+                enderecoBuscado.Cep = enderecoAtualizado.Cep;
+            if (enderecoAtualizado.Logradouro != null)
+                enderecoBuscado.Logradouro = enderecoAtualizado.Logradouro;
+            if (enderecoAtualizado.Complemento != null)
+                enderecoBuscado.Complemento = enderecoAtualizado.Complemento;
+            if (enderecoAtualizado.Bairro != null)
+                enderecoBuscado.Bairro = enderecoAtualizado.Bairro;
+            if (enderecoAtualizado.Uf != null)
+                enderecoBuscado.Uf = enderecoAtualizado.Uf;
+            if (enderecoAtualizado.Cidade != null)
+                enderecoBuscado.Cidade = enderecoAtualizado.Cidade;
+            if (enderecoAtualizado.Numero != null)
+                enderecoBuscado.Numero = enderecoAtualizado.Numero;
 
-            // Atualiza o endereco que foi buscado
             ctx.Endereco.Update(enderecoBuscado);
-
-            // Salva as informações para serem gravadas no banco
             ctx.SaveChanges();
         }
 
-        // Busca um endereco através do ID
+        /// <summary>
+        /// Busca um endereco através do ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Endereco BuscarPorId(int id)
         {
-            // Retorna o primeiro endereco para o ID informado
             return ctx.Endereco.FirstOrDefault(u => u.IdEndereco == id);
         }
 
-        //Cadastrar novo endereco
+        
+        /// <summary>
+        /// Cadastrar novo endereco e salva as informações para serem gravas no banco
+        /// </summary>
+        /// <param name="novoEndereco"></param>
         public void Cadastrar(Endereco novoEndereco)
         {
-            // Adiciona um novo endereco
             ctx.Endereco.Add(novoEndereco);
-
-            // Salva as informações para serem gravas no banco
             ctx.SaveChanges();
         }
 
-        //Deleta endereco
+
+        /// <summary>
+        /// Busca endereco através do id, remove o endereco que foi busacado e salva as alterações
+        /// </summary>
+        /// <param name="id"></param>
         public void Deletar(int id)
         {
-            //Busca endereco através do id
             Endereco enderecoBuscado = ctx.Endereco.Find(id);
 
-            //Remove o endereco que foi busacado
             ctx.Endereco.Remove(enderecoBuscado);
 
-            //Salva as alterações
-            ctx.SaveChangues();
+            ctx.SaveChanges();
         }
 
-        //Lista com todos os usuários
+        /// <summary>
+        /// Lista com todos os usuários
+        /// </summary>
+        /// <returns></returns>
         public List<Endereco> Listar()
         {
-            //Retorna uma lista com todads as informações do usuário
             return ctx.Endereco.ToList();
         }
     }

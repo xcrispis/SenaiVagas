@@ -6,22 +6,42 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Interfaces
 {
-    // Interface responsável pelo UsuarioRepository
+    /// <summary>
+    /// Interface responsável pelo UsuarioRepository
+    /// </summary>
     interface IEnderecoRepository
     {
-        //Listar endereços
+        
+        /// <summary>
+        /// Listar endereços
+        /// </summary>
+        /// <returns></returns>
         List<Endereco> Listar();
 
-        //Cadastrar um novo endereço
+        /// <summary>
+        /// Cadastrar um novo endereço
+        /// </summary>
+        /// <param name="novoEndereco"></param>
         void Cadastrar(Endereco novoEndereco);
 
-        //Atualizar o endereço existente
+        /// <summary>
+        /// Atualizar o endereço existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="enderecoAtualizado"></param>
         void Atualizar(int id, Endereco enderecoAtualizado);
 
-        //Deletar endereço
+        /// <summary>
+        /// Deletar endereço
+        /// </summary>
+        /// <param name="id"></param>
         void Deletar(int id);
 
-        //Buscar endereço por ID
+        /// <summary>
+        /// Buscar endereço por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Endereco BuscarPorId(int id);
     }
 }

@@ -6,22 +6,42 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Interfaces
 {
+    /// <summary>
+    /// Interface responsável pelo UsuarioRepository
+    /// </summary>
     interface IVagaRepository
     {
 
-        //Listar vagas
+        /// <summary>
+        /// Listar vagas
+        /// </summary>
+        /// <returns></returns>
         List<Vaga> Listar();
 
-        //Cadastrar uma nova vaga
+        /// <summary>
+        /// Cadastrar uma nova vaga
+        /// </summary>
+        /// <param name="novaVaga"></param>
         void Cadastrar(Vaga novaVaga);
 
-        //Atualizar vaga existente
+        /// <summary>
+        /// Atualizar vaga existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="vagaAtualizada"></param>
         void Atualizar(int id, Vaga vagaAtualizada);
 
-        //Deletar vaga
+        /// <summary>
+        /// Deletar vaga
+        /// </summary>
+        /// <param name="id"></param>
         void Deletar(int id);
 
-        //Buscar vaga por ID
+        /// <summary>
+        /// Buscar vaga por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Vaga BuscarPorId(int id);
     }
 }

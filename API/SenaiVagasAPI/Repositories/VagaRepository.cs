@@ -12,62 +12,73 @@ namespace SenaiVagasAPI.Repositories
     {
         ContextBd ctx = new ContextBd();
 
-        //Atualiza uma vaga existente
+        /// <summary>
+        /// Busca uma vaga através do ID, atribui os novos valores ao campos existentes, atualiza a vaga que foi buscado e salva as informações para serem gravadas no banco
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="vagaAtualizada"></param>
         public void Atualizar(int id, Vaga vagaAtualizada)
         {
-            // Busca uma vaga através do id
             Vaga vagaBuscada = ctx.Vaga.Find(id);
 
-            // Atribui os novos valores ao campos existentes
-            vagaBuscada.IdVaga = vagaAtualizada.IdVaga;
+            if (vagaAtualizada.IdVaga != null)
+                vagaBuscada.IdVaga = vagaAtualizada.IdVaga;
+            if(vagaAtualizada.Descricao != null)
             vagaBuscada.Descricao = vagaAtualizada.Descricao;
-            vagaBuscada.Habilidades = vagaAtualizada.Habilidades;
-            vagaBuscada.PlanoEstagio = vagaAtualizada.PlanoEstagio;
-            vagaBuscada.FkEmpresa = vagaAtualizada.FkEmpresa;
-            vagaBuscada.FkFormaContratacao = vagaAtualizada.FkFormaContratacao;
-            vagaBuscada.FkEndereco = vagaAtualizada.FkEndereco;
+            if (vagaAtualizada.Habilidades != null)
+                vagaBuscada.Habilidades = vagaAtualizada.Habilidades;
+            if (vagaAtualizada.PlanoEstagio != null)
+                vagaBuscada.PlanoEstagio = vagaAtualizada.PlanoEstagio;
+            if (vagaAtualizada.FkEmpresa != null)
+                vagaBuscada.FkEmpresa = vagaAtualizada.FkEmpresa;
+            if (vagaAtualizada.FkFormaContratacao != null)
+                vagaBuscada.FkFormaContratacao = vagaAtualizada.FkFormaContratacao;
+            if (vagaAtualizada.FkEndereco != null)
+                vagaBuscada.FkEndereco = vagaAtualizada.FkEndereco;
 
-            // Atualiza a vaga que foi buscado
             ctx.Vaga.update(vagaBuscada);
-
-            // Salva as informações para serem gravadas no banco
             ctx.SaveChanges();
         }
 
-        //Busca vaga através do ID
+
+        /// <summary>
+        /// Busca vaga através do ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Vaga BuscarPorId(int id)
         {
-            //Retorna a vaga para o ID informado
             return ctx.Vaga.FirstOrDefault(u => u.IdVaga == id);
         }
 
-        //Cadastrar uma nova vaga
+        /// <summary>
+        /// Cadastrar uma nova vaga e salva as informações
+        /// </summary>
+        /// <param name="novaVaga"></param>
         public void Cadastrar(Vaga novaVaga)
         {
-            //Adiciona uma nova vaga
             ctx.Vaga.Add(novaVaga);
-
-            //Salva as informações
             ctx.SaveChanges();
         }
 
-        //Deletar uma vaga
+        /// <summary>
+        /// Busca uma vaga através do ID, remove a vaga buscada e salva as alterações
+        /// </summary>
+        /// <param name="id"></param>
         public void Deletar(int id)
         {
-            //Buscar uma vaga através do ID
             Vaga vagaBuscada = ctx.Vaga.Find(id);
 
-            //Remove a vaga buscada
             ctx.Vaga.Remove(vagaBuscada);
-
-            //Salva as alterações
             ctx.SaveChanges();
         }
 
-        //Lista com as vagas
+        /// <summary>
+        /// Lista com as vagas
+        /// </summary>
+        /// <returns></returns>
         public List<Vaga> Listar()
         {
-            //Retorna uma lista com as vagas
             return ctx.Vaga.ToList();
         }
     }

@@ -10,7 +10,9 @@ using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
 {
-    // Define que o tipo de resposta da API será no formato JSON
+    /// <summary>
+    /// Define que o tipo de resposta da API será no formato JSON
+    /// </summary>
     [Produces("application/json")]
 
     //Define que a rota de uma aquisição será no formato domínio/api/NomeController
