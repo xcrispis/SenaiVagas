@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
+using SenaiVagasAPI.Interfaces;
 using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
@@ -20,7 +21,7 @@ namespace SenaiVagasAPI.Controllers
     public class UsuarioController : ControllerBase
     {
         //Criação do objetivo que receberá todos os métodos da interface
-        private UsuarioRepository _usuarioRepository;
+        private IUsuarioRepository _usuarioRepository;
 
         //Instância do objeto para ter referencia de uso no Repository
         public UsuarioController()
