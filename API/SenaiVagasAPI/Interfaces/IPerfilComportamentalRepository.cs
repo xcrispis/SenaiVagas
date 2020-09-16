@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Interfaces
 {
-    interface IPerfilComportamental
+    interface IPerfilComportamentalRepository
     {
-        Task<List<PerfilComportamental>> Listar();
+        List<PerfilComportamental> Listar();
 
         PerfilComportamental BuscarPorId(int id);
 
-        Task<PerfilComportamental> Salvar(PerfilComportamental perfil);
+        void Salvar(PerfilComportamental perfil);
 
-        PerfilComportamental Alterar(int id, PerfilComportamental perfil);
+        void Alterar(int id, PerfilComportamental perfil);
     }
 }

@@ -10,56 +10,40 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SenaiVagasAPI.Repositories
 {
-    public class CursoRepository : ICurso
+    public class CursoRepository : ICursoRepository
+
     {
-        public Curso Alterar(int id, Curso curso)
+        ContextBd _contexto = new ContextBd();
+        public void Alterar(int id, Curso curso)
         {
-            using (ContextBd _contexto = new ContextBd())
-            {
                 Curso cursosNew =  BuscarPorId(id);
                 if (cursosNew.Titulo != null)
                     cursosNew.Titulo = curso.Titulo;
         
                 _contexto.Curso.Update(cursosNew);
                 _contexto.SaveChanges();
-            }
-            return curso;
         }
 
         public  Curso BuscarPorId(int id)
         {
-            using (ContextBd _contexto = new ContextBd())
-            {
-                return _contexto.Curso.FirstOrDefault(p => p.IdCursos == id);
-            }
+                return _contexto.Curso.FirstOrDefault(p => p.IdCursos == id);       
         }
 
-        public  Curso Excluir(Curso curso)
-        {
-            using (ContextBd _contexto = new ContextBd())
-            {
+        public void Excluir(Curso curso)
+        {        
                 _contexto.Curso.Remove(curso);
                  _contexto.SaveChanges();
-                return curso;
-            }
         }
 
-        public async Task<List<Curso>> Listar()
+        public  List<Curso> Listar()
         {
-            using (ContextBd _contexto = new ContextBd())
-            {
-                return await _contexto.Curso.ToListAsync();
-            }
+                return  _contexto.Curso.ToList();
         }
 
-        public async Task<Curso> Salvar(Curso curso)
-        {
-            using (ContextBd _contexto = new ContextBd())
-            {
-                await _contexto.AddAsync(curso);               
-                await _contexto.SaveChangesAsync();
-            }
-            return curso;
+        public  void Salvar(Curso curso)
+        {    
+                 _contexto.Add(curso);               
+                 _contexto.SaveChanges();
         }
     }
 }

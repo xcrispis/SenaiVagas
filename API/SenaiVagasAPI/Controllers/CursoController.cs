@@ -9,6 +9,7 @@ using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class CursoController : ControllerBase
@@ -16,24 +17,30 @@ namespace SenaiVagasAPI.Controllers
         CursoRepository _repositorio = new CursoRepository();
 
         [HttpGet]
-        public async Task<ActionResult<List<Curso>>> Get()
-        {
-            var curso = await _repositorio.Listar();
-            return curso;
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<Curso>> Post(Curso curso)
+        public  IActionResult Get()
         {
             try
             {
-                await _repositorio.Salvar(curso);
+                return Ok(_repositorio.Listar());
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception error)
             {
-                throw;
+                return BadRequest(error);
+            }     
+        }
+
+        [HttpPost]
+        public  IActionResult Post(Curso curso)
+        {
+            try
+            {
+                 _repositorio.Salvar(curso);
+                return StatusCode(201);
             }
-            return curso;
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
         [HttpPatch("{id}")]
@@ -44,9 +51,9 @@ namespace SenaiVagasAPI.Controllers
                 _repositorio.Alterar(id, curso);
                 return StatusCode(201);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                return BadRequest(Error);
+                return BadRequest(error);
             }
         }
 

@@ -9,6 +9,7 @@ using SenaiVagasAPI.Repositories;
 
 namespace SenaiVagasAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class PerfilComportamentalController : ControllerBase
@@ -16,24 +17,33 @@ namespace SenaiVagasAPI.Controllers
         PerfilComportamentalRepository _repositorio = new PerfilComportamentalRepository();
 
         [HttpGet]
-        public async Task<ActionResult<List<PerfilComportamental>>> Get()
-        {
-            var perfil = await _repositorio.Listar();
-            return perfil;
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<PerfilComportamental>> Post(PerfilComportamental perfil)
+        public  ActionResult<List<PerfilComportamental>> Get()
         {
             try
             {
-                await _repositorio.Salvar(perfil);
+                return Ok(_repositorio.Listar());
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception error)
             {
-                throw;
+
+                return BadRequest(error);
             }
-            return perfil;
+         
+        }
+
+        [HttpPost]
+        public IActionResult Post(PerfilComportamental perfil)
+        {
+            try
+            {
+                 _repositorio.Salvar(perfil);
+                return StatusCode(201);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+            
         }
 
         [HttpPatch("{id}")]

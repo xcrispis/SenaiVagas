@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Repositories
 {
-    public class PerfilComportamentalRepository : IPerfilComportamental
+    public class PerfilComportamentalRepository : IPerfilComportamentalRepository
     {
+        ContextBd _contexto = new ContextBd();
 
-        public  PerfilComportamental Alterar(int id, PerfilComportamental perfil)
-        {
-            using (ContextBd _contexto = new ContextBd())
-            {
+        public  void Alterar(int id, PerfilComportamental perfil)
+        {         
                  PerfilComportamental perfilComp = BuscarPorId(id);
                 if (perfil.Gato != null)
                     perfilComp.Gato = perfil.Gato;
@@ -26,37 +25,24 @@ namespace SenaiVagasAPI.Repositories
                 if (perfil.Aguia != null)
                     perfilComp.Aguia = perfil.Aguia;
                 _contexto.PerfilComportamental.Update(perfilComp);
-                _contexto.SaveChanges();
-            }
-            return perfil;
+                _contexto.SaveChanges();          
         }
 
         public  PerfilComportamental BuscarPorId(int id)
-        {
-            using (ContextBd _contexto = new ContextBd())
-            {
+        {               
                 return  _contexto.PerfilComportamental.FirstOrDefault(p => p.IdPerfilComportamental == id);
-            }
         }
 
-        public async Task<List<PerfilComportamental>> Listar()
+        public  List<PerfilComportamental> Listar()
         {
-            using (ContextBd _contexto = new ContextBd())
-            {
-                var ofertas = await _contexto.PerfilComportamental.ToListAsync();
-                return await _contexto.PerfilComportamental.ToListAsync();
-            }
+                var ofertas =  _contexto.PerfilComportamental.ToList();
+                return  _contexto.PerfilComportamental.ToList();
         }
 
-        public async Task<PerfilComportamental> Salvar(PerfilComportamental perfil)
+        public void Salvar(PerfilComportamental perfil)
         {
-            using (ContextBd _contexto = new ContextBd())
-            {
-                
-                await _contexto.AddAsync(perfil);
-                await _contexto.SaveChangesAsync();
-                return perfil;
-            }
+                 _contexto.Add(perfil);
+                 _contexto.SaveChanges();
         }
 
        
