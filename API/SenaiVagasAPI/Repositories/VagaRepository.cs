@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SenaiVagasAPI.Repositories
 {
@@ -36,7 +37,7 @@ namespace SenaiVagasAPI.Repositories
             if (vagaAtualizada.FkEndereco != null)
                 vagaBuscada.FkEndereco = vagaAtualizada.FkEndereco;
 
-            ctx.Vaga.update(vagaBuscada);
+            ctx.Vaga.Update(vagaBuscada);
             ctx.SaveChanges();
         }
 
