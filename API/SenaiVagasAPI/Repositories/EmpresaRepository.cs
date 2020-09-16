@@ -68,7 +68,8 @@ namespace SenaiVagasAPI.Repositories
         {
             return ctx.Empresa
                 .Select(e => new Empresa()
-                { 
+                {
+                    IdEmpresa = e.IdEmpresa,
                     StatusEmpresa = e.StatusEmpresa,
                     RazaoSocial = e.RazaoSocial,
                     Cnpj = e.Cnpj,
