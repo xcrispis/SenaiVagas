@@ -1,4 +1,5 @@
-﻿using SenaiVagasAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SenaiVagasAPI.Contexts;
 using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Interfaces;
 using System;
@@ -53,8 +54,12 @@ namespace SenaiVagasAPI.Repositories
 
         public void Criar(Candidato candidato)
         {
-            _context.Candidato.Add(candidato);
-            _context.SaveChanges();
+            if(BuscarPorCpf(candidato.Cpf) == null)
+            {
+                _context.Candidato.Add(candidato);
+                _context.SaveChanges();
+            }
+            
         }
 
         public void Deletar(int idCandidato)
@@ -65,7 +70,20 @@ namespace SenaiVagasAPI.Repositories
 
         public List<Candidato> Listar()
         {
-            return _context.Candidato.ToList();
+            return _context.Candidato.Include(c => c.FkCursoNavigation)
+                                     .Include(c => c.FkEnderecoNavigation)
+                                     .Include(c => c.FkPerfilComportamentalNavigation)
+                                     .Include(c => c.FkSituacaoNavigation)
+                                     .Select(u => new Candidato()
+                                     {
+                                         IdUsuarioNavigation = new Usuario
+                                         {
+                                             IdUsuario = u.IdUsuarioNavigation.IdUsuario,
+                                             Email = u.IdUsuarioNavigation.Email,
+                                             FkTipoUsuario = u.IdUsuarioNavigation.FkTipoUsuario
+
+                                         }
+                                     }).ToList();
         }
     }
 }
