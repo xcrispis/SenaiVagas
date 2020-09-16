@@ -30,7 +30,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "3")]
         public IActionResult Get()
         {
             try
@@ -44,7 +44,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "3")]
         public IActionResult GetById(int id)
         {
             try
@@ -80,7 +80,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpPatch("{id}")]
-        [Authorize(Roles = "Administrador,Candidato")]
+        [Authorize(Roles = "3,1")]
         public IActionResult Patch(int id, Usuario usuarioAtualizado)
         {
             try
@@ -103,7 +103,7 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "3")]
         public IActionResult Delete(int id)
         {
             try
