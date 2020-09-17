@@ -9,9 +9,10 @@ GO
 
 INSERT INTO Curso(Titulo)
 VALUES ('Desenvolvimento de Sistemas')
-	  ,('Redes')
+	  
 	  ,('Multimidia');
 GO
+INSERT INTO Situacao(Titulo)
 VALUES ('Buscando')
 	  ,('Estagio')
 	  ,('Efetivo')
