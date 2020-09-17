@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\GitHub\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\GitHub\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\GitHub\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
         "projectName": "SenaiVagasAPI",
-        "projectPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
-        "packagesPath": "C:\\Users\\HENRIQUE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
+        "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\GitHub\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\GitHub\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\HENRIQUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[3.1.8, )"
             },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.7.1, )"
@@ -87,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

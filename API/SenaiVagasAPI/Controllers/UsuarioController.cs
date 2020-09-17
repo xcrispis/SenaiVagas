@@ -29,7 +29,13 @@ namespace SenaiVagasAPI.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Lista todos os Usuarios
+        /// </summary>
+        /// <returns>Satus Code 200 ok com uma lista de usuarios</returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //[Authorize(Roles = "3")]
         public IActionResult Get()
         {
