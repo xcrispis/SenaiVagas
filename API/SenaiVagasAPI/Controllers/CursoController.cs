@@ -17,7 +17,7 @@ namespace SenaiVagasAPI.Controllers
         CursoRepository _repositorio = new CursoRepository();
 
         [HttpGet]
-        public  IActionResult Get()
+        public IActionResult Get()
         {
             try
             {
@@ -26,15 +26,15 @@ namespace SenaiVagasAPI.Controllers
             catch (Exception error)
             {
                 return BadRequest(error);
-            }     
+            }
         }
 
         [HttpPost]
-        public  IActionResult Post(Curso curso)
+        public IActionResult Post(Curso curso)
         {
             try
             {
-                 _repositorio.Salvar(curso);
+                _repositorio.Salvar(curso);
                 return StatusCode(201);
             }
             catch (Exception error)
@@ -58,16 +58,22 @@ namespace SenaiVagasAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public  ActionResult<Curso> Delete(int id)
+        public IActionResult Delete(int id)
         {
-            var curso =  _repositorio.BuscarPorId(id);
-            if (curso == null)
+            try
             {
-                return NotFound(new{mensagem = "Não foi possível deletar o curso pois o ID informado não existe!" });
+                Curso curso = _repositorio.BuscarPorId(id);
+                if (curso == null)
+                {
+                    return NotFound(new { mensagem = "Não foi possível deletar o curso pois o ID informado não existe!" });
+                }
+                _repositorio.Excluir(id);
+                return StatusCode(201);
             }
-             _repositorio.Excluir(curso);
-
-            return curso;
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
     }
 }

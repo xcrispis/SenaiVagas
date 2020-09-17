@@ -8,18 +8,18 @@ namespace SenaiVagasAPI.Interfaces
 {
     interface ICursoRepository
     {
-       /// <summary>
-       /// Lista os Cursos
-       /// </summary>
-       /// <returns>Lista de cursos</returns>
-       public List<Curso> Listar();
+        /// <summary>
+        /// Lista os Cursos
+        /// </summary>
+        /// <returns>Lista de cursos</returns>
+        public List<Curso> Listar();
 
-       public Curso BuscarPorId(int id);
+        public Curso BuscarPorId(int id);
 
-       public void Salvar(Curso curso);
+        public void Salvar(Curso curso);
 
-       public void Alterar(int id, Curso curso);
+        public void Alterar(int id, Curso curso);
 
-       public void Excluir(Curso curso);
+        public void Excluir(int id);
     }
 }
