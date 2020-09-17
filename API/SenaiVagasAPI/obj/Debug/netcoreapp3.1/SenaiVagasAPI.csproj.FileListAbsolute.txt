@@ -128,3 +128,8 @@ C:\Users\mathe\OneDrive\Área de Trabalho\GitHub\SenaiVagas\API\SenaiVagasAPI\bi
 C:\Users\mathe\OneDrive\Área de Trabalho\GitHub\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\mathe\OneDrive\Área de Trabalho\GitHub\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.csproj.CoreCompileInputs.cache
 C:\Users\mathe\OneDrive\Área de Trabalho\GitHub\SenaiVagas\API\SenaiVagasAPI\obj\Debug\netcoreapp3.1\SenaiVagasAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\HENRIQUE\Desktop\SenaiVagas\API\SenaiVagasAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
