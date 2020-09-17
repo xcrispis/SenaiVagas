@@ -16,36 +16,35 @@ namespace SenaiVagasAPI.Repositories
         ContextBd _contexto = new ContextBd();
         public void Alterar(int id, Curso curso)
         {
-                Curso cursosNew =  BuscarPorId(id);
-                if (cursosNew.Titulo != null)
-                    cursosNew.Titulo = curso.Titulo;
-        
-                _contexto.Curso.Update(cursosNew);
-                _contexto.SaveChanges();
+            Curso cursosNew = BuscarPorId(id);
+            if (cursosNew.Titulo != null)
+                cursosNew.Titulo = curso.Titulo;
+            _contexto.Curso.Update(cursosNew);
+            _contexto.SaveChanges();
         }
 
-        public  Curso BuscarPorId(int id)
+        public Curso BuscarPorId(int id)
         {
-                return _contexto.Curso.FirstOrDefault(p => p.IdCursos == id);       
+            return _contexto.Curso.FirstOrDefault(p => p.IdCursos == id);
         }
 
-        public void Excluir(Curso curso)
-        {        
-                _contexto.Curso.Remove(curso);
-                 _contexto.SaveChanges();
-        }
-
-        public  List<Curso> Listar()
+        public void Excluir(int id)
         {
-                return  _contexto.Curso.ToList();
+            _contexto.Curso.Remove(BuscarPorId(id));
+            _contexto.SaveChanges();
         }
 
-        public  void Salvar(Curso curso)
-        {    
-                 _contexto.Add(curso);               
-                 _contexto.SaveChanges();
+        public List<Curso> Listar()
+        {
+            return _contexto.Curso.ToList();
+        }
+
+        public void Salvar(Curso curso)
+        {
+            _contexto.Add(curso);
+            _contexto.SaveChanges();
         }
     }
 }
-    
+
 

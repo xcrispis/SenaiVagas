@@ -13,39 +13,38 @@ namespace SenaiVagasAPI.Repositories
     {
         ContextBd _contexto = new ContextBd();
 
-        public  void Alterar(int id, PerfilComportamental perfil)
-        {         
-                 PerfilComportamental perfilComp = BuscarPorId(id);
-                if (perfil.Gato != null)
-                    perfilComp.Gato = perfil.Gato;
-                if (perfil.Lobo != null)
-                    perfilComp.Lobo = perfil.Lobo;
-                if (perfil.Tubarao != null)
-                    perfilComp.Tubarao = perfil.Tubarao;
-                if (perfil.Aguia != null)
-                    perfilComp.Aguia = perfil.Aguia;
-                _contexto.PerfilComportamental.Update(perfilComp);
-                _contexto.SaveChanges();          
-        }
-
-        public  PerfilComportamental BuscarPorId(int id)
-        {               
-                return  _contexto.PerfilComportamental.FirstOrDefault(p => p.IdPerfilComportamental == id);
-        }
-
-        public  List<PerfilComportamental> Listar()
+        public void Alterar(int id, PerfilComportamental perfil)
         {
-                var ofertas =  _contexto.PerfilComportamental.ToList();
-                return  _contexto.PerfilComportamental.ToList();
+            PerfilComportamental perfilComp = BuscarPorId(id);
+            if (perfil.Gato != null)
+                perfilComp.Gato = perfil.Gato;
+            if (perfil.Lobo != null)
+                perfilComp.Lobo = perfil.Lobo;
+            if (perfil.Tubarao != null)
+                perfilComp.Tubarao = perfil.Tubarao;
+            if (perfil.Aguia != null)
+                perfilComp.Aguia = perfil.Aguia;
+            _contexto.PerfilComportamental.Update(perfilComp);
+            _contexto.SaveChanges();
+        }
+
+        public PerfilComportamental BuscarPorId(int id)
+        {
+            return _contexto.PerfilComportamental.FirstOrDefault(p => p.IdPerfilComportamental == id);
+        }
+
+        public List<PerfilComportamental> Listar()
+        {
+            return _contexto.PerfilComportamental.ToList();
         }
 
         public void Salvar(PerfilComportamental perfil)
         {
-                 _contexto.Add(perfil);
-                 _contexto.SaveChanges();
+            _contexto.Add(perfil);
+            _contexto.SaveChanges();
         }
 
-       
+
 
     }
 }
