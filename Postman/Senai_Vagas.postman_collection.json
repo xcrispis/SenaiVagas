@@ -1,90 +1,156 @@
 {
 	"info": {
-		"_postman_id": "863129f9-b719-4ac4-8770-5deed79b44a4",
+		"_postman_id": "c61f018b-6f63-4a30-8501-f3651c5c24b2",
 		"name": "Senai_Vagas",
-		"description": "Teste da API Senai Vagas. \r\nProjeto que está sendo desenvolvimento para formação de curso do Senai para que possa ajudar alunos e ex-alunos senai a encontrar uma oportunidade de emprego.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"name": "Curso",
+			"item": [
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Curso"
+							]
+						},
+						"description": "Lista todos os cursos"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Desenvolvimento de Sistemas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Curso/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Curso",
+								"1"
+							]
+						},
+						"description": "Edita um curso"
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Redes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Curso"
+							]
+						},
+						"description": "cadastra um novo curso"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Curso/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Curso",
+								"1"
+							]
+						},
+						"description": "deleta um curso"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Usuario",
 			"item": [
 				{
-					"name": "Usuario.Listar",
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
+									"value": "",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Usuario",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Usuario"
-							]
-						},
-						"description": "Lista todos os Usuarios."
-					},
-					"response": []
-				},
-				{
-					"name": "Usuario.BuscarPorId",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Usuario/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Usuario",
-								"3"
-							]
-						},
-						"description": "Busca o Usuario com determinado id, basta colocar o id desejado depois do nome do controler.\r\nEx: http://localhost:5000/api/Usuario/4"
-					},
-					"response": []
-				},
-				{
-					"name": "Usuario.Cadastrar",
-					"request": {
-						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"teste@teste.com\",\r\n    \"senha\" : \"teste\",\r\n    \"FKTipoUsuario\" : 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/Usuario",
@@ -98,36 +164,34 @@
 								"Usuario"
 							]
 						},
-						"description": "Exemplo de cadastro de um novo usuário."
+						"description": "Lista usuarios"
 					},
 					"response": []
 				},
 				{
-					"name": "Usuario.Atualizar",
+					"name": "BuscarPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhibmNvZCIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjAwMzQ2MTYwLCJpc3MiOiJTZW5haVZhZ2FzQVBJIiwiYXVkIjoiU2VuYWlWYWdhc0FQSSJ9.EyhEfyEG-ohbLF7B6zScwRQa7amKpGREtpCZjfHgQaQ",
 									"type": "string"
 								}
 							]
 						},
-						"method": "PATCH",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"teste@testeee.com\",\r\n    \"senha\" : \"testestestesteste\",\r\n    \"FKTipoUsuario\" : 2\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/Usuario/3",
+							"raw": "http://localhost:5000/api/Usuario/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -136,240 +200,21 @@
 							"path": [
 								"api",
 								"Usuario",
-								"3"
+								"5"
 							]
 						},
-						"description": "Exemplo de atualização de um novo usuário. "
+						"description": "Lista usuarios"
 					},
 					"response": []
 				},
-				{
-					"name": "Usuario.Deletar",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Usuario/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Usuario",
-								"3"
-							]
-						},
-						"description": "Deleta um usuario pelo Id."
-					},
-					"response": []
-				}
-			],
-			"description": "Pasta para salvar os testes de api do Controller de Usuario do projeto Senai Vagas.",
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Empresa",
-			"item": [
-				{
-					"name": "Empresa.Listar",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI4MDI1NiwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.vWW3PC3QaNkCk2js5fYn2o_3CwGSEkapc6parMrC_ew",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Empresa",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Empresa"
-							]
-						},
-						"description": "Lista todos os Usuarios."
-					},
-					"response": []
-				},
-				{
-					"name": "Empresa.BuscarPorId",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Empresa/6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Empresa",
-								"6"
-							]
-						},
-						"description": "Busca o Usuario com determinado id, basta colocar o id desejado depois do nome do controler.\r\nEx: http://localhost:5000/api/Usuario/4"
-					},
-					"response": []
-				},
-				{
-					"name": "Empresa.Cadastrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"RazaoSocial\" : \"teste\",\r\n    \"StatusEmpresa\" : 0,\r\n    \"Cnpj\" : 12345778912,\r\n    \"Telefone\" : 11960785043,\r\n    \"Cnae\" : \"testop\",\r\n    \"Apresentacao\" : \"testetestestestestes\",\r\n    \"NomeResponsavel\" : \"teste\",\r\n    \"logo\" : \"808301291830\",\r\n    \"CargoExercido\" : \"teste\",\r\n    \"EmailContato\" : \"teste@teste.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/api/Empresa",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Empresa"
-							]
-						},
-						"description": "Exemplo de cadastro de um novo usuário."
-					},
-					"response": []
-				},
-				{
-					"name": "Empresa.Atualizar",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"RazaoSocial\" : \"testeteste\",\r\n    \"StatusEmpresa\" : 1,\r\n    \"Cnpj\" : 12345678912,\r\n    \"Telefone\" : 11960788043,\r\n    \"Cnae\" : \"teste\",\r\n    \"Apresentacao\" : \"testetestestestestes\",\r\n    \"NomeResponsavel\" : \"teste\",\r\n    \"logo\" : \"808301291830\",\r\n    \"CargoExercido\" : \"teste\",\r\n    \"EmailContato\" : \"teste@teste.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/api/Empresa/4",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Empresa",
-								"4"
-							]
-						},
-						"description": "Exemplo de atualização de um novo usuário. "
-					},
-					"response": []
-				},
-				{
-					"name": "Empresa.Deletar",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlNC5jb20iLCJqdGkiOiI1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYwMDI3OTQ0MSwiaXNzIjoiU2VuYWlWYWdhc0FQSSIsImF1ZCI6IlNlbmFpVmFnYXNBUEkifQ.d7l6CwLGbQib1sdwpHqt15otvU4hE-srUajW2lgJRss",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Empresa/4",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Empresa",
-								"4"
-							]
-						},
-						"description": "Deleta um usuario pelo Id."
-					},
-					"response": []
-				}
-			],
-			"description": "Pasta para salvar os testes de api do Controller de Empresa do projeto Senai Vagas.",
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Login ",
-			"item": [
 				{
 					"name": "Login",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"teste@teste4.com\",\n    \"senha\": \"teste\"\n}",
+							"raw": "{\r\n    \"Email\" : \"henrique@gmail.com\" ,\r\n    \"Senha\" : \"123321\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -377,7 +222,8 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/api/Login",
+							"raw": "http://localhost:5000/api/Login",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -386,13 +232,473 @@
 								"api",
 								"Login"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\" : \"henrique@gmail.com\" ,\r\n    \"Senha\" : \"123321\",\r\n    \"FkTipoUsuario\" : 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": "Teste do metódo de login da API SenaiVagas."
+						"url": {
+							"raw": "http://localhost:5000/api/Usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuario"
+							]
+						},
+						"description": "Cadastra um usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Senha\" : \"senhareserva\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Usuario/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuario",
+								"5"
+							]
+						},
+						"description": "Atualiza um usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuario/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuario",
+								"3"
+							]
+						},
+						"description": "Deleta um usuário"
 					},
 					"response": []
 				}
 			],
-			"description": "Pasta para teste da requisição de login da API SenaiVagas.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PerfilComportamental",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/PerfilComportamental",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"PerfilComportamental"
+							]
+						},
+						"description": "lista todos os perfis"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Gato\" : 23.1,\r\n    \"Lobo\" : 23.2,\r\n    \"Aguia\": 22.2,\r\n    \"Tubarao\": 15.0\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/PerfilComportamental",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"PerfilComportamental"
+							]
+						},
+						"description": "Cria um perfil comportamental"
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gato\": 60,\r\n    \"aguia\": 30.0,\r\n    \"tubarao\": 15.0,\r\n    \"lobo\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/PerfilComportamental/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"PerfilComportamental",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Endereco"
+							]
+						},
+						"description": "lista endereços\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Cep\": \"01311000\",\r\n  \"Logradouro\": \"Avenida Paulista\",\r\n  \"Complemento\": \"até 609 - lado ímpar\",\r\n  \"Bairro\": \"Bela Vista\",\r\n  \"Cidade\": \"São Paulo\",\r\n  \"Uf\": \"SP\",\r\n  \"Numero\":203\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Endereco"
+							]
+						},
+						"description": "cria um novo endereco\r\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dica",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Dica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Dica"
+							]
+						},
+						"description": "Lista todas as dicas"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Dica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Dica",
+								"1"
+							]
+						},
+						"description": "Lista uma dica especifica."
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"dica\",\r\n    \"descricao\" : \"dica da dica\",\r\n    \"link\" : \"dica.link\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Dica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Dica"
+							]
+						},
+						"description": "Cadastra uma nova dica."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"diiiica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Dica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Dica",
+								"1"
+							]
+						},
+						"description": "Atualiza uma dica pelo seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Dica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Dica",
+								"1"
+							]
+						},
+						"description": "Deleta uma dica pelo seu id."
+					},
+					"response": []
+				}
+			],
+			"description": "Pasta para guardar os testes dos endpoints de Dica da API de Senai vagas",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Inscricao",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricao"
+							]
+						},
+						"description": "Lista todas as inscrições\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricao/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricao",
+								"1"
+							]
+						},
+						"description": "Lista uma determinada inscrição pelo seu ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StatusInscricao\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricao"
+							]
+						},
+						"description": "Cadastra uma nova inscrição."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricao/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricao",
+								"1"
+							]
+						},
+						"description": "Deleta uma vaga pelo seu id."
+					},
+					"response": []
+				}
+			],
+			"description": "Pasta para guarda os testes de endpoints da API Senai Vagas",
 			"protocolProfileBehavior": {}
 		}
 	],
