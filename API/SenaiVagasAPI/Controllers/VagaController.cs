@@ -36,8 +36,15 @@ namespace SenaiVagasAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            //Retorna a resposta sa aquisição fazendo a chamada para o método
-            return Ok(_vagaRepository.Listar());
+            try
+            {
+                //Retorna a resposta sa aquisição fazendo a chamada para o método
+                return Ok(_vagaRepository.Listar());
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
         //Busca vaga através do ID e retorna um status code 200 - OK
@@ -45,7 +52,14 @@ namespace SenaiVagasAPI.Controllers
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
-            return Ok(_vagaRepository.BuscarPorId(id));
+            try
+            {
+                return Ok(_vagaRepository.BuscarPorId(id));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
 
@@ -54,8 +68,15 @@ namespace SenaiVagasAPI.Controllers
         [HttpPost]
         public IActionResult Post(Vaga novaVaga)
         {
-            _vagaRepository.Cadastrar(novaVaga);
-            return StatusCode(201);
+            try
+            {
+                _vagaRepository.Cadastrar(novaVaga);
+                return StatusCode(201);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
         //Atualiza endereço existente e retorna status code
@@ -65,20 +86,20 @@ namespace SenaiVagasAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, Vaga vagaAtualizada)
         {
-            Vaga vagaBuscada = _vagaRepository.BuscarPorId(id);
-            if (vagaBuscada == null)
-            {
-                return NotFound
-                    (
-                    new
-                    {
-                        mensagem = "Vaga não encontrada",
-                        erro = true
-                    }
-                    );
-            }
             try
             {
+                Vaga vagaBuscada = _vagaRepository.BuscarPorId(id);
+                if (vagaBuscada == null)
+                {
+                    return NotFound
+                        (
+                        new
+                        {
+                            mensagem = "Vaga não encontrada",
+                            erro = true
+                        }
+                        );
+                }
                 _vagaRepository.Atualizar(id, vagaAtualizada);
                 return NoContent();
             }
@@ -93,8 +114,15 @@ namespace SenaiVagasAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
-            _vagaRepository.Deletar(id);
-            return Ok("Vaga Deletada");
+            try
+            {
+                _vagaRepository.Deletar(id);
+                return Ok("Vaga Deletada");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
     }
 }

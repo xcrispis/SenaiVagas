@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\Thais\\nova prof do senai\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
+    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\Thais\\nova prof do senai\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
+    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\Thais\\nova prof do senai\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
         "projectName": "SenaiVagasAPI",
-        "projectPath": "C:\\Users\\PC\\Documents\\Thais\\nova prof do senai\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\Thais\\nova prof do senai\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
+        "projectPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "packagesPath": "C:\\Users\\HENRIQUE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HENRIQUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -201,7 +201,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
