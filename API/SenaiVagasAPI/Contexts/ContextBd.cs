@@ -40,6 +40,11 @@ namespace SenaiVagasAPI.Contexts
             }
         }
 
+        internal void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Administrador>(entity =>
