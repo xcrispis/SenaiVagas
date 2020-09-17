@@ -24,7 +24,7 @@ namespace SenaiVagasAPI.Domains
         public int? IdUsuario { get; set; }
         public int? FkCurso { get; set; }
         public int? FkPerfilComportamental { get; set; }
-        public int? FkEndereco { get; set; }
+        public int? FkEndereco { get; set; } 
         public int? FkSituacao { get; set; }
 
         public virtual Curso FkCursoNavigation { get; set; }

@@ -17,12 +17,12 @@ namespace SenaiVagasAPI.Repositories
             Usuario usuarioBuscado = ctx.Usuario.Find(id);
 
             if (usuarioBuscado != null)            
-                if (usuarioBuscado.Email != null)
+                if (usuarioAtualizado.Email != null)
                     usuarioBuscado.Email = usuarioAtualizado.Email;
-                if (usuarioBuscado.Senha != null)
+                if (usuarioAtualizado.Senha != null)
                     usuarioBuscado.Senha = usuarioAtualizado.Senha;
-                if (usuarioBuscado.FkTipoUsuario != null)
-                    usuarioBuscado.FkTipoUsuario = usuarioAtualizado.FkTipoUsuario;
+                //if (usuarioAtualizado.FkTipoUsuario != null)
+                //    usuarioBuscado.FkTipoUsuario = usuarioAtualizado.FkTipoUsuario;
 
                 ctx.Usuario.Update(usuarioBuscado);
 
