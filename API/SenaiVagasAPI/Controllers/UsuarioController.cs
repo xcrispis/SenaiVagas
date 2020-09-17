@@ -30,9 +30,11 @@ namespace SenaiVagasAPI.Controllers
         }
 
         /// <summary>
-        /// Lista todos os Usuarios
+        /// Busca todos os usuários
         /// </summary>
-        /// <returns>Satus Code 200 ok com uma lista de usuarios</returns>
+        /// <response code="200">Retorna uma lista de usuário</response> 
+        /// <response code="400">Retorna o erro gerado</response> 
+        /// domaim/api/Usuario
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -48,8 +50,18 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
-
+        /// <summary>
+        /// Busca um usuário pelo seu id
+        /// </summary>
+        /// <param name="id">Id do usuário a ser buscado</param>
+        /// <response code="200">Retorna o usuário buscado</response>
+        /// <response code="404">Retorna uma mensagem de erro</response>
+        /// <response code="400">Retorna o erro gerado</response> 
+        /// domain/api/Usuario/{id}
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //[Authorize(Roles = "3")]
         public IActionResult GetById(int id)
         {
@@ -69,8 +81,16 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
-
+        /// <summary>
+        /// Cadastra um novo usuário
+        /// </summary>
+        /// <param name="novoUsuario">Dados do usuário a ser cadastrado</param>
+        /// <response code="201">Retorna o status code Created</response> 
+        /// <response code = "400">Retorna o erro gerado</response> 
+        /// domain/api/Usuario
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post(Usuario novoUsuario)
         {
             try
@@ -84,8 +104,19 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
-
+        /// <summary>
+        /// Atualiza um usuário pelo seu id
+        /// </summary>
+        /// <param name="id">Id do usuário a ser atualizado</param>
+        /// <param name="usuarioAtualizado">Dados atualizados do usuário</param>
+        /// <response code="204">Retorna o status code No Content</response>
+        /// <response code="404">Retorna uma mensagem de erro</response>
+        /// <response code="400">Retorna o erro gerado</response> 
+        /// domain/api/Usuario/{id}
         [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //[Authorize(Roles = "3,1")]
         public IActionResult Patch(int id, Usuario usuarioAtualizado)
         {
@@ -108,8 +139,18 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um usuário pelo seu id
+        /// </summary>
+        /// <param name="id">Id do usuário a ser deletado</param>
+        /// <response code="202">Retorna o status code Accepted</response>
+        /// <response code="404">Retorna uma mensagem de erro</response> 
+        /// <response code="400">Retorna o erro gerado</response> 
         [HttpDelete("{id}")]
         //[Authorize(Roles = "3")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Delete(int id)
         {
             try
