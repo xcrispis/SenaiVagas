@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Repositories
 {
-    public class DicaRepository : IDicasRepository 
+    public class DicaRepository : IDicaRepository 
     {
 
         ContextBd ctx = new ContextBd();

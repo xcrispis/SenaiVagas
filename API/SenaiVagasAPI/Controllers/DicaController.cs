@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Interfaces;
+using SenaiVagasAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,12 @@ namespace SenaiVagasAPI.Controllers
 
 
     [ApiController]
-    public class DicasController : ControllerBase
+    public class DicaController : ControllerBase
     {
-        private IDicasRepository _dicasRepository;
-        public DicasController()
+        private IDicaRepository _dicasRepository;
+        public DicaController()
         {
-            _dicasRepository = new DicasRepository();
+            _dicasRepository = new DicaRepository();
         }
 
       

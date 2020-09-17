@@ -1,4 +1,5 @@
-﻿using SenaiVagasAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SenaiVagasAPI.Contexts;
 using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Interfaces;
 using System;
@@ -14,29 +15,15 @@ namespace SenaiVagasAPI.Repositories
 
 
         public List<Inscricao> Listar()
-        {            
-            return ctx.Inscricao
-                .Include(e => e.FkCandidatoNavigation)
-
-                .Include(e => e.IdVagaNavigation)
-
-
-                .ToList();
+        {
+            return ctx.Inscricao.Include(I => I.IdVagaNavigation).Include(I => I.FkCandidatoNavigation).ToList();
         }
 
         public Inscricao BuscarPorId(int id)
         {
-            Inscricao inscricaoBuscada = ctx.Inscricao
-
+            return ctx.Inscricao
                 .Include(e => e.FkCandidatoNavigation)
-                .Include(e => e.IdInstituicaoNavigation);
-               
-
-            if (inscricaoBuscada != null)
-            {
-                return inscricaoBuscada;
-            }
-            return null;
+                .Include(e => e.IdVagaNavigation).FirstOrDefault(i => i.IdInscricao == id);
         }
 
         public void Cadastrar(Inscricao novaInscricao)

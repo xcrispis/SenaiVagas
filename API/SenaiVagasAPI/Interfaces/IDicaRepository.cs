@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenaiVagasAPI.Interfaces
 {
-    interface IDicasRepository
+    interface IDicaRepository
     {
         List<Dicas> Listar();
 
