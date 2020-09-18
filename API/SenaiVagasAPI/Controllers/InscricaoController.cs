@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SenaiVagasAPI.Domains;
 using SenaiVagasAPI.Interfaces;
 using SenaiVagasAPI.Repositories;
@@ -85,6 +86,39 @@ namespace SenaiVagasAPI.Controllers
 
 
                     return StatusCode(202);
+                }
+
+                return NotFound("Nenhuma inscrição encontrada para o ID informado");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+        /// <summary>
+        /// Atualizar o status de uma inscrição
+        /// </summary>
+        /// <param name="id">Id da inscrição a ser atualizada</param>
+        /// <param name="statusInscricao">novo status da inscrição</param>
+        /// <response code="204">Atualizado com sucessoo</response> 
+        /// <response code="400">Nenhuma inscrição encontrada para o ID informado</response> 
+        /// <response code="400">Retorna alguma excessão gerada</response> 
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPatch("{id}")]
+        public IActionResult AtualizarStatus(int id, bool statusInscricao)
+        {
+            try
+            {
+                Inscricao inscricaoBuscada = _inscricaoRepository.BuscarPorId(id);
+
+                if (inscricaoBuscada != null)
+                {
+                    _inscricaoRepository.AtualizarStatus(id, statusInscricao);
+
+
+                    return StatusCode(204);
                 }
 
                 return NotFound("Nenhuma inscrição encontrada para o ID informado");
