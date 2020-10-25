@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logosBranco from '../../Assets/images/logobranco.png';
 import './style.css';
-function Header() {
+interface HeaderProps{
+}
+const Header:React.FunctionComponent<HeaderProps> =(props) =>{
     return (
         <div className="header">
             <header>
@@ -10,8 +12,7 @@ function Header() {
                 </div>
                 <div className="navigation">
                     <ul className="lista">
-                      <li>Login</li>
-                      <li>Cadastre-se</li>
+                      {props.children}
                     </ul>
                 </div>
             </header>
