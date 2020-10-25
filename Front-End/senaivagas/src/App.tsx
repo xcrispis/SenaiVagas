@@ -1,11 +1,12 @@
 import React from 'react';
 import Footer from './components/footer';
+import Routers from './routers';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-      <Footer />    
+      <Routers/>  
       </div>
   );
 }
