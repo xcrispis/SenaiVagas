@@ -1,23 +1,13 @@
 import React from 'react';
-<<<<<<< HEAD
 import Footer from './components/footer';
 import Routers from './routers';
-
-=======
-import Header from '../src/Componentes/Header/index';
->>>>>>> Header
+import Header from './components/header/index';
 
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      <Routers/>  
-      </div>
-=======
-      <Header>
-         </Header>
+        
     </div>
->>>>>>> Header
   );
 }
 
