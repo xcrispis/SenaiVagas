@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import logosBranco from '../../Assets/images/logobranco.png';
+import React from 'react';
+import logosBranco from '../../assets/images/logobranco.png';
 import './style.css';
+import '../../assets/styles/global.css'
 interface HeaderProps{
 }
 const Header:React.FunctionComponent<HeaderProps> =(props) =>{
