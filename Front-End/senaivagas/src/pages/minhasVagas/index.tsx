@@ -1,15 +1,13 @@
 import React from 'react';
 import './style.css';
 import '../../assets/styles/global.css';
+import Footer from '../../components/footer';
 import ibmLogo from '../../assets/images/ibmlogo.png';
-import CampoDeBusca from '../../components/campo-de-busca/index';
 
-
-function vagasGerais() {
+function minhasVagas() {
     return (
         <div>
             <main>
-                <CampoDeBusca/>
                 <section className="container-geral">
                     <div className="alinha-linha">
                         <div className="container-individual">
@@ -20,14 +18,8 @@ function vagasGerais() {
                             </div>
 
                             <div className="container-3">
-                                <div className="mini-container">
-                                    <p className="local-title">Local</p>
-                                    <p className="local-text">Home Office</p>
-                                </div>
-                                <div className="mini-container">
-                                    <p className="habilidades-title">Habilidades Requeridas</p>
-                                    <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                                </div>
+                                <p className="local-title"><b>Status</b></p>
+                                <p className="local-text">Em Andamento</p>
                             </div>
                         </div>
                         <div className="blue-div"></div>
@@ -42,14 +34,8 @@ function vagasGerais() {
                             </div>
 
                             <div className="container-3">
-                                <div className="mini-container">
-                                    <p className="local-title">Local</p>
-                                    <p className="local-text">Home Office</p>
-                                </div>
-                                <div className="mini-container">
-                                    <p className="habilidades-title">Habilidades Requeridas</p>
-                                    <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                                </div>
+                                <p className="local-title"><b>Status</b></p>
+                                <p className="local-text">Em Andamento</p>
                             </div>
                         </div>
                         <div className="blue-div"></div>
@@ -65,14 +51,8 @@ function vagasGerais() {
                             </div>
 
                             <div className="container-3">
-                                <div className="mini-container">
-                                    <p className="local-title">Local</p>
-                                    <p className="local-text">Home Office</p>
-                                </div>
-                                <div className="mini-container">
-                                    <p className="habilidades-title">Habilidades Requeridas</p>
-                                    <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                                </div>
+                                <p className="local-title"><b>Status</b></p>
+                                <p className="local-text">Em Andamento</p>
                             </div>
                         </div>
                         <div className="blue-div"></div>
@@ -84,18 +64,12 @@ function vagasGerais() {
                             <img src={ibmLogo} alt="" />
                             <div className="container-2">
                                 <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                <p className="nome-empresa-text"> International Business Machines Corporation</p>
+                                <p className="nome-empresa-text"> CONGO TEAM</p>
                             </div>
 
                             <div className="container-3">
-                                <div className="mini-container">
-                                    <p className="local-title">Local</p>
-                                    <p className="local-text">Home Office</p>
-                                </div>
-                                <div className="mini-container">
-                                    <p className="habilidades-title">Habilidades Requeridas</p>
-                                    <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                                </div>
+                                <p className="local-title"><b>Status</b></p>
+                                <p className="local-text">Em Andamento</p>
                             </div>
                         </div>
                         <div className="blue-div"></div>
@@ -103,8 +77,9 @@ function vagasGerais() {
                 </section>
             </main>
 
+            <Footer />
         </div>
     )
 }
 
-export default vagasGerais;
+export default minhasVagas;

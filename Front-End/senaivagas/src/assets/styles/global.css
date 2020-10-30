@@ -2,5 +2,6 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
 }

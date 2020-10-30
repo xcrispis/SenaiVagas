@@ -66,16 +66,15 @@ h1 {
     background-color: #EBEBEB;
     padding: 0;
     margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw 2vh 1vw 2vh;
     border-radius: 4px;
 }
 
 .mini-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 1vw 2vh 1vw 2vh;
-    border-radius: 4px;
+  
 }
 
 .local-title {
