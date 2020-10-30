@@ -1,7 +1,7 @@
 footer {
     background-color: #509BF5;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 15vh;
 }

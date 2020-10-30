@@ -2,8 +2,7 @@
     width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
 }
 .titulo{
     width: 100%;
