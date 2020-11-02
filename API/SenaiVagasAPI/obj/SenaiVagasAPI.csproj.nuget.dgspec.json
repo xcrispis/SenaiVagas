@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
+    "C:\\Users\\uyguy\\OneDrive\\Área de Trabalho\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
+    "C:\\Users\\uyguy\\OneDrive\\Área de Trabalho\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\uyguy\\OneDrive\\Área de Trabalho\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
         "projectName": "SenaiVagasAPI",
-        "projectPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
-        "packagesPath": "C:\\Users\\HENRIQUE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
+        "projectPath": "C:\\Users\\uyguy\\OneDrive\\Área de Trabalho\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "packagesPath": "C:\\Users\\uyguy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\uyguy\\OneDrive\\Área de Trabalho\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\HENRIQUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\uyguy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

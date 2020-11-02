@@ -1,0 +1,175 @@
+main {
+    height: 100vh;
+}
+
+.blue-box-title {
+    width: 60vw;
+    height: 5vh;
+    background-color: #509BF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+#verVagas-h1-candidatos {
+    margin-bottom: 4%;
+    font-size: 35px;
+}
+
+.container-box {
+    background-color: #EBEBEB;
+    width: 50vw;
+    border-radius: 4px;
+    padding: 2%;
+    font-size: 18px;
+    margin: 1% 2% 2% 2%;
+}
+
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-individual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+}
+
+.container-individual img {
+    width: 12%;
+    margin: 0;
+    padding: 0;
+    margin-right: 5vh;
+}
+
+.cargo-text-verCandidato {
+    background-color: #EBEBEB;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0.4vw 0.4vh 0.4vw 0.4vh;
+    width: 20vw;
+    font-weight: bold;
+}
+
+.nome-empresa-text-verCandidato {
+    background: #000000;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 1vh;
+    padding: 0.4vw 0.4vh 0.4vw 0.4vh;
+    width: 20vw;
+    font-weight: bold;
+}
+
+.container-2-verCandidatos {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vh;
+}
+
+.container-3-verCandidatos {
+    display: flex;
+    background-color: #EBEBEB;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.mini-container-verCandidatos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1vw 2vh 1vw 2vh;
+    border-radius: 4px;
+}
+
+.local-title-verCandidatos {
+    color: #F55050;
+    font-weight: bold;
+    margin: 0;
+}
+
+.local-text-verCandidatos {
+    color: black;
+    margin: 0;
+}
+
+.habilidades-title-verCandidatos {
+    color: #F55050;
+    font-weight: bold;
+    text-align: start;
+    margin: 0;
+}
+
+.habilidades-text-verCandidatos {
+    color: black;
+    margin: 0;
+    width: 12vw;
+}
+
+.alinha-linha-verCandidatos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 2% 1% 2%;
+}
+
+.container-candidato {
+    display: flex;
+    align-items: center;
+    background-color: #EBEBEB;
+    width: 50vw;
+    padding: 2%;
+    justify-content: space-around;
+    margin: 2%;
+    border-radius: 4px;
+}
+
+.curriculo-candidato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-curriculo {
+    background-color: #C4C4C4;
+    width: 6vw;
+    height: 4vh;
+    border-radius: 4px;
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-candidato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-status {
+    background-color: #C4C4C4;
+    width: 6vw;
+    height: 4vh;
+    border-radius: 4px;
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -61,7 +61,7 @@ h1 {
     margin-right: 5vh;
 }
 
-.container-3 {
+.container-4 {
     display: flex;
     background-color: #EBEBEB;
     padding: 0;
@@ -73,9 +73,7 @@ h1 {
     border-radius: 4px;
 }
 
-.mini-container {
-  
-}
+
 
 .local-title {
     color: #F55050;

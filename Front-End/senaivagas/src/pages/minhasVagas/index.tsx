@@ -17,7 +17,7 @@ function minhasVagas() {
                                 <p className="nome-empresa-text"> International Business Machines Corporation</p>
                             </div>
 
-                            <div className="container-3">
+                            <div className="container-4">
                                 <p className="local-title"><b>Status</b></p>
                                 <p className="local-text">Em Andamento</p>
                             </div>
@@ -33,7 +33,7 @@ function minhasVagas() {
                                 <p className="nome-empresa-text"> International Business Machines Corporation</p>
                             </div>
 
-                            <div className="container-3">
+                            <div className="container-4">
                                 <p className="local-title"><b>Status</b></p>
                                 <p className="local-text">Em Andamento</p>
                             </div>
@@ -50,7 +50,7 @@ function minhasVagas() {
                                 <p className="nome-empresa-text"> International Business Machines Corporation</p>
                             </div>
 
-                            <div className="container-3">
+                            <div className="container-4">
                                 <p className="local-title"><b>Status</b></p>
                                 <p className="local-text">Em Andamento</p>
                             </div>
@@ -67,7 +67,7 @@ function minhasVagas() {
                                 <p className="nome-empresa-text"> CONGO TEAM</p>
                             </div>
 
-                            <div className="container-3">
+                            <div className="container-4">
                                 <p className="local-title"><b>Status</b></p>
                                 <p className="local-text">Em Andamento</p>
                             </div>
