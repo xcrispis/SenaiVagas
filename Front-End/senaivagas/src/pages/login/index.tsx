@@ -11,19 +11,24 @@ function Login() {
     return(
     <div>
         <Header></Header>
+        
         <div className="alinhar">
-            <div className="esquerda">
-                <img src={Img} alt=""/>
-            </div>
-            <div className="direita">
-                <h1>Login</h1>
-                <form>
-                    <Input label="E-mail" name="email" placeholder="Insira seu e-mail"/>
-                    <Input label="Senha" name="senha" placeholder="Insira sua senha"/>
-                    <Button value="Entrar"/>
-                </form>
+
+            <div className="container-geral">
+                <div className="esquerda">
+                    <img src={Img} alt=""/>
+                </div>
+                <div className="direita">
+                    <form>
+                        <h1>Login</h1>
+                        <Input label="E-mail" name="email" placeholder="Insira seu e-mail"/>
+                        <Input label="Senha" name="senha" placeholder="Insira sua senha"/>
+                        <Button value="Entrar"/>
+                    </form>
+                </div>
             </div>
         </div>
+        <Footer/>
     </div>
     )
 }

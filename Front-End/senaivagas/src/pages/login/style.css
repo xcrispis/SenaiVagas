@@ -1,9 +1,14 @@
 .alinhar{
     width: 90%;
+    height: 80vh;
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: teal;
+}
+.container-geral{
+    display: flex;
+    flex-direction: row;
 }
 .esquerda{
     width: 50%;
@@ -15,4 +20,15 @@
 .direita{
     width: 50%;
     background-color: wheat;
+    justify-content: center;
+}
+.direita h1{
+    justify-self: center;
+}
+form{
+    background-color: teal;
+}
+form h1{
+    margin: 10px;
+    color:#635D5D;
 }
