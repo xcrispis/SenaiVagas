@@ -18,10 +18,20 @@ namespace SenaiVagasAPI
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "senaivagas-front";
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Configurações do cors
+            services
+               .AddCors(options =>
+               {
+                   options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
+                   {
+                       builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                   });
+               });
             services.AddControllers()
 
                     .AddNewtonsoftJson(options =>
@@ -82,10 +92,8 @@ namespace SenaiVagasAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }            
+            // cors
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
 
             app.UseRouting();
 
