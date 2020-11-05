@@ -11,7 +11,7 @@ namespace SenaiVagasAPI.Domains
         }
 
         public int IdEmpresa { get; set; }
-        public bool StatusEmpresa { get; set; }
+        public bool? StatusEmpresa { get; set; }
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
         public string Telefone { get; set; }

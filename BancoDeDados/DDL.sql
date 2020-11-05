@@ -114,6 +114,8 @@ CREATE TABLE Vaga (
 	IdVaga	INT PRIMARY KEY IDENTITY
 	,Descricao	TEXT NOT NULL 
 	,Habilidades	TEXT NOT NULL
+	,Titulo  TEXT NOT NULL
+	,AreaVaga TEXT NOT NULL
 	,PlanoEstagio BIT NOT NULL
 	,FK_Empresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) 
 	,FK_FormaContratacao	INT FOREIGN KEY REFERENCES FormaContratacao (IdFormaContratacao) 

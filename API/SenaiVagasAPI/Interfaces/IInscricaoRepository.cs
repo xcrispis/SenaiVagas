@@ -10,6 +10,7 @@ namespace SenaiVagasAPI.Interfaces
     {
         List<Inscricao> Listar();
 
+        void AtualizarStatus(int id, bool statusInscricao);
 
         Inscricao BuscarPorId(int id);
 

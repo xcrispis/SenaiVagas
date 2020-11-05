@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
+    "C:\\Users\\fic\\Downloads\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
+    "C:\\Users\\fic\\Downloads\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Downloads\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
         "projectName": "SenaiVagasAPI",
-        "projectPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
-        "packagesPath": "C:\\Users\\HENRIQUE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HENRIQUE\\Desktop\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
+        "projectPath": "C:\\Users\\fic\\Downloads\\SenaiVagas\\API\\SenaiVagasAPI\\SenaiVagasAPI.csproj",
+        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fic\\Downloads\\SenaiVagas\\API\\SenaiVagasAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\HENRIQUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -42,6 +38,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -55,6 +59,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
@@ -75,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

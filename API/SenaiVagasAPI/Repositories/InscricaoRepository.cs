@@ -41,7 +41,10 @@ namespace SenaiVagasAPI.Repositories
             ctx.SaveChanges();
         }
 
-
-
+        public void AtualizarStatus(int id, bool statusInscricao)
+        {
+            Inscricao inscricao = BuscarPorId(id);
+            inscricao.StatusIncricao = statusInscricao;
+        }
     }
 }
