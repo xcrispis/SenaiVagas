@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="imagens\**" />
+    <Compile Remove="WebRootPath\**" />
+    <Content Remove="imagens\**" />
+    <Content Remove="WebRootPath\**" />
+    <EmbeddedResource Remove="imagens\**" />
+    <EmbeddedResource Remove="WebRootPath\**" />
+    <None Remove="imagens\**" />
+    <None Remove="WebRootPath\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Imagenslogin1.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Enuns\" />
   </ItemGroup>
 

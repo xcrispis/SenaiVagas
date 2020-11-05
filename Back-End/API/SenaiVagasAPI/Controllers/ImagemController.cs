@@ -20,6 +20,7 @@ namespace SenaiVagasAPI.Controllers
         {
             _environment = environment;
         }
+        private const string PATH = "Imagens/";
 
         [HttpGet("upload")]
         public async Task<string> EnviaArquivo([FromForm] IFormFile arquivo)
@@ -28,15 +29,15 @@ namespace SenaiVagasAPI.Controllers
             {
                 try
                 {
-                    if (!Directory.Exists(_environment.WebRootPath + "\\imagens\\"))
+                    if (!Directory.Exists(PATH))
                     {
-                        Directory.CreateDirectory(_environment.WebRootPath + "\\imagens\\");
+                        Directory.CreateDirectory(PATH);
                     }
-                    using (FileStream filestream = System.IO.File.Create(_environment.WebRootPath + "\\imagens\\" + arquivo.FileName))
+                    using (FileStream filestream = System.IO.File.Create(PATH + arquivo.FileName))
                     {
                         await arquivo.CopyToAsync(filestream);
                         filestream.Flush();
-                        return "\\imagens\\" + arquivo.FileName;
+                        return PATH + "/" + arquivo.FileName;
                     }
                 }
                 catch (Exception error)
