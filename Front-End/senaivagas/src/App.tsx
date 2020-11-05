@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import Footer from './components/footer';
+>>>>>>> Develop
 import Routers from './routers';
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #mainVagasGerais {
     display: flex;
     justify-content: center;
@@ -10,6 +11,8 @@ h1 {
     color: #404040;
 }
 
+=======
+>>>>>>> Develop
 .container-geral {
     display: flex;
     flex-direction: column;
@@ -21,7 +24,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     width: 70vw;
+=======
+    width: 80vw;
+>>>>>>> Develop
 }
 
 .container-individual img {
