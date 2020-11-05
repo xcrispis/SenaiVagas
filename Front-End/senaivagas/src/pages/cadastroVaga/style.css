@@ -1,0 +1,49 @@
+
+
+#permissao{
+    width: 400px;
+    height: 40px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    margin: 20px 0px;
+    display: flex;
+}
+
+.alinhar{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+}
+
+.container-all{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+input{
+    width: 90%;
+    height: 5vh;
+    border: 1px solid #000000;
+    margin-top: 3%;
+   
+}
+
+label{
+   height: 6vh;
+}
+
+
+.centro h1{
+    justify-self: center;
+    font-size: 30px;
+}
+
+form h1{
+    margin: 40px;
+    color:#635D5D;
+}
+
+
+
+       
