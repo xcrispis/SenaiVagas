@@ -17,7 +17,7 @@ namespace SenaiVagasAPI.Controllers
         PerfilComportamentalRepository _repositorio = new PerfilComportamentalRepository();
 
         [HttpGet]
-        public  ActionResult<List<PerfilComportamental>> Get()
+        public  IActionResult Get()
         {
             try
             {
@@ -25,7 +25,6 @@ namespace SenaiVagasAPI.Controllers
             }
             catch (Exception error)
             {
-
                 return BadRequest(error);
             }
          

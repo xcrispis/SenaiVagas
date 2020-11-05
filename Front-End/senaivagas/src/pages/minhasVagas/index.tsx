@@ -7,7 +7,7 @@ import ibmLogo from '../../assets/images/ibmlogo.png';
 function minhasVagas() {
     return (
         <div>
-            <main>
+            <main id="mainMinhasVagas">
                 <section className="container-geral">
                     <div className="alinha-linha">
                         <div className="container-individual">

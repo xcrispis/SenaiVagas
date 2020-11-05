@@ -41,7 +41,7 @@ namespace SenaiVagasAPI.Repositories
 
         public void Salvar(Curso curso)
         {
-            _contexto.Add(curso);
+            _contexto.Curso.Add(curso);
             _contexto.SaveChanges();
         }
     }
