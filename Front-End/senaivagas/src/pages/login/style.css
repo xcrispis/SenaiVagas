@@ -3,32 +3,56 @@
     height: 80vh;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    background-color: teal;
-}
-.container-geral{
-    display: flex;
     flex-direction: row;
 }
 .esquerda{
     width: 50%;
+    height: 100%;
 }
 .esquerda img{
     width: 60%;
-    height: 90%;
+    
+    
 }
 .direita{
     width: 50%;
-    background-color: wheat;
-    justify-content: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.direita form{
+    width: 100%;
+    height: 100%;
 }
 .direita h1{
-    justify-self: center;
-}
-form{
-    background-color: teal;
-}
-form h1{
-    margin: 10px;
+    margin-top: 83px;
+    margin-bottom: 30px;
     color:#635D5D;
+}
+.direita form ul{
+    list-style-type: none;
+    display: flex;
+}
+.direita form ul li{
+    font-family: 'Roboto';
+    
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin: 3px;
+}
+
+.direita form ul :first-child{
+    color: #898989;
+    width: 45%;
+}
+.direita form ul :last-child{
+    color: black;
+    width: 55%;
+}
+.mensagemErro{
+    font-size: 10px ;
+    color: #FF0000;
 }
