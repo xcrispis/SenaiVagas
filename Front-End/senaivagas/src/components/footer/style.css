@@ -3,11 +3,19 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     height: 20vh;
+=======
+    height: 15vh;
+>>>>>>> origin/Develop
 }
 
 .footer-content {
     text-align: center;
     color: white;
+<<<<<<< HEAD
     line-height: 1.4;
+=======
+    line-height: 1.6;
+>>>>>>> origin/Develop
 }

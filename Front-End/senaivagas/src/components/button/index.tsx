@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import '../../Assets/styles/global.css';
+=======
+import '../../assets/style/global.css';
+>>>>>>> origin/Develop
 
 interface ButtonProps {
     value: string;

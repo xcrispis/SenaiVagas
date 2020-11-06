@@ -1,7 +1,12 @@
 import React from 'react';
 import './style.css';
+<<<<<<< HEAD
 import '../../Assets/styles/global.css';
 import ibmLogo from '../../Assets/images/ibmlogo.png';
+=======
+import '../../assets/styles/global.css';
+import ibmLogo from '../../assets/images/ibmlogo.png';
+>>>>>>> origin/Develop
 
 
 function vagasGerais() {
