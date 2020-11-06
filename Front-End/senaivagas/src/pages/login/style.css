@@ -8,11 +8,11 @@
 .esquerda{
     width: 50%;
     height: 100%;
+    display: flex;
+    margin-top: 10px;
 }
 .esquerda img{
-    width: 60%;
-    
-    
+    width: 60%;    
 }
 .direita{
     width: 50%;
