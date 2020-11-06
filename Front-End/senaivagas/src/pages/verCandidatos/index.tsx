@@ -14,7 +14,7 @@ function verCandidatos() {
     return (
         <div>
             <header></header>
-            <main>
+            <main id="main-verCandidatos"> 
                 <h1 id="verVagas-h1-candidatos">CANDIDATOS</h1>
                 <div className="blue-box-title"><b>DESCRIÇÃO</b></div>
                 <div className="alinha-linha-verCandidatos">

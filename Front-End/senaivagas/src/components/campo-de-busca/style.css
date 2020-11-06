@@ -1,8 +1,7 @@
 .campo-de-busca {
     outline: 0;
     border-bottom: 1.5px solid #495AF5; 
-    width: 25vw;
-    
+    width: 25vw; 
 }
 
 .campo-de-busca:focus {

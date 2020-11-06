@@ -1,5 +1,9 @@
-main {
+#main-verCandidatos {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .blue-box-title {

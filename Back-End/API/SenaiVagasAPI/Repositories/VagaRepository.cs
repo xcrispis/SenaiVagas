@@ -80,7 +80,7 @@ namespace SenaiVagasAPI.Repositories
         /// <returns></returns>
         public List<Vaga> Listar()
         {
-            return ctx.Vaga.ToList();
+            return ctx.Vaga.Include(v => v.FkEmpresaNavigation).ToList();
         }
     }
 }

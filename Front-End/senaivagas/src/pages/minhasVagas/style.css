@@ -5,26 +5,22 @@
     flex-direction: column;
 }
 
-h1 {
-    font-size: 50px;
-    color: #404040;
-}
 
-.container-geral {
+.container-geral-minhasVagas {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container-individual {
+.container-individual-minhasVagas {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 70vw;
 }
 
-.container-individual img {
+.container-individual-minhasVagas img {
     width: 12%;
     margin: 0;
     padding: 0;

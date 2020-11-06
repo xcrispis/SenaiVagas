@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom';
 import './style.css';
 import '../../assets/styles/global.css';
 import ibmLogo from '../../assets/images/ibmlogo.png';
@@ -16,7 +16,7 @@ function VagasGerais() {
     }, []);
 
     function buscaVagas() {
-        fetch('http://localhost:55373/api/vaga', {
+        fetch('http://localhost:5000/api/vaga', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
@@ -26,8 +26,14 @@ function VagasGerais() {
             .then(response => response.json())
             .then(dados => {
                 setVagas(dados);
+                console.log(dados);
             })
     }
+
+    function pegaId(item:any) {
+            localStorage.setItem('id-vaga', item)
+          }
+    
 
 
 
@@ -40,12 +46,12 @@ function VagasGerais() {
                     {
                         vagas.map((item: any) => {
                             return (
-                                <div className="alinha-linha">
+                                <div onClick={() => pegaId(item.idVaga)} className="alinha-linha">
                                     <div key={item.IdVaga} className="container-individual">
-                                        <img src={item.FkEmpresa.Logo} alt="" />
+                                        <img alt="" />
                                         <div className="container-2">
                                             <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
+                                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
                                         <div className="container-3">
@@ -55,7 +61,7 @@ function VagasGerais() {
                                             </div>
                                             <div className="mini-container">
                                                 <p className="habilidades-title">Habilidades Requeridas</p>
-                                                <p className="habilidades-text">{item.Habilidades}</p>
+                                                <p className="habilidades-text">{item.habilidades}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -74,118 +80,11 @@ function VagasGerais() {
 
                 </section>
             </main>
-
-=======
-import React from 'react';
-import './style.css';
-import '../../assets/styles/global.css';
-import ibmLogo from '../../assets/images/ibmlogo.png';
-
-
-function vagasGerais() {
-    return (
-        <div className="maindiv">
-            <section className="container-geral">
-                <div className="alinha-linha">
-                    <div className="container-individual">
-                        <img src={ibmLogo} alt="" />
-                        <div className="container-2">
-                            <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                        </div>
-
-                        <div className="container-3">
-                            <div className="mini-container">
-                                <p className="local-title">Local</p>
-                                <p className="local-text">Home Office</p>
-                            </div>
-                            <div className="mini-container">
-                                <p className="habilidades-title">Habilidades Requeridas</p>
-                                <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="blue-div"></div>
-                </div>
-
-                <div className="alinha-linha">
-                    <div className="container-individual">
-                        <img src={ibmLogo} alt="" />
-                        <div className="container-2">
-                            <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                        </div>
-
-                        <div className="container-3">
-                            <div className="mini-container">
-                                <p className="local-title">Local</p>
-                                <p className="local-text">Home Office</p>
-                            </div>
-                            <div className="mini-container">
-                                <p className="habilidades-title">Habilidades Requeridas</p>
-                                <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="blue-div"></div>
-                </div>
-
-
-                <div className="alinha-linha">
-                    <div className="container-individual">
-                        <img src={ibmLogo} alt="" />
-                        <div className="container-2">
-                            <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                        </div>
-
-                        <div className="container-3">
-                            <div className="mini-container">
-                                <p className="local-title">Local</p>
-                                <p className="local-text">Home Office</p>
-                            </div>
-                            <div className="mini-container">
-                                <p className="habilidades-title">Habilidades Requeridas</p>
-                                <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="blue-div"></div>
-                </div>
-
-
-                <div className="alinha-linha">
-                    <div className="container-individual">
-                        <img src={ibmLogo} alt="" />
-                        <div className="container-2">
-                            <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                        </div>
-
-                        <div className="container-3">
-                            <div className="mini-container">
-                                <p className="local-title">Local</p>
-                                <p className="local-text">Home Office</p>
-                            </div>
-                            <div className="mini-container">
-                                <p className="habilidades-title">Habilidades Requeridas</p>
-                                <p className="habilidades-text">Html, Css, Javascript, React e AngularJS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="blue-div"></div>
-                </div>
-
-
-
-            </section>
->>>>>>> Develop
-        </div>
-    )
+        </div>)
 }
 
-<<<<<<< HEAD
+
+
+
+
 export default VagasGerais;
-=======
-export default vagasGerais;
->>>>>>> Develop
