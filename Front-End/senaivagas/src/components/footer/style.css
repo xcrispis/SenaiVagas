@@ -1,0 +1,18 @@
+footer {
+    background-color: #509BF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    text-align: center;
+    color: white;
+    line-height: 1.6;
+}
+
+.footer {
+    position: static;
+    bottom:0;
+    width:100%;
+}

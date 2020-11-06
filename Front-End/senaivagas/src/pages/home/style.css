@@ -1,0 +1,7 @@
+.quadrado {
+    width: 352px;
+    height: 366px;
+    border: 1px solid #000;
+    margin: 6.4vh 10vh 6.4vh 10vh;
+    border-radius: 4px;
+}
