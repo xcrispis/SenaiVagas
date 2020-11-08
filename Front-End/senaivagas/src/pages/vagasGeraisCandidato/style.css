@@ -109,6 +109,10 @@ h1 {
     align-items: center;
 }
 
+.alinha-linha:hover{
+    cursor: grab;
+}
+
 .blue-div {
     border: 1px solid #509BF5;
     padding: 0;

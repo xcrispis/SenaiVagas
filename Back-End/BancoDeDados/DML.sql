@@ -10,7 +10,7 @@ GO
 INSERT INTO Curso(Titulo)
 VALUES ('Desenvolvimento de Sistemas')
 	  
-	  ,('Multimidia');
+	  ,('Multimidia'E);
 GO
 INSERT INTO Situacao(Titulo)
 VALUES ('Buscando')
@@ -26,8 +26,11 @@ VALUES ('Estagio')
 	  ,('PJ')
 	  ,('Jovem Aprendiz');
 GO
+INSERT INTO Candidato (Nome, Sobrenome, Telefone, LinkedIn, GitHub, Apresentacao, CPF, EmailContato, IdUsuario, FK_Curso, FK_Situacao)
+VALUES ('Marco', 'Basile', 11984641234, 'linkedin/marco', 'github/marco', 'Oi, eu sou o marco', 50012312319, 'marco@marco.com', 2, 1, 1)
+GO
  INSERT INTO Usuario(FK_TipoUsuario, Email, Senha)
- VALUES (2, 'emp@emp.com', '123123123');
+ VALUES  (2, 'emp@emp.com', '123123123'), (1, 'cand@cand.com', '123123123');
 GO
 INSERT INTO Empresa(StatusEmpresa, 
         RazaoSocial,
@@ -46,5 +49,9 @@ INSERT INTO Empresa(StatusEmpresa,
 
 	  GO
 	  INSERT INTO Vaga(FK_Empresa, FK_FormaContratacao, Descricao, Habilidades, PlanoEstagio) VALUES (4, 2, 'tEM QUE SER BOM, SE NÃO RODA', 'CODAR IGUAL UM HACKER EM FILME', '1')
+
+	  GO
+	  INSERT INTO Inscricao (StatusIncricao, IdVaga, FK_Candidato)
+	  VALUES (0, 4, 1), (1, 4, 1)
 
 	
