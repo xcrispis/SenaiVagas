@@ -6,7 +6,7 @@ import Button from '../../components/button/index';
 import Img from '../../assets/images/imgBanner2.png';
 import '../../assets/styles/global.css';
 import './style.css';
-import { useHistory } from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 
 function Login() {
@@ -50,7 +50,10 @@ function Login() {
     
     return(
     <div>
-        <Header></Header>
+        <Header>
+          <li><Link to="/" className="link">Home</Link></li>
+          <li><Link to="cadastro" className="link">Cadastro</Link></li>
+        </Header>
         
         <div className="alinhar loading">
             <div className="esquerda">
@@ -76,6 +79,7 @@ function Login() {
                 </form>
             </div>
         </div>
+        <Footer />
     </div>
     )
 }

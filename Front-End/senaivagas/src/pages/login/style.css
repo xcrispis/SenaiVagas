@@ -1,6 +1,6 @@
 .alinhar{
     width: 90%;
-    height: 80vh;
+    height: 90vh;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,10 @@
     margin-top: 10px;
 }
 .esquerda img{
-    width: 60%;    
+    margin-top: 15px;
+    width: 350px;
+    height: 505px; 
+  
 }
 .direita{
     width: 50%;

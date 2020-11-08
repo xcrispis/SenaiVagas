@@ -4,3 +4,8 @@
     border: none;
     font-family: 'Roboto', sans-serif;
 }
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

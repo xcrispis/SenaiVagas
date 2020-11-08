@@ -14,7 +14,7 @@ function Dicas() {
             </Header>
             <div className="alinhar">
                 <div className="titulo">
-                    <h1>Dicas</h1>
+                     <h1>Dicas</h1>
                 </div>
                 <div className="allDicas">
                 <div className="dica">
