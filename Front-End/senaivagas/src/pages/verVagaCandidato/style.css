@@ -1,0 +1,78 @@
+#main-verVagaCandidato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+}
+
+.logos .logo {
+    width: 20%;
+    margin: 8vh 0vw 8vh 0vw;
+}
+
+.view-contrato {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 700px;
+}
+
+.cargo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8vh;
+}
+
+.cargo h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.view-contrato .cargo h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8vh;
+}
+
+.view-contrato .dados {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view-contrato .dados h2 {
+    font-size: 18px;
+}
+
+.view-contrato .dados p {
+    width: 400px;
+    font-size: 16px;
+}
+
+.linha {
+    width: 691px;
+    border: solid 1px #509BF5;
+    margin-bottom: 8vh;
+    margin-top: 1vh;
+}
+
+.botao-editar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8vh;
+}
+
+.botao-editar .button {
+    width: 250px;
+    height: 35px;
+    font-size: 14px;
+}

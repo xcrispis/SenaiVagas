@@ -1,0 +1,21 @@
+.campo-de-busca {
+    outline: 0;
+    border-bottom: 1.5px solid #495AF5; 
+    width: 25vw; 
+}
+
+.campo-de-busca:focus {
+    transition: 0.3s ease-out;
+    border-color: lightblue;
+  }
+
+  #img-lupa {
+    width: 1.3vw;
+    margin-left: 1vw;
+  }
+
+  .div-campo-busca {
+      display: flex;
+      justify-content: center;
+      margin: 1vw 0 2vw 0;
+  }

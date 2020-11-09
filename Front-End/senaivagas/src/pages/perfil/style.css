@@ -1,0 +1,84 @@
+#main-perfil {
+    display: flex;
+    height: 100vh;
+}
+
+#lado-esquerdo {
+    padding: 6vh 5vw 8vh 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 8vw;
+    height: 8vw;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 5vh;
+    border: 0.5vw solid;
+    border-color: #509BF5;
+    
+}
+
+
+.foto-perfil img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+#perfil-psicologico {
+    background-color: #EBEBEB;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    width: 8vw;
+    height: 20vh;
+}
+
+#perfil-psicologico li {
+    padding: 1vh 0px 1vh 0px;
+    font-size: 20px;
+}
+
+#lado-direito {
+    margin: 6vh 5vw 10vh 0;
+    background-color: #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    width: 50vw;
+    border-radius: 4px;
+    padding: 5%;
+
+}
+
+#container-dados-esq-dir {
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    margin-bottom: 10vh;
+}
+
+.dado-usuario {
+    margin: 5vh 0vw 5vh 0vw;
+    width: max-content;
+    max-width: 30vw;
+    
+}
+
+#apresentacao-txt-box {
+    text-align: center;
+}
+
+#apresentacao-txt-box p {
+    width: fit-content;
+}
+
