@@ -49,12 +49,14 @@ namespace SenaiVagasAPI.Controllers
 
         //Busca vaga através do ID e retorna um status code 200 - OK
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             try
             {
-                return Ok(_vagaRepository.BuscarPorId(id));
+                List<Vaga> vagas = new List<Vaga>();
+                vagas.Add(_vagaRepository.BuscarPorId(id));
+                return Ok(vagas);
             }
             catch (Exception error)
             {
@@ -126,3 +128,5 @@ namespace SenaiVagasAPI.Controllers
         }
     }
 }
+
+

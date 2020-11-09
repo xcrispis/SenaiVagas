@@ -14,6 +14,8 @@ namespace SenaiVagasAPI.Interfaces
 
         Inscricao BuscarPorId(int id);
 
+        List<Inscricao> BuscarPorVaga(int id);
+
 
         void Cadastrar(Inscricao novaInscricao);
 

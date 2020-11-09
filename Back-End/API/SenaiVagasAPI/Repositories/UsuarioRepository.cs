@@ -29,6 +29,13 @@ namespace SenaiVagasAPI.Repositories
                 ctx.SaveChanges();            
         }
 
+        public int buscarPorEmail(string email)
+        {
+            Usuario usuarioBuscado = ctx.Usuario.FirstOrDefault(u => u.Email == email);
+
+            return usuarioBuscado.IdUsuario;
+        }
+
         public Usuario BuscarPorId(int id)
         {
             return ctx.Usuario.FirstOrDefault(u => u.IdUsuario == id);

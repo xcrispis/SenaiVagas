@@ -97,7 +97,7 @@ namespace SenaiVagasAPI.Controllers
             {
                 _usuarioRepository.Cadastrar(novoUsuario);
 
-                return StatusCode(201);
+                return Ok(_usuarioRepository.buscarPorEmail(novoUsuario.Email));
             }
             catch (Exception error)
             {

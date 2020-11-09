@@ -42,5 +42,7 @@ namespace SenaiVagasAPI.Interfaces
         /// <param name="senha">senha a ser comparada ao realizar o login</param>
         /// <returns></returns>
         Usuario Login(string email, string senha);
+
+        int buscarPorEmail(string email);
     }
 }

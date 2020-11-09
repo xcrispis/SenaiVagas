@@ -44,6 +44,13 @@ namespace SenaiVagasAPI.Repositories
             ctx.SaveChanges();
         }
 
+        public int buscarPorCep(string cep, int numero)
+        {
+            Endereco endereco = ctx.Endereco.FirstOrDefault(e => e.Cep == cep && e.Numero == numero);
+
+            return endereco.IdEndereco;
+        }
+
         /// <summary>
         /// Busca um endereco através do ID
         /// </summary>

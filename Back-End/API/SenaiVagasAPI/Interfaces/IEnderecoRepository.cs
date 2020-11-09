@@ -44,5 +44,7 @@ namespace SenaiVagasAPI.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Endereco BuscarPorId(int id);
+
+        int buscarPorCep(string cep, int numero);
     }
 }

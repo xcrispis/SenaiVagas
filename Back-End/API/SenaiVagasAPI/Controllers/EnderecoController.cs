@@ -76,10 +76,10 @@ namespace SenaiVagasAPI.Controllers
             try
             {
                 //Faz uma chamada para o método
-                _enderecoRepository.Cadastrar(novoEndereco);
+                _enderecoRepository.Cadastrar(novoEndereco);                
 
                 //Retorna um status code 201
-                return StatusCode(201);
+                return Ok(_enderecoRepository.buscarPorCep(novoEndereco.Cep, novoEndereco.Numero));
             }
             catch (Exception error)
             {

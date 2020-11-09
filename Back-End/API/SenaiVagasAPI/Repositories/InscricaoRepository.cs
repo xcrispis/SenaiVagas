@@ -16,15 +16,9 @@ namespace SenaiVagasAPI.Repositories
 
         public List<Inscricao> Listar()
         {
-            return ctx.Inscricao.Include(I => I.IdVagaNavigation).Include(I => I.FkCandidatoNavigation).ToList();
+            return ctx.Inscricao.Include(I => I.IdVagaNavigation).ToList();
         }
 
-        public Inscricao BuscarPorId(int id)
-        {
-            return ctx.Inscricao
-                .Include(e => e.FkCandidatoNavigation)
-                .Include(e => e.IdVagaNavigation).FirstOrDefault(i => i.IdInscricao == id);
-        }
 
         public void Cadastrar(Inscricao novaInscricao)
         {
@@ -45,6 +39,27 @@ namespace SenaiVagasAPI.Repositories
         {
             Inscricao inscricao = BuscarPorId(id);
             inscricao.StatusIncricao = statusInscricao;
+        }
+
+        Inscricao BuscarPorId(int id)
+        {
+            return ctx.Inscricao
+         .Include(e => e.FkCandidatoNavigation)
+         .Include(e => e.IdVagaNavigation).FirstOrDefault(i => i.IdVaga == id);
+        }
+
+        public List<Inscricao> BuscarPorVaga(int id)
+        {
+            return ctx.Inscricao
+         .Include(e => e.FkCandidatoNavigation)
+         .Include(e => e.IdVagaNavigation).Where(i => i.IdVaga == id).ToList();
+        }
+
+        Inscricao IInscricaoRepository.BuscarPorId(int id)
+        {
+            return ctx.Inscricao
+        .Include(e => e.FkCandidatoNavigation)
+        .FirstOrDefault(i => i.IdVaga == id);
         }
     }
 }

@@ -24,8 +24,8 @@ namespace SenaiVagasAPI.Repositories
 
             if (vagaAtualizada.IdVaga != null)
                 vagaBuscada.IdVaga = vagaAtualizada.IdVaga;
-            if(vagaAtualizada.Descricao != null)
-            vagaBuscada.Descricao = vagaAtualizada.Descricao;
+            if (vagaAtualizada.Descricao != null)
+                vagaBuscada.Descricao = vagaAtualizada.Descricao;
             if (vagaAtualizada.Habilidades != null)
                 vagaBuscada.Habilidades = vagaAtualizada.Habilidades;
             if (vagaAtualizada.PlanoEstagio != null)
@@ -49,7 +49,7 @@ namespace SenaiVagasAPI.Repositories
         /// <returns></returns>
         public Vaga BuscarPorId(int id)
         {
-            return ctx.Vaga.FirstOrDefault(u => u.IdVaga == id);
+            return ctx.Vaga.Include(v => v.FkEmpresaNavigation).FirstOrDefault(u => u.IdVaga == id);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace SenaiVagasAPI.Repositories
         /// <returns></returns>
         public List<Vaga> Listar()
         {
-            return ctx.Vaga.ToList();
+            return ctx.Vaga.Include(v => v.FkEmpresaNavigation).ToList();
         }
     }
 }
