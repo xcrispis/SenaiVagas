@@ -1,7 +1,45 @@
 .quadrado {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 352px;
     height: 366px;
     border: 1px solid #000;
     margin: 6.4vh 10vh 6.4vh 10vh;
     border-radius: 4px;
+}
+
+.quadrado .button {
+    border: 0;
+}
+
+.div-imgCandidato {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgCandidato {
+    display: flex;
+    width: 10vw;
+    margin-bottom: 8vh;
+}
+
+.div-imgEmpresa {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgEmpresa{
+    display: flex;
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 8vh;
+}
+
+.link-home {
+    text-decoration: none;
 }

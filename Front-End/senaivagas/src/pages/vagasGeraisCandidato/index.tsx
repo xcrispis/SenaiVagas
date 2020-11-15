@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import './style.css';
 import '../../assets/styles/global.css';
-import ibmLogo from '../../assets/images/ibmlogo.png';
+
+import Header from '../../components/header/index';
+// import ibmLogo from '../../assets/images/ibmlogo.png';
 import CampoDeBusca from '../../components/campo-de-busca/index';
 
 
@@ -18,11 +20,11 @@ function VagasGerais() {
     }, []);
 
     function buscaVagas() {
-        fetch('http://localhost:5000/api/vaga', {
+        fetch('http://localhost:5000/api/Vaga', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
-                //authorization: 'Bearer ' + localStorage.getItem('token-filmes')
+                //authorization: 'Bearer ' + localStorage.getItem('token-senaivagas')
             }
         })
             .then(response => response.json())
@@ -34,14 +36,14 @@ function VagasGerais() {
 
     function pegaId(item:any) {
             localStorage.setItem('id-vaga', item);
-            history.push('/verVaga');
+            history.push('/ver-vaga');
           }
-    
-
-
 
     return (
         <div>
+
+            <Header/>
+
             <main id="mainVagasGerais">
                 <CampoDeBusca />
                 <section className="container-geral">
@@ -54,7 +56,7 @@ function VagasGerais() {
                                         <img alt="" />
                                         <div className="container-2">
                                             <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
+                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
                                         <div className="container-3">

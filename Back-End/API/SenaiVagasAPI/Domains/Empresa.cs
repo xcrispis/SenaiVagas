@@ -11,7 +11,7 @@ namespace SenaiVagasAPI.Domains
         }
 
         public int IdEmpresa { get; set; }
-        public bool? StatusEmpresa { get; set; }
+        public bool StatusEmpresa { get; set; }
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
         public string Telefone { get; set; }
@@ -19,7 +19,7 @@ namespace SenaiVagasAPI.Domains
         public string Apresentacao { get; set; }
         public string NomeResponsavel { get; set; }
         public string CargoExercido { get; set; }
-        public byte[] Logo { get; set; }
+        public string Logo { get; set; }
         public string EmailContato { get; set; }
         public int? FkUsuario { get; set; }
         public int? FkEndereco { get; set; }

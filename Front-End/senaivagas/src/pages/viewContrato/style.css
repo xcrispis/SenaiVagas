@@ -3,13 +3,13 @@
     justify-content: center;
 }
 
-.logos .logo {
+.logos .logo-adm {
     width: 154px;
     height: 91px;
     margin: 8vh 0vw 8vh 0vw;
 }
 
-.view-contrato {
+.view-contrato-adm {
     display: flex;
     justify-content: center;
     flex-direction: column;

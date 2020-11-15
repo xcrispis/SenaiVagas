@@ -1,4 +1,4 @@
-.center h1 {
+.center-adm h1 {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
@@ -7,23 +7,23 @@
     color: #509BF5;
 }
 
-.row {
+.row-adm {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.column {
+.column-adm {
     display: flex;
     flex-direction: column;
     padding: 8vh;
 }
 
-.row label {
+.row-adm label {
     font-size: 16px;
 }
 
-.row input {
+.row-adm input {
     width: 250px;
     height: 30px;
     border-radius: 4px;

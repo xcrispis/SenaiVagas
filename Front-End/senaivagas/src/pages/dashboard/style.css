@@ -1,11 +1,11 @@
-.container {
+.container-dashboard {
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-top: 7vh;
 }
 
-.linha {
+.linha-dashboard {
     width: 460px;
 }
 
@@ -16,26 +16,26 @@
     margin-bottom: 8vh;
 }
 
-.container h2 {
+.container-dashboard h2 {
     font-size: 24px;
     margin-bottom: 1vh;
 }
 
-.container .contrato h2 {
+.container-dashboard .contrato h2 {
     display: flex;
     justify-content: center;
 }
 
-.container .empresas h2 {
+.container-dashboard .empresas h2 {
     display: flex;
     justify-content: center;
 }
 
-.contrato .linha {
+.contrato .linha-dashboard {
     border: 6px solid #509BF5;
 }
 
-.empresas .linha {
+.empresas .linha-dashboard {
     border: 6px solid #ff0000;
 }
 
@@ -77,14 +77,12 @@
     justify-content: center;
 }
 
-
-
 .row-dashboard  .dados-empresa .apresentacao h3 {
     display: flex;
     justify-content: center;
 }
 
-.row-dashboard  .dados-empresa .logos .logo{
+.row-dashboard  .dados-empresa .logos-dashboard .logo-dashboard{
     width: 154px;
     height: 91px;
 }
@@ -176,7 +174,7 @@
     align-items: center;
 }
 
-.contratos .logo {
+.contratos .logo-dashboard {
     width: 154px;
     height: 91px;
 }

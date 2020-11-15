@@ -17,9 +17,9 @@ namespace SenaiVagasAPI.Domains
         public string Senha { get; set; }
         public int? FkTipoUsuario { get; set; }
 
-        public TipoUsuario FkTipoUsuarioNavigation { get; set; }
-        public ICollection<Administrador> Administrador { get; set; }
-        public ICollection<Candidato> Candidato { get; set; }
-        public ICollection<Empresa> Empresa { get; set; }
+        public virtual TipoUsuario FkTipoUsuarioNavigation { get; set; }
+        public virtual ICollection<Administrador> Administrador { get; set; }
+        public virtual ICollection<Candidato> Candidato { get; set; }
+        public virtual ICollection<Empresa> Empresa { get; set; }
     }
 }

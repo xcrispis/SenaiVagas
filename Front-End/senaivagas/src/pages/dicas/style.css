@@ -1,0 +1,54 @@
+.alinhar{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;    
+}
+.titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.titulo h1{
+    color:#509BF5;  
+    margin: 20px;
+}
+.allDicas{
+    height: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.dica{
+    width: 35%;
+    height: 90px;
+    display: flex;
+    margin-bottom: 30px;
+    
+}
+.dica img{
+    width: 30%;
+    height: 100%;
+    margin-right: 1%;
+}
+.info{
+    width: 100%;
+    background-color: #EBEBEB;
+}
+.info h3{
+    color: red;
+    font-size: 18px;
+    margin: 4px;
+}
+.info p{
+    margin-left: 5px;
+    color: #000000;
+}
+.conteudoDica{
+    font-size: 15px;
+}
+.dataDica{
+    font-size: 10px;
+    color: #515050 !important;
+    justify-self:center;
+}

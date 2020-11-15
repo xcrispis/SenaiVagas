@@ -7,6 +7,12 @@
     list-style: none;
 }
 
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }

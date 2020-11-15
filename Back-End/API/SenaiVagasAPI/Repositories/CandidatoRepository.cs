@@ -76,11 +76,11 @@ namespace SenaiVagasAPI.Repositories
                                      .Include(c => c.FkSituacaoNavigation)
                                      .Select(u => new Candidato()
                                      {
-                                         IdUsuarioNavigation = new Usuario
+                                         FkUsuarioNavigation = new Usuario
                                          {
-                                             IdUsuario = u.IdUsuarioNavigation.IdUsuario,
-                                             Email = u.IdUsuarioNavigation.Email,
-                                             FkTipoUsuario = u.IdUsuarioNavigation.FkTipoUsuario
+                                             IdUsuario = u.FkUsuarioNavigation.IdUsuario,
+                                             Email = u.FkUsuarioNavigation.Email,
+                                             FkTipoUsuario = u.FkUsuarioNavigation.FkTipoUsuario
 
                                          }
                                      }).ToList();

@@ -11,10 +11,12 @@ namespace SenaiVagasAPI.Domains
             Inscricao = new HashSet<Inscricao>();
         }
 
-        public int? IdVaga { get; set; }
+        public int IdVaga { get; set; }
         public string Descricao { get; set; }
         public string Habilidades { get; set; }
-        public bool? PlanoEstagio { get; set; }
+        public bool PlanoEstagio { get; set; }
+        public string AreaVaga { get; set; }
+        public string Cargo { get; set; }
         public int? FkEmpresa { get; set; }
         public int? FkFormaContratacao { get; set; }
         public int? FkEndereco { get; set; }

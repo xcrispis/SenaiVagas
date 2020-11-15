@@ -10,7 +10,7 @@ namespace SenaiVagasAPI.Domains
             Candidato = new HashSet<Candidato>();
         }
 
-        public int? IdCursos { get; set; }
+        public int IdCursos { get; set; }
         public string Titulo { get; set; }
 
         public virtual ICollection<Candidato> Candidato { get; set; }

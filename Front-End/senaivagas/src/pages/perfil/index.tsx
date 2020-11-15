@@ -3,10 +3,12 @@ import './style.css';
 import '../../assets/styles/global.css';
 import imb from '../../assets/images/person_110935.png'
 import Footer from '../../components/footer';
+import Header from '../../components/header/index';
 
 function Perfil() {
     return (
         <div>
+            <Header/>
             <main id="main-perfil">
                 <section id="lado-esquerdo">
                     <div className="foto-perfil">

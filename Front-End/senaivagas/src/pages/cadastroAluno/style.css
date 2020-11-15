@@ -1,0 +1,37 @@
+.all{
+  height: 130vh;
+}
+.center h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 8vh;
+  font-size: 24px;
+  font-weight: bold;
+  color: #509BF5;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 8vh;
+}
+
+.row label {
+  font-size: 16px;
+}
+
+.row input {
+  width: 250px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+.btn{
+  margin-bottom: 10vh;
+}

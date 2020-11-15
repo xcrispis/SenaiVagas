@@ -3,9 +3,10 @@ import Header from '../../components/header/index';
 import Input from '../../components/input/index';
 import Button from '../../components/button/index';
 import Footer from '../../components/footer/index';
+import {Link} from 'react-router-dom';
 
 import './style.css';
-import '../../assets/style/global.css';
+import '../../assets/styles/global.css';
 
 const CadastroEmpresa:React.FC = () => {
 
@@ -136,7 +137,7 @@ const CadastroEmpresa:React.FC = () => {
             Apresentacao: apresentacao,            
             NomeResponsavel: nomeFantasia,
             CargoExercido: cargoExercido,
-            Logo: img,
+            Logo: "0xD31177E05DFB0F7E43043E421850F8",
             EmailContato: emailContato,
             FkUsuario: idUsuario,
             FkEndereco: idEndereco
@@ -149,7 +150,7 @@ const CadastroEmpresa:React.FC = () => {
         fetch('http://localhost:5000/api/Empresa', {
             method: methodEmpresa,
             body: JSON.stringify(form),
-            headers: { 
+            headers: {
                 'content-type': 'application/json',
                 // authorization: 'Bearer' + localStorage.getItem('token-SenaiVagas')
             }
@@ -164,7 +165,7 @@ const CadastroEmpresa:React.FC = () => {
     return (
         <div>
             <Header/>
-            <div className="center">
+            <div className="center-adm">
                 <h1>Cadastro da Empresa</h1>
             </div>
             {/* onChange={(e: ChangeEvent<HTMLInputElement>) => salvarEmpresa(e)} */}
@@ -173,8 +174,8 @@ const CadastroEmpresa:React.FC = () => {
                 event.preventDefault();
                 salvarUsuario();
             }}>
-                <div className="row">
-                    <div className="column">
+                <div className="row-adm">
+                    <div className="column-adm">
                         <Input type="text" name="RazaoSocial" label="Razão Social" onChange={e => setRazaoSocial(e.target.value)}/>
                         <Input type="text" name="Cnpj" label="CNPJ"  onChange={e => setCnpj(e.target.value)}/>
                         <Input type="text" name="cep" label="Cep" onChange={e => setCep(e.target.value)}/>
@@ -187,14 +188,14 @@ const CadastroEmpresa:React.FC = () => {
                         <Input type="text" name="Apresentacao" label="EmailContato" onChange={e => setEmailContato(e.target.value)}/>
                     </div>
 
-                    <div className="column">
+                    <div className="column-adm">
                         <Input type="text" name="Telefone" label="Telefone para contato" onChange={e => setTelefone(e.target.value)}/>
                         <Input type="text" name="endereço" label="Endereço" onChange={e => setEndereco(e.target.value)}/>
                         <Input type="text" name="bairro" label="Bairro" onChange={e => setBairro(e.target.value)}/>
                         <Input type="text" name="cidade" label="Cidade" onChange={e => setCidade(e.target.value)}/>
                         <Input type="text" name="complemento" label="Complemento" onChange={e => setComplemento(e.target.value)}/>                                                
                         <Input type="text" name="CNAE" label="CNAE" onChange={e => setCnae(e.target.value)}/>
-                        <Input type="file" name="Logo" label="Logo da empresa"  onChange={e => setImg(e.target.value)}/>
+                        {/* <Input type="file" name="Logo" label="Logo da empresa"  onChange={e => setImg(e.target.value)}/> */}
                         <Input type="text" name="Cargo" label="Cargo Exercido" onChange={e => setCargoExercido(e.target.value)}/>
 
                     </div>

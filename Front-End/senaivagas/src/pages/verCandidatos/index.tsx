@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../../components/footer';
 import './style.css'
 import '../../assets/styles/global.css';
+
 import ibmLogo from '../../assets/images/ibmlogo.png';
+import Header from '../../components/header';
 
 function verCandidatos() {
 
-
- 
-
-
-
     return (
         <div>
-            <header></header>
+            <Header/>
             <main id="main-verCandidatos"> 
                 <h1 id="verVagas-h1-candidatos">CANDIDATOS</h1>
                 <div className="blue-box-title"><b>DESCRIÇÃO</b></div>

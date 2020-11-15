@@ -3,9 +3,10 @@ import Header from '../../components/header/index';
 import Footer from '../../components/footer/index';
 // import Button from '../../components/button/index';
 import Logo from '../../assets/images/sn_icon.svg';
+import { Link } from 'react-router-dom';
 
 import './style.css';
-import '../../assets/style/global.css';
+import '../../assets/styles/global.css';
 
 
 function Dashboard() {
@@ -19,17 +20,17 @@ function Dashboard() {
 
             <Header/>
 
-                 <div className="container">
+                 <div className="container-dashboard">
                     <div className="contrato">                    
                         <h2>Gerenciar Solicitações</h2>
-                        <div className="linha"></div>
+                        <div className="linha-dashboard"></div>
                     </div>
                     
                     <div className="linha-central"></div>
 
                     <div className="empresas">
                         <h2>Solicitações de Empresas</h2>
-                        <div className="linha"></div>
+                        <div className="linha-dashboard"></div>
                     </div>                    
                 </div>
                 
@@ -101,8 +102,8 @@ function Dashboard() {
                 
                 <div className="ahunaoi">
                     <div className="contratos">                    
-                        <div className="logos">
-                            <img className="logo" src={Logo} alt="Logo empresa"/>
+                        <div className="logos-dashboard">
+                            <img className="logo-dashboard" src={Logo} alt="Logo empresa"/>
                         </div>
 
                         <div className="cpf-aluno">
@@ -139,8 +140,8 @@ function Dashboard() {
 
                 <div className="ahunaoi">
                     <div className="contratos">                    
-                        <div className="logos">
-                            <img className="logo" src={Logo} alt="Logo empresa"/>
+                        <div className="logos-dashboard">
+                            <img className="logo-dashboard" src={Logo} alt="Logo empresa"/>
                         </div>
 
                         <div className="cpf-aluno">

@@ -4,8 +4,9 @@ import Footer from '../../components/footer/index';
 import Logo from '../../assets/images/sn_icon.svg';
 import Button from '../../components/button/index';
 
-import '../../assets/style/global.css';
+import '../../assets/styles/global.css';
 import './style.css';
+
 
 function ViewContrato() {
 
@@ -13,14 +14,14 @@ function ViewContrato() {
         <div>
             <Header/>
             <div className="logos">
-                <img className="logo" src={Logo} alt="Logo empresa"/>
+                <img className="logo-adm" src={Logo} alt="Logo empresa"/>
             </div>
 
             <div className="cargo">
                 <h2>Desenvolvedor Front-End</h2>
             </div>
 
-            <div className="view-contrato">               
+            <div className="view-contrato-adm">               
 
                 <div className="dados">
                     <h2>Razão Social</h2>
