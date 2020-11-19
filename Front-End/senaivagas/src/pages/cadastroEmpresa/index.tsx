@@ -3,7 +3,6 @@ import Header from '../../components/header/index';
 import Input from '../../components/input/index';
 import Button from '../../components/button/index';
 import Footer from '../../components/footer/index';
-import {Link} from 'react-router-dom';
 
 import './style.css';
 import '../../assets/styles/global.css';

@@ -6,8 +6,8 @@ import Button from '../../components/button/index';
 import Img from '../../assets/images/imgBanner2.png';
 import '../../assets/styles/global.css';
 import './style.css';
-import {Link, useHistory} from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
+import { parseJwt } from '../../services';
 
 function Login() {
     let history = useHistory();
@@ -30,13 +30,30 @@ function Login() {
         })
         .then( response => response.json())
         .then( dados => {
-          if(dados.token !== undefined && dados.token !== null)
+          if(dados.token !== undefined || dados.token !== null)
           {
+            let idUser = parseJwt().jti;
             localStorage.setItem('permissao', dados.Permissao);
             localStorage.setItem('token-SenaiVagas', dados.token);
             console.log(dados.token);
-            setIsloading(false);
-            history.push('/vagas');
+            console.log(idUser);
+            setIsloading(false);            
+            history.push('/dashboard');
+            // if (idUser == 1) {
+            //   console.log(idUser);
+            //   history.push('/vagas');
+            // }
+            // if (idUser == 2) {
+            //   console.log(idUser);  
+            //   history.push('/cadastro-vaga');
+            // }
+            // if (idUser == 3) {
+            //   console.log(idUser);
+            //   history.push('/dashboard'); 
+            // }
+            // else {
+            //   console.log(erroMensagem);
+            // }
           }else{
             setIsloading(false);
             setMessagemErro('Senha ou Email incorretos!')

@@ -12,7 +12,9 @@ import '../../assets/styles/global.css';
 function Home() {
     return (
         <div>
-            <Header/>            
+            <Header>
+                <li><Link className="link" to="/login">Login</Link></li>
+            </Header>
 
             <div className="row">
                 <div className="quadrado">

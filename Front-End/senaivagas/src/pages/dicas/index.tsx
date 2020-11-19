@@ -7,11 +7,8 @@ import curriculoImg from '../../assets/images/curriculo.png';
 function Dicas() {
     return(
         <div>
-            <Header>
-                <li>Minhas Vagas</li>
-                <li>Meu Perfil</li>
-                <li>Sair</li>
-            </Header>
+            <Header/>
+            
             <div className="alinhar">
                 <div className="titulo">
                      <h1>Dicas</h1>

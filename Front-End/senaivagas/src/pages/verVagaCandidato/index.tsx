@@ -47,7 +47,7 @@ function VerVagaCandidato() {
     }, []);
 
     function carregaDadosVaga() {
-        let idUser = parseJwt().jti
+        // let idUser = parseJwt().jti;
         console.log(parseJwt());
         
         fetch('http://localhost:5000/api/Vaga/' + id, {
