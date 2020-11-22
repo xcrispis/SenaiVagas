@@ -6,3 +6,11 @@
 .label-inputComponent {
     margin-bottom: 3px;
 }
+
+.input-component{
+    border-radius: 5px;
+    width: 10vw;
+    background-color: white;
+    padding-left: 3px;
+    border: 1px solid #292929;
+}
