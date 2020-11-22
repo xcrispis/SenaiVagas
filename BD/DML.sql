@@ -28,8 +28,9 @@ GO
  INSERT INTO Usuario(FK_TipoUsuario, Email, Senha)
  VALUES  (2, 'serv@serv.com', '123123123'), (1, 'cand@cand.com', '123123123');
 GO
+
 INSERT INTO Candidato (Nome, Sobrenome, Telefone, LinkedIn, GitHub, Apresentacao, CPF, EmailContato, FK_Usuario, FK_Curso, FK_Situacao)
-VALUES ('Marco', 'Basile', 11984641234, 'linkedin/marco', 'github/marco', 'Oi, eu sou o marco', 50012312319, 'marco@marco.com', 2, 1, 1)
+VALUES ('Marco', 'Basile', 11984641234, 'linkedin/marco', 'github/marco', 'Oi, eu sou o marco', 50012312319, 'marco@marco.com', 4, 1, 1)
 GO
 
 INSERT INTO Empresa(StatusEmpresa, 
