@@ -12,7 +12,7 @@ const Header:React.FunctionComponent<HeaderProps> = (props) =>{
         <div className="header">
             <nav>
                 <div className="logos">
-                    <img src={logosBranco} alt="logo do senai e do castor"/>
+                <Link to="/"><img src={logosBranco} alt="logo do senai e do castor"/></Link> 
                 </div>
                 <div className="navigation">
                     <ul className="lista">

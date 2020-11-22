@@ -16,27 +16,32 @@ function Home() {
                 <li><Link className="link" to="/login">Login</Link></li>
             </Header>
 
-            <div className="row">
-                <div className="quadrado">
-                    <div className="div-imgEmpresa">
-                        <img className="imgEmpresa" src={imgEmpresa} alt=""/>
+            <main id="main-home">
+                <h1 id="homeH1">Cadastre-se para dar e aproveitar novas oportunidades!</h1>
+                <div className="row-home">
+                    <div className="quadrado">
+                        <div className="div-imgEmpresa">
+                            <img className="imgEmpresa" src={imgEmpresa} alt="" />
+                        </div>
+
+                       
+                        <Link className="link-home" to="/cadastro-empresa"><Button value="Empresa" /></Link>
                     </div>
 
-                    <p>Cadastre sua empresa e conheça os melhores profissionais na área</p>
-                   <Link className="link-home" to="/cadastro-empresa"><Button value="Empresa"/></Link> 
-                </div>
+                    <div className="quadrado">
+                        <div className="div-imgCandidato">
+                            <img className="imgCandidato" src={imgCandidato} alt="" />
+                        </div>
 
-                <div className="quadrado">
-                    <div className="div-imgCandidato">
-                        <img className="imgCandidato" src={imgCandidato} alt=""/>                        
+                        
+                        <Link className="link-home" to="/cadastro-aluno"><Button value="Candidato" /></Link>
                     </div>
-
-                    <p>Cadastre-se e não perca as melhores vagas do mercado</p>
-                    <Link className="link-home" to="/cadastro-aluno"><Button value="Candidato"/></Link>
                 </div>
-            </div>
 
-            <Footer/>
+            </main>
+
+
+            <Footer />
         </div>
     );
 }

@@ -61,13 +61,13 @@ function Cadastrovaga(){
                         History.push("/");
                         }}>
                             <h1>Cadastre sua Vaga</h1>
-                            <Input type="text" label="Título da Vaga:" name="titulo" placeholder=" Ex: Consultor em segurança da informação " onChange={e => setTitulo(e.target.value)}/>
+                            <Input type="text" className='label-cadastroVaga' label="Título da Vaga:" name="titulo" placeholder=" Ex: Consultor em segurança da informação " onChange={e => setTitulo(e.target.value)}/>
                             <br></br>
                             {/* <Input type="text" label="Area da Vaga:" name="areavaga"  placeholder=" Front-End" onChange={e => setAreaVaga(e.target.value)}/> */}
                             <br></br>
-                            <Input type="text" label="Descrição da vaga:" name="descricao"  placeholder=" Ex: Vaga de segurança da informação, em São Paulo" onChange={e => setDescricao(e.target.value)}/>
+                            <Input type="text" className='label-cadastroVaga' label="Descrição da vaga:" name="descricao"  placeholder=" Ex: Vaga de segurança da informação, em São Paulo" onChange={e => setDescricao(e.target.value)}/>
                             <br></br>
-                            <Input type="text" label="Requisítos e habilidades:" name="habilidade"  placeholder=" Ex: Experiência em Java " onChange={e => setHabilidade(e.target.value)}/>
+                            <Input type="text" className='label-cadastroVaga' label="Requisítos e habilidades:" name="habilidade"  placeholder=" Ex: Experiência em Java " onChange={e => setHabilidade(e.target.value)}/>
                             <br />               
                             <div className="botao">
                                 <Button value="Enviar" />

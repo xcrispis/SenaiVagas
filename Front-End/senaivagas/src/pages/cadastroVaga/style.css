@@ -19,16 +19,9 @@
     align-items: center;
 }
   
-input{
-    width: 90%;
-    height: 5vh;
-    border: 1px solid #000000;
-    margin-top: 3%;
-   
-}
 
-label{
-   height: 6vh;
+.label-cadastroVaga{
+   height: 2vh;
 }
 
 

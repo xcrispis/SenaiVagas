@@ -7,7 +7,7 @@ import Footer from '../../components/footer/index';
 import './style.css';
 import '../../assets/styles/global.css';
 
-const CadastroEmpresa:React.FC = () => {
+const CadastroEmpresa: React.FC = () => {
 
     // const [idEmpresa, setEmpresa] = useState<IdadosEmpresa>({
     //     RazaoSocial: '',
@@ -54,10 +54,10 @@ const CadastroEmpresa:React.FC = () => {
     const [complemento, setComplemento] = useState('');
     const [senha, setSenha] = useState('');
     const [numero, setNumero] = useState('');
-    const [cargoExercido, setCargoExercido] = useState(''); 
+    const [cargoExercido, setCargoExercido] = useState('');
     const [emailContato, setEmailContato] = useState('');
 
-    const salvarUsuario = () => { 
+    const salvarUsuario = () => {
 
         alert('roi');
         const formUsuario = {
@@ -74,7 +74,7 @@ const CadastroEmpresa:React.FC = () => {
                 // authorization: 'Bearer' + localStorage.getItem('token-SenaiVagas')
             }
         })
-            .then(response=>response.json())
+            .then(response => response.json())
             .then(dados => {
                 // idUsuario = dados;
                 // setIdUsuario(dados);
@@ -82,7 +82,7 @@ const CadastroEmpresa:React.FC = () => {
                 console.log(formUsuario);
                 // console.log(idUsuario);
                 salvarEndereco(dados);
-            }) 
+            })
     }
 
     const salvarEndereco = (idUsuario: any) => {
@@ -99,30 +99,30 @@ const CadastroEmpresa:React.FC = () => {
         fetch('http://localhost:5000/api/Endereco', {
             method: 'POST',
             body: JSON.stringify(formEndereco),
-            headers: { 
+            headers: {
                 'content-type': 'application/json',
                 // authorization: 'Bearer' + localStorage.getItem('token-SenaiVagas')
-            }            
+            }
         })
-            .then( response => response.json() )
+            .then(response => response.json())
             .then(dados => {
-                salvar(idUsuario,dados);
+                salvar(idUsuario, dados);
                 console.log(formEndereco);
             })
-            .catch(erro=>console.error(erro));
-            
-            
-            // do{
-            //     if(idUsuario != null && idUsuario != undefined)
-            //     {
-            //         console.log(idUsuario);
-            //         salvar();
-            //     }
-            // }
-            // while(idUsuario != null && idUsuario != undefined)
+            .catch(erro => console.error(erro));
+
+
+        // do{
+        //     if(idUsuario != null && idUsuario != undefined)
+        //     {
+        //         console.log(idUsuario);
+        //         salvar();
+        //     }
+        // }
+        // while(idUsuario != null && idUsuario != undefined)
     }
 
-    const salvar = (idUsuario: any, idEndereco: any) => {        
+    const salvar = (idUsuario: any, idEndereco: any) => {
 
         alert('Empresa cadastrada');
 
@@ -133,7 +133,7 @@ const CadastroEmpresa:React.FC = () => {
             Cnpj: cnpj,
             Telefone: telefone,
             Cnae: cnae,
-            Apresentacao: apresentacao,            
+            Apresentacao: apresentacao,
             NomeResponsavel: nomeFantasia,
             CargoExercido: cargoExercido,
             Logo: "0xD31177E05DFB0F7E43043E421850F8",
@@ -141,7 +141,7 @@ const CadastroEmpresa:React.FC = () => {
             FkUsuario: idUsuario,
             FkEndereco: idEndereco
         };
-        
+
         const methodEmpresa = (idEmpresa === 0 ? 'POST' : 'PUT');
 
         console.log(form);
@@ -153,61 +153,64 @@ const CadastroEmpresa:React.FC = () => {
                 'content-type': 'application/json',
                 // authorization: 'Bearer' + localStorage.getItem('token-SenaiVagas')
             }
-        })            
-            .then(() => {                
-                setIdEmpresa(0);                
-                
+        })
+            .then(() => {
+                setIdEmpresa(0);
+
             })
-            .catch(erro=>console.error(erro));
+            .catch(erro => console.error(erro));
     }
 
     return (
         <div>
-            <Header/>
-            <div className="center-adm">
-                <h1>Cadastro da Empresa</h1>
-            </div>
-            {/* onChange={(e: ChangeEvent<HTMLInputElement>) => salvarEmpresa(e)} */}
-            {/* onChange={e => setEmpresa(e.target.value)} */}
-            <form onSubmit={event => {
-                event.preventDefault();
-                salvarUsuario();
-            }}>
-                <div className="row-adm">
-                    <div className="column-adm">
-                        <Input type="text" name="RazaoSocial" label="Razão Social" onChange={e => setRazaoSocial(e.target.value)}/>
-                        <Input type="text" name="Cnpj" label="CNPJ"  onChange={e => setCnpj(e.target.value)}/>
-                        <Input type="text" name="cep" label="Cep" onChange={e => setCep(e.target.value)}/>
-                        <Input type="text" name="number" label="Número" onChange={e => setNumero(e.target.value)}/>
-                        <Input type="text" name="estado" label="Estado" onChange={e => setEstado(e.target.value)}/>
-                        <Input type="email" name="EmailContato" label="Email" onChange={e => setEmail(e.target.value)}/>
-                        <Input type="password" name="senha" label="Senha" onChange={e => setSenha(e.target.value)}/>                  
-                        <Input type="text" name="NomeFantasia" label="Nome Responsavel" onChange={e => setNomeFantasia(e.target.value)}/>                        
-                        <Input type="textarea" name="Apresentacao" label="Sobre a empresa" onChange={e => setApresentacao(e.target.value)}/>
-                        <Input type="text" name="Apresentacao" label="EmailContato" onChange={e => setEmailContato(e.target.value)}/>
-                    </div>
-
-                    <div className="column-adm">
-                        <Input type="text" name="Telefone" label="Telefone para contato" onChange={e => setTelefone(e.target.value)}/>
-                        <Input type="text" name="endereço" label="Endereço" onChange={e => setEndereco(e.target.value)}/>
-                        <Input type="text" name="bairro" label="Bairro" onChange={e => setBairro(e.target.value)}/>
-                        <Input type="text" name="cidade" label="Cidade" onChange={e => setCidade(e.target.value)}/>
-                        <Input type="text" name="complemento" label="Complemento" onChange={e => setComplemento(e.target.value)}/>                                                
-                        <Input type="text" name="CNAE" label="CNAE" onChange={e => setCnae(e.target.value)}/>
-                        {/* <Input type="file" name="Logo" label="Logo da empresa"  onChange={e => setImg(e.target.value)}/> */}
-                        <Input type="text" name="Cargo" label="Cargo Exercido" onChange={e => setCargoExercido(e.target.value)}/>
-
-                    </div>
+            <Header />
+            <main> 
+                <div className="center-adm">
+                    <h1>Cadastro da Empresa</h1>
                 </div>
+                {/* onChange={(e: ChangeEvent<HTMLInputElement>) => salvarEmpresa(e)} */}
+                {/* onChange={e => setEmpresa(e.target.value)} */}
+                <form onSubmit={event => {
+                    event.preventDefault();
+                    salvarUsuario();
+                }}>
+                    <div className="row-adm">
+                        <div className="column-adm">
+                            <Input type="text" name="RazaoSocial" label="Razão Social" onChange={e => setRazaoSocial(e.target.value)} />
+                            <Input type="text" name="Cnpj" label="CNPJ" onChange={e => setCnpj(e.target.value)} />
+                            <Input type="text" name="cep" label="Cep" onChange={e => setCep(e.target.value)} />
+                            <Input type="text" name="number" label="Número" onChange={e => setNumero(e.target.value)} />
+                            <Input type="text" name="estado" label="Estado" onChange={e => setEstado(e.target.value)} />
+                            <Input type="email" name="EmailContato" label="Email" onChange={e => setEmail(e.target.value)} />
+                            <Input type="password" name="senha" label="Senha" onChange={e => setSenha(e.target.value)} />
+                            <Input type="text" name="NomeFantasia" label="Nome Responsavel" onChange={e => setNomeFantasia(e.target.value)} />
+                            <Input type="textarea" name="Apresentacao" label="Sobre a empresa" onChange={e => setApresentacao(e.target.value)} />
+                            <Input type="text" name="Apresentacao" label="EmailContato" onChange={e => setEmailContato(e.target.value)} />
+                        </div>
 
-                <div className="btn">
-                    <Button value="Cadastrar"/>
-                </div> 
-            </form>
+                        <div className="column-adm">
+                            <Input type="text" name="Telefone" label="Telefone para contato" onChange={e => setTelefone(e.target.value)} />
+                            <Input type="text" name="endereço" label="Endereço" onChange={e => setEndereco(e.target.value)} />
+                            <Input type="text" name="bairro" label="Bairro" onChange={e => setBairro(e.target.value)} />
+                            <Input type="text" name="cidade" label="Cidade" onChange={e => setCidade(e.target.value)} />
+                            <Input type="text" name="complemento" label="Complemento" onChange={e => setComplemento(e.target.value)} />
+                            <Input type="text" name="CNAE" label="CNAE" onChange={e => setCnae(e.target.value)} />
+                            {/* <Input type="file" name="Logo" label="Logo da empresa"  onChange={e => setImg(e.target.value)}/> */}
+                            <Input type="text" name="Cargo" label="Cargo Exercido" onChange={e => setCargoExercido(e.target.value)} />
 
-                       
+                        </div>
+                    </div>
 
-            <Footer/>
+                    <div className="btn">
+                        <Button value="Cadastrar" />
+                    </div>
+                </form>
+            </main>
+
+
+
+
+            <Footer />
 
         </div>
     );

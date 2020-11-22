@@ -42,3 +42,15 @@ nav{
     font-weight: bold;
 }
 
+@media only screen and (max-width: 360px) {
+    .logos img{
+        width: 110%;
+    
+    }
+
+    .lista li{
+        font-size: 15px;
+    }
+}
+ 
+
