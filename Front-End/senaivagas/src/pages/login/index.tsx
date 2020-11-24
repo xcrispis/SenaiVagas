@@ -6,8 +6,7 @@ import Button from '../../components/button/index';
 import Img from '../../assets/images/imgBanner2.png';
 import '../../assets/styles/global.css';
 import './style.css';
-import { Link, useHistory } from 'react-router-dom';
-import { parseJwt } from '../../services';
+import { Link, Switch, useHistory } from 'react-router-dom';
 
 function Login() {
   let history = useHistory();
@@ -30,36 +29,43 @@ function Login() {
     })
       .then(response => response.json())
       .then(dados => {
+        console.log(dados);
         if (dados.token !== undefined || dados.token !== null) {
-          let idUser = parseJwt().jti;
-          localStorage.setItem('permissao', dados.Permissao);
+          console.log('entrou')
+
           localStorage.setItem('token-SenaiVagas', dados.token);
-          console.log(dados.token);
-          console.log(idUser);
+          
+          // Define a variável base64 que vai receber o payload do token
+          var base64 = dados.token.split('.')[1];
+          
+          // convert o token em uma string
+          var tokenstring =  window.atob(base64);
+          // busca o campo "Role" na string e devolve seu valor
+          var tipoUser = tokenstring.split(',')[2].split(':')[2];
+          //retira as aspas duplas da string
+          tipoUser = tipoUser.slice(1, -1);
+          
+          localStorage.setItem('permicao', tipoUser);
+
           setIsloading(false);
-          history.push('/dashboard');
-          // if (idUser == 1) {
-          //   console.log(idUser);
-          //   history.push('/vagas');
-          // }
-          // if (idUser == 2) {
-          //   console.log(idUser);  
-          //   history.push('/cadastro-vaga');
-          // }
-          // if (idUser == 3) {
-          //   console.log(idUser);
-          //   history.push('/dashboard'); 
-          // }
-          // else {
-          //   console.log(erroMensagem);
-          // }
+          switch(tipoUser){
+            case '1':
+              history.push('/vagas');
+              break;
+            case '2' :
+              history.push('/cadastro-vaga');
+              break;
+            case '3':
+              history.push('/dashboard'); 
+              break;
+          }
         } else {
           setIsloading(false);
           setMessagemErro('Senha ou Email incorretos!')
         }
       })
       .catch(erro => {
-        setMessagemErro(erro);
+        console.log(erro);
         setIsloading(false);
       });
   }
