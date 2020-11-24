@@ -22,7 +22,7 @@ namespace SenaiVagasAPI.Repositories
 
         public void Cadastrar(Inscricao novaInscricao)
         {
-
+            novaInscricao.StatusIncricao = false;
             ctx.Inscricao.Add(novaInscricao);
 
             ctx.SaveChanges();
