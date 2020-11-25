@@ -25,14 +25,14 @@ VALUES ('Estagio')
 	  ,('PJ')
 	  ,('Jovem Aprendiz');
 GO
- INSERT INTO Usuario(FK_TipoUsuario, Email, Senha)
+ INSERT INTO Usuario(FkTipoUsuario, Email, Senha)
  VALUES  (2, 'serv@serv.com', '123123123'), (1, 'cand@cand.com', '123123123');
 GO
 
-INSERT INTO Candidato (Nome, Sobrenome, Telefone, LinkedIn, GitHub, Apresentacao, CPF, EmailContato, FK_Usuario, FK_Curso, FK_Situacao)
-VALUES ('Marco', 'Basile', 11984641234, 'linkedin/marco', 'github/marco', 'Oi, eu sou o marco', 50012312319, 'marco@marco.com', 4, 1, 1)
+INSERT INTO Candidato (Nome, Sobrenome, Telefone, LinkedIn, GitHub, Apresentacao, CPF, EmailContato, FkUsuario, FkCurso, FkSituacao)
+VALUES ('Marco', 'Basile', 11984641234, 'linkedin/marco', 'github/marco', 'Oi, eu sou o marco', 50012312319, 'marco@marco.com', 2, 1, 1)
 GO
-
+Select * from TipoUsuario
 INSERT INTO Empresa(StatusEmpresa, 
        RazaoSocial
       ,Cnpj
@@ -42,15 +42,16 @@ INSERT INTO Empresa(StatusEmpresa,
       ,Apresentacao
       ,NomeResponsavel
       ,EmailContato
-      ,FK_Usuario
+      ,FkUsuario
 	  ,Logo)
-	  VALUES ('1', 'Bandai Namco', 77637684000161, 1198465757, 4142345, 'Desenvolvedor Front-End', 'Somos uma empresa responsavel, feliz e dedicada.', 'Julio Gomes', 'carlinhos@gmail.com', 4, '1837373')
+	  VALUES ('1', 'Bandai Namco', 77637684000161, 1198465757, 4142345, 'Desenvolvedor Front-End', 'Somos uma empresa responsavel, feliz e dedicada.', 'Julio Gomes', 'carlinhos@gmail.com', 1, '1837373')
 
 	  GO
-	  INSERT INTO Vaga(FK_Empresa, FK_FormaContratacao, Descricao, Habilidades, PlanoEstagio) VALUES (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1'), (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1') 
-
+	  INSERT INTO Vaga(FkEmpresa, FkFormaContratacao, Descricao, Habilidades, PlanoEstagio) VALUES (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1'), (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1') 
+	  select * from Candidato
 	  GO
-	  INSERT INTO Inscricao (StatusIncricao, IdVaga, FK_Candidato)
-	  VALUES (0, 2, 1), (1, 3, 1)
+	  select * from Vaga
+	  INSERT INTO Inscricao (StatusIncricao, IdVaga, FKCandidato)
+	  VALUES (0, 1, 1), (1, 2, 1)
 
 	

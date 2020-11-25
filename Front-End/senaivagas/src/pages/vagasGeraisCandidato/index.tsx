@@ -20,6 +20,7 @@ function VagasGerais() {
     }, []);
 
     function buscaVagas() {
+        console.log('chegouaqu  n?')
         fetch('http://localhost:5000/api/Vaga', {
             method: 'GET',
             headers: {
@@ -30,8 +31,9 @@ function VagasGerais() {
             .then(response => response.json())
             .then(dados => {
                 setVagas(dados);
-                console.log(dados);
+                console.log('chegouaqu  n?'+dados);
             })
+            .catch(error => console.log(error))
     }
 
     function pegaId(item:any) {
@@ -52,11 +54,11 @@ function VagasGerais() {
                         vagas.map((item: any) => {
                             return (
                                 <div onClick={() => pegaId(item.idVaga)} className="alinha-linha">
-                                    <div key={item.IdVaga} className="container-individual">
+                                    <div key={item.idVaga} className="container-individual">
                                         <img alt="" />
                                         <div className="container-2">
                                             <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
+                                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
                                         <div className="container-3">
