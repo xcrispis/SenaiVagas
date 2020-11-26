@@ -1,9 +1,11 @@
-.alinhar{
-    width: 90%;
+#mainDicas {
+    height: 90vh;
+    width: 80%;
     margin: auto;
     display: flex;
     flex-direction: column;    
 }
+
 .titulo{
     width: 100%;
     display: flex;

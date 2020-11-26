@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/global.css';
 import imb from '../../assets/images/person_110935.png'
 import Footer from '../../components/footer';
@@ -8,7 +9,12 @@ import Header from '../../components/header/index';
 function Perfil() {
     return (
         <div>
-            <Header/>
+           <Header>
+                <li><Link className="link" to="/vagas">Vagas Gerais</Link></li>
+                <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/dicas">Dicas</Link></li>
+                <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+            </Header>
             <main id="main-perfil">
                 <section id="lado-esquerdo">
                     <div className="foto-perfil">

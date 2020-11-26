@@ -1,8 +1,9 @@
 #mainVagasGerais {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    height: 90vh;
 }
 
 h1 {
@@ -110,7 +111,7 @@ h1 {
 }
 
 .alinha-linha:hover{
-    cursor: grab;
+    cursor: pointer;
 }
 
 .blue-div {

@@ -11,7 +11,7 @@
       transform: rotate(360deg);
     }
   }
-.alinhar{
+.alinhar-Login{
     width: 90%;
     height: 90vh;
     margin: auto;
@@ -21,7 +21,7 @@
 }
 
 
-.esquerda{
+.esquerdaLogin{
     width: 50%;
     height: 100%;
     display: flex;
@@ -29,13 +29,13 @@
     justify-content: center;
     margin-top: 10px;
 }
-.esquerda img{
+.esquerdaLogin img{
     margin-top: 15px;
     width: 350px;
     height: 505px; 
   
 }
-.direita{
+.direitaLogin{
     width: 50%;
     height: 100%;
     display: flex;
@@ -45,12 +45,12 @@
     margin-bottom: 10vh;
 }
 
-.direita h1{
+.direitaLogin h1{
     margin-top: 83px;
     margin-bottom: 30px;
     color:#635D5D;
 }
-.direita form ul{
+.direitaLogin form ul{
     list-style-type: none;
     display: flex;
     width: 100%;
@@ -58,7 +58,7 @@
     align-items: center;
     margin-top: 0.7vw;
 }
-.direita form ul li{
+.direitaLogin form ul li{
     font-family: 'Roboto';
     display: flex;
     align-items: center;
@@ -67,11 +67,11 @@
     margin: 3px;
 }
 
-.direita form ul :first-child{
+.direitaLogin form ul :first-child{
     color: #898989;
     width: 90%;
 }
-.direita form ul :last-child{
+.direitaLogin form ul :last-child{
     color: black;
     width: 90%;
 }
@@ -79,13 +79,13 @@
     font-size: 10px ;
     color: #FF0000;
 }
-.direita input[type = "text"]{
+.direitaLogin input[type = "text"]{
     width: 250px;
     height: 30px;
     border-radius: 4px;
     border: 1px solid #000;
   }
-  .direita input[type = "password"]{
+  .direitaLogin input[type = "password"]{
     width: 250px;
     height: 30px;
     border-radius: 4px;

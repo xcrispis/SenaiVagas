@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 import '../../assets/styles/global.css';
 
 import Header from '../../components/header/index';
+import Footer from '../../components/footer/index'
 // import ibmLogo from '../../assets/images/ibmlogo.png';
 import CampoDeBusca from '../../components/campo-de-busca/index';
 
@@ -31,20 +32,25 @@ function VagasGerais() {
             .then(response => response.json())
             .then(dados => {
                 setVagas(dados);
-                console.log('chegouaqu  n?'+dados);
+                console.log('chegouaqu  n?' + dados);
             })
             .catch(error => console.log(error))
     }
 
-    function pegaId(item:any) {
-            localStorage.setItem('id-vaga', item);
-            history.push('/ver-vaga');
-          }
+    function pegaId(item: any) {
+        localStorage.setItem('id-vaga', item);
+        history.push('/ver-vaga');
+    }
 
     return (
         <div>
 
-            <Header/>
+            <Header>
+                <li><Link className="link" to="/vagas">Vagas Gerais</Link></li>
+                <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/dicas">Dicas</Link></li>
+                <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+            </Header>
 
             <main id="mainVagasGerais">
                 <CampoDeBusca />
@@ -78,15 +84,9 @@ function VagasGerais() {
                         })
                     }
 
-
-
-
-
-
-
-
                 </section>
             </main>
+            <Footer />
         </div>)
 }
 

@@ -75,8 +75,8 @@ function Login() {
     <div>
       <Header />
 
-      <div className="alinhar">
-        <div className="esquerda">
+      <div className="alinhar-Login">
+        <div className="esquerdaLogin">
           <img src={Img} alt="" />
         </div>
         {
@@ -84,7 +84,7 @@ function Login() {
           <div className="spinner" />
         }
 
-        <div className="direita">
+        <div className="direitaLogin">
           <h1>Login</h1>
           <form onSubmit={event => {
             event.preventDefault();

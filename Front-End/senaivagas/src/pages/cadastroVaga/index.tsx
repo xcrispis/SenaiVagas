@@ -50,7 +50,7 @@ function Cadastrovaga(){
     return (
         <div>
             <Header />
-            <div className="alinhar">
+            <div className="alinhar-cadastroVaga">
 
                 <div className="container-all">
                     <div className="centro">

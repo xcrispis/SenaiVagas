@@ -1,9 +1,9 @@
 #mainMinhasVagas {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 90vh;
 }
 
 
@@ -82,6 +82,7 @@
 .local-text {
     color: black;
     margin: 0;
+    text-align: center;
 }
 
 .habilidades-title {
