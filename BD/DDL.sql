@@ -61,7 +61,7 @@ CREATE TABLE Usuario (
 	IdUsuario	INT PRIMARY KEY IDENTITY
 	,Email		VARCHAR(255) NOT NULL UNIQUE
 	,Senha		VARCHAR(255) NOT NULL
-	,FK_TipoUsuario	INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario)
+	,FkTipoUsuario	INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario)
 );
 GO
 
@@ -69,7 +69,7 @@ CREATE TABLE Administrador (
 	IdAdministrador	INT PRIMARY KEY IDENTITY
 	,Nome			VARCHAR(255) NOT NULL
 	,Cpf			CHAR(11) NOT NULL UNIQUE
-	,FK_Usuario		INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+	,FkUsuario		INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
 GO
 
@@ -84,11 +84,11 @@ CREATE TABLE Candidato (
 	,CPF		CHAR(11) NOT NULL UNIQUE
 	,Foto		NVARCHAR(255)
 	,EmailContato	NVARCHAR(255) NOT NULL 
-	,FK_Usuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
-	,FK_Curso	INT FOREIGN KEY REFERENCES Curso (IdCursos)
-	,FK_PerfilComportamental	INT FOREIGN KEY REFERENCES PerfilComportamental (IdPerfilComportamental)
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
-	,FK_Situacao INT FOREIGN KEY REFERENCES Situacao (IdSituacao) 
+	,FkUsuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+	,FkCurso	INT FOREIGN KEY REFERENCES Curso (IdCursos)
+	,FkPerfilComportamental	INT FOREIGN KEY REFERENCES PerfilComportamental (IdPerfilComportamental)
+	,FkEndereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
+	,FkSituacao INT FOREIGN KEY REFERENCES Situacao (IdSituacao) 
 );
 GO 
 
@@ -105,8 +105,8 @@ CREATE TABLE Empresa (
 	/*NumeroFuncionarios	INT NOT NULL*/
 	,Logo		NVARCHAR(255) NOT NULL
 	,EmailContato	NVARCHAR(255) NOT NULL 
-	,FK_Usuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
+	,FkUsuario	INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+	,FkEndereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 );
 GO
 
@@ -117,9 +117,9 @@ CREATE TABLE Vaga (
 	,PlanoEstagio BIT NOT NULL
 	,AreaVaga VARCHAR(255)
 	,Cargo VARCHAR(255)
-	,FK_Empresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
-	,FK_FormaContratacao	INT FOREIGN KEY REFERENCES FormaContratacao (IdFormaContratacao) 
-	,FK_Endereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
+	,FkEmpresa	INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+	,FkFormaContratacao	INT FOREIGN KEY REFERENCES FormaContratacao (IdFormaContratacao) 
+	,FkEndereco	INT FOREIGN KEY REFERENCES Endereco (IdEndereco)
 );
 GO
 
@@ -127,7 +127,7 @@ CREATE TABLE Inscricao (
 	IdInscricao	INT PRIMARY KEY IDENTITY 
 	,StatusIncricao	BIT NOT NULL
 	,IdVaga	INT FOREIGN KEY REFERENCES Vaga (IdVaga)
-	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
+	,Fkcandidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 );
 GO
 
@@ -140,8 +140,8 @@ CREATE TABLE ContratoEstagio (
 	,Avaliacao2	NVARCHAR(MAX) NOT NULL
 	,Avaliacao3	NVARCHAR(MAX) NOT NULL
 	,Avaliacao4	NVARCHAR(MAX) NOT NULL
-	,FK_StatusEstagio INT FOREIGN KEY REFERENCES Situacao(IdSituacao)
-	,FK_Candidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
-	,FK_Vaga		INT FOREIGN KEY REFERENCES Vaga (IdVaga)
+	,FkStatusEstagio INT FOREIGN KEY REFERENCES Situacao(IdSituacao)
+	,FkCandidato	INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
+	,FkVaga		INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );
 GO
