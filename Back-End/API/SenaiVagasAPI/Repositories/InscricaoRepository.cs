@@ -44,21 +44,21 @@ namespace SenaiVagasAPI.Repositories
         Inscricao BuscarPorId(int id)
         {
             return ctx.Inscricao
-         .Include(e => e.FkCandidatoNavigation)
+         .Include(e => e.FkcandidatoNavigation)
          .Include(e => e.IdVagaNavigation).FirstOrDefault(i => i.IdVaga == id);
         }
 
         public List<Inscricao> BuscarPorVaga(int id)
         {
             return ctx.Inscricao
-         .Include(e => e.FkCandidatoNavigation)
+         .Include(e => e.FkcandidatoNavigation)
          .Include(e => e.IdVagaNavigation).Where(i => i.IdVaga == id).ToList();
         }
 
         Inscricao IInscricaoRepository.BuscarPorId(int id)
         {
             return ctx.Inscricao
-        .Include(e => e.FkCandidatoNavigation)
+        .Include(e => e.FkcandidatoNavigation)
         .FirstOrDefault(i => i.IdVaga == id);
         }
     }

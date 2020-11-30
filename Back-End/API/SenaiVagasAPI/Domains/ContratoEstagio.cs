@@ -14,6 +14,7 @@ namespace SenaiVagasAPI.Domains
             FkCandidato = fkCandidato;
             FkVaga = fkVaga;
         }
+
         public int IdContratoEstagio { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataTermino { get; set; }
