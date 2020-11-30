@@ -7,24 +7,24 @@ export default function App() {
 
   const [minhasVagas, setMinhasVagas] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     ListarVagas();
-},[] );
+  }, []);
 
-function ListarVagas() {
-  fetch('http://localhost:5000/api/Inscricao', {
+  function ListarVagas() {
+    fetch('http://localhost:5000/api/Inscricao', {
       method: 'GET',
       headers: {
-          'content-type': 'application/json'
-          //authorization: 'Bearer ' + localStorage.getItem('token-senaivagas')
+        'content-type': 'application/json'
+        //authorization: 'Bearer ' + localStorage.getItem('token-senaivagas')
       }
-  })
+    })
       .then(response => response.json())
       .then(dados => {
-          setMinhasVagas(dados);
-          console.log(dados);
+        setMinhasVagas(dados);
+        console.log(dados);
       })
-}
+  }
 
 
 
@@ -32,25 +32,38 @@ function ListarVagas() {
   return (
     <View style={styles.container}>
       <View style={styles.containerGeralMinhasVagas}>
-        <View style={styles.alinhaLinha}>
 
-          <TouchableOpacity style={styles.containerIndividualMinhasVagas}>
-            <View style={styles.containerArea1}>
-              <Text style={styles.cargoText}>Desenvolvedor(a) Front-End Junior.</Text>
-              <View style={styles.containerStatus}>
-                <Text style={styles.localTitle}>Status</Text>
-                <Text style={styles.localText}>Em andamento</Text>
+
+        {
+          minhasVagas.map(() => {
+            return (
+
+              <View style={styles.alinhaLinha}>
+
+                <TouchableOpacity style={styles.containerIndividualMinhasVagas}>
+                  <View style={styles.containerArea1}>
+                    <Text style={styles.cargoText}>Desenvolvedor(a) Front-End Junior.</Text>
+                    <View style={styles.containerStatus}>
+                      <Text style={styles.localTitle}>Status</Text>
+                      <Text style={styles.localText}>Em andamento</Text>
+                    </View>
+
+                  </View>
+
+                  <View style={styles.containerNomeEmpresa}>
+                    <Text style={styles.nomeEmpresaText}> International Business Machines Corporation</Text>
+                  </View>
+                </TouchableOpacity>
+
+                <View style={styles.blueView}></View>
               </View>
 
-            </View>
+            );
+          })
+        }
 
-            <View style={styles.containerNomeEmpresa}>
-              <Text style={styles.nomeEmpresaText}> International Business Machines Corporation</Text>
-            </View>
-          </TouchableOpacity>
 
-          <View style={styles.blueView}></View>
-        </View>
+
       </View>
     </View>
   );
@@ -90,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    
+
   },
   cargoText: {
     backgroundColor: '#EBEBEB',
