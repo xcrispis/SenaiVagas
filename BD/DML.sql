@@ -47,8 +47,9 @@ INSERT INTO Empresa(StatusEmpresa,
 	  VALUES ('1', 'Bandai Namco', 77637684000161, 1198465757, 4142345, 'Desenvolvedor Front-End', 'Somos uma empresa responsavel, feliz e dedicada.', 'Julio Gomes', 'carlinhos@gmail.com', 4, '1837373')
 
 	  GO
-	  INSERT INTO Vaga(FK_Empresa, FK_FormaContratacao, Descricao, Habilidades, PlanoEstagio) VALUES (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1'), (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', '1') 
+	  INSERT INTO Vaga(FK_Empresa, FK_FormaContratacao, Descricao, Habilidades, Cargo, PlanoEstagio) VALUES (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', 'Desenvolvedor Front-End', '1'), (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Conhecimentos sólidos em HTML, CSS e Javascript', 'Desenvolvedor Front-End', '1') 
 
+	  UPDATE Vaga SET Cargo = 'Desevolvedor Front-End';
 	  GO
 	  INSERT INTO Inscricao (StatusIncricao, IdVaga, FK_Candidato)
 	  VALUES (0, 2, 1), (1, 3, 1)

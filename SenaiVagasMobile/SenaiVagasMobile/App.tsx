@@ -22,9 +22,16 @@ export default function App() {
       .then(response => response.json())
       .then(dados => {
         setMinhasVagas(dados);
-        console.log(dados);
+
       })
   }
+
+  function pegaId(item: any) {
+    localStorage.setItem('id-vaga', item);
+    //navigation.navigate('Details')
+  }
+
+  console.log(minhasVagas);
 
 
 
@@ -35,14 +42,16 @@ export default function App() {
 
 
         {
-          minhasVagas.map(() => {
+          minhasVagas.map((item: any) => {
             return (
 
               <View style={styles.alinhaLinha}>
 
-                <TouchableOpacity style={styles.containerIndividualMinhasVagas}>
+                <TouchableOpacity onPress={() => pegaId(item.idVaga)} style={styles.containerIndividualMinhasVagas}>
                   <View style={styles.containerArea1}>
-                    <Text style={styles.cargoText}>Desenvolvedor(a) Front-End Junior.</Text>
+                    <View style={styles.alinhaCargoText}>
+                    <Text style={styles.cargoText}>{item.idVagaNavigation.cargo}</Text>
+                    </View>
                     <View style={styles.containerStatus}>
                       <Text style={styles.localTitle}>Status</Text>
                       <Text style={styles.localText}>Em andamento</Text>
@@ -51,7 +60,7 @@ export default function App() {
                   </View>
 
                   <View style={styles.containerNomeEmpresa}>
-                    <Text style={styles.nomeEmpresaText}> International Business Machines Corporation</Text>
+                    <Text style={styles.nomeEmpresaText}> {item.idVagaNavigation.fkEmpresaNavigation.razaoSocial}</Text>
                   </View>
                 </TouchableOpacity>
 
@@ -106,6 +115,12 @@ const styles = StyleSheet.create({
 
   },
   cargoText: {
+    fontWeight: 'bold',
+  },
+  alinhaCargoText: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#EBEBEB',
     textAlign: 'center',
     borderRadius: 4,
@@ -113,7 +128,7 @@ const styles = StyleSheet.create({
     width: '55vw',
     marginRight: '1vw',
     height: '13vw',
-    fontWeight: 'bold'
+    
   },
   nomeEmpresaText: {
     backgroundColor: 'black',

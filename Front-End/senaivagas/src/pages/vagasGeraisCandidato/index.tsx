@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './style.css';
 import '../../assets/styles/global.css';
 
@@ -34,15 +34,15 @@ function VagasGerais() {
             })
     }
 
-    function pegaId(item:any) {
-            localStorage.setItem('id-vaga', item);
-            history.push('/ver-vaga');
-          }
+    function pegaId(item: any) {
+        localStorage.setItem('id-vaga', item);
+        history.push('/ver-vaga');
+    }
 
     return (
         <div>
 
-            <Header/>
+            <Header />
 
             <main id="mainVagasGerais">
                 <CampoDeBusca />
@@ -56,7 +56,7 @@ function VagasGerais() {
                                         <img alt="" />
                                         <div className="container-2">
                                             <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
+                                            <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
                                         <div className="container-3">
