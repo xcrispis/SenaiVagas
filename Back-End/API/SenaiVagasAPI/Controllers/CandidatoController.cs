@@ -35,6 +35,25 @@ namespace SenaiVagasAPI.Controllers
                 return BadRequest(error);
             }
         }
+
+        [HttpGet("{idCandidato}")]
+        public IActionResult BuscarPorId(int idCandidato)
+        {
+
+            try
+            {
+                Candidato candidatoBuscado = _repository.BuscarPorId(idCandidato);
+
+                if (candidatoBuscado != null)
+                    return Ok(candidatoBuscado);
+
+                return NotFound($"O candidato {idCandidato} não foi encontrada");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
         /// <summary>
         /// Deleta um candidato
         /// </summary>

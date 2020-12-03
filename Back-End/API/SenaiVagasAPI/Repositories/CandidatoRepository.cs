@@ -49,7 +49,7 @@ namespace SenaiVagasAPI.Repositories
 
         public Candidato BuscarPorId(int idCandidato)
         {
-            return _context.Candidato.FirstOrDefault(C => C.IdCandidato == idCandidato);
+            return _context.Candidato.FirstOrDefault(C => C.FkUsuario == idCandidato);
         }
 
         public void Criar(Candidato candidato)

@@ -54,12 +54,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     font-size: 25px;
     width: 50vw;
     border-radius: 4px;
     padding: 5vw;
-
 }
+
+
 
 #container-dados-esq-dir {
     display: flex;
@@ -75,11 +77,21 @@
     
 }
 
+#lado-direito-esquerda {
+    margin-left: 1vw;
+}
+
 #apresentacao-txt-box {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #apresentacao-txt-box p {
     width: fit-content;
+    
+
 }
 
