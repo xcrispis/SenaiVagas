@@ -1,19 +1,22 @@
 import React, { useState }  from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Button } from 'react-native';
 import styles from './style'
 
-export default function App() {
+export default function Login({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erroMensagem, setMessagemErro] = useState('');
   const [isLoading, setIsloading] = useState(false);
+
   const login = () => {
     setIsloading(true);
+
     const login = {
       Email: email.email,
       Senha: senha.senha
     }
+
     fetch('http://localhost:5000/api/login', {
       method: 'POST',
       body: JSON.stringify(login),
@@ -59,17 +62,17 @@ export default function App() {
         } else {
           setIsloading(false);
           setMessagemErro('Senha ou Email incorretos!')
-          console.log('saserro')
         }
       })
       .catch(erro => {
         console.log(erro);
-        setMessagemErro('Campo Email ou Senha incorretos!')
+        setMessagemErro(erro)
         setIsloading(false);
       });
   }
   return (
     <View style={styles.container}>
+      <Button onPress={navigation.openDrawer()}></Button>
       <Text style={styles.titulo}>Login</Text>
       <TextInput style={styles.input} 
       placeholder="Digite seu email" 

@@ -16,7 +16,7 @@ namespace SenaiVagasAPI.Repositories
 
         public List<Inscricao> Listar()
         {
-            return ctx.Inscricao.Include(I => I.IdVagaNavigation).ToList();
+            return ctx.Inscricao.Include(I => I.IdVagaNavigation).Include(V => V.IdVagaNavigation.FkEmpresaNavigation).ToList();
         }
 
 
