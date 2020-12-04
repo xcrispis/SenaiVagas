@@ -4,18 +4,24 @@ const styles = StyleSheet.create({
     container: {
         width: '100vw',
         height: 60,
-        backgroundColor: '#000'
+        backgroundColor: '#509BF5'
     },
     header: {
-        width: '100%',
+        width: '80%',
         height: '100%',
         flex:1,
+        flexDirection: 'row',
         alignItems:'center',
-        justifyContent: 'center'
+        justifyContent: 'space-between'
     },
     img: {
-        width: 50,
-        heigth: 55
+        marginLeft:5,
+        width: 30,
+        height: 30,
+    },
+    imgLogo: {
+        width: '70%',
+        height: '70%'
     }
   });
   export default styles;
