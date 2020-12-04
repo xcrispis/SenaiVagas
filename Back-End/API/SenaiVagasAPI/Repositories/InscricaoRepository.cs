@@ -58,7 +58,7 @@ namespace SenaiVagasAPI.Repositories
         Inscricao IInscricaoRepository.BuscarPorId(int id)
         {
             return ctx.Inscricao
-        .Include(e => e.FkcandidatoNavigation)
+        .Include(e => e.FkcandidatoNavigation).Include(V => V.IdVagaNavigation.FkEmpresaNavigation)
         .FirstOrDefault(i => i.IdVaga == id);
         }
     }

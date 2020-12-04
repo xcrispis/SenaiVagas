@@ -1,21 +1,55 @@
 import * as React from 'react';
-import { Button, View } from 'react-native';
+import { Text } from 'react-native';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { DrawerActions, NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
 
 import login from './src/pages/login/index'
 import home from './src/pages/home/index'
-import minhasVagasCandidato from './src/screens/minhasVagasCandidato';
+import minhasVagas from './src/pages/minhasVagas/index';
+import minhasInscricoes from './src/pages/inscricoes/index';
+import detalheInscricao from './src/pages/detralhesInscricao/index';
+
+import sair from './src/pages/sair/index';
 
 
 const Drawer = createDrawerNavigator();
+// const Stack = createStackNavigator();
+
 export default function App() {
   return (
     <NavigationContainer>
+      {/* <Stack.Screen name="Details" component={detalheInscricao} /> */}
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={home} />
-        <Drawer.Screen name="Login" component={login} />
+        
+        <Drawer.Screen name="Home" component={home} /> 
+        {
+          //usuario não logado
+          sessionStorage.getItem('logado') == '0' || sessionStorage.getItem('logado') == null &&
+          <Drawer.Screen name="Login" component={login} />
+        }
+        {
+          //usuario logado
+          sessionStorage.getItem('logado') == '1' && sessionStorage.getItem('permissao') == '1' &&
+          <Drawer.Screen name="Minhas Vagas" component={minhasVagas} />
+          
+        }
+        {
+          //usuario logado Empresa
+          sessionStorage.getItem('logado') == '1' && sessionStorage.getItem('permissao') == '2' &&
+          <Drawer.Screen name="Minhas Inscrições" component={minhasInscricoes} />
+          
+          
+        }
+          <Drawer.Screen name="Details" component={detalheInscricao} />
+        
+        {
+          //usuario logado
+          sessionStorage.getItem('logado') == '1' &&
+          <Drawer.Screen name="Sair" component={sair} />
+
+        }
       </Drawer.Navigator>
     </NavigationContainer>
   );

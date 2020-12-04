@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
         if (dados.token !== undefined || dados.token !== null) {
           console.log('entrou')
 
-          localStorage.setItem('token-SenaiVagas', dados.token);
+          sessionStorage.setItem('token-SenaiVagas', dados.token);
           
           // Define a variável base64 que vai receber o payload do token
           var base64 = dados.token.split('.')[1];
@@ -42,20 +42,21 @@ export default function Login({ navigation }) {
           //retira as aspas duplas da string
           tipoUser = tipoUser.slice(1, -1);
           
-          localStorage.setItem('permicao', tipoUser);
+          sessionStorage .setItem('permissao', tipoUser);
+          sessionStorage .setItem('logado', '1');
 
           setIsloading(false);
           switch(tipoUser){
             case '1':
-              // history.push('/vagas'); inserir navegação
+              navigation.navigate('Home')
               console.log('candidato')
               break;
             case '2' :
-              // history.push('/cadastro-vaga');
+              navigation.navigate('Home')
               console.log('empresa')
               break;
             case '3':
-              // history.push('/dashboard'); 
+              navigation.navigate('Home') 
               console.log('adm')
               break;
           }
