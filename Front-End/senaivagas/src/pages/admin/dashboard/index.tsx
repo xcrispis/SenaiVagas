@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../../components/header/index';
-import Footer from '../../components/footer/index';
+import Header from '../../../components/header/index';
+import Footer from '../../../components/footer/index';
 // import Button from '../../components/button/index';
-import Logo from '../../assets/images/sn_icon.svg';
+import Logo from '../../../assets/images/sn_icon.svg';
 import { Link } from 'react-router-dom';
 
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
 
 function Dashboard() {

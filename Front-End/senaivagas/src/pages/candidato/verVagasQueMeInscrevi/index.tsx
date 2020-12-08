@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-import '../../assets/styles/global.css';
-import Footer from '../../components/footer';
-import ibmLogo from '../../assets/images/ibmlogo.png';
-import Header from '../../components/header/index';
+import '../../../assets/styles/global.css';
+import Footer from '../../../components/footer';
+import ibmLogo from '../../../assets/images/ibmlogo.png';
+import Header from '../../../components/header/index';
 import { Link } from 'react-router-dom';
-import CampoDeBusca from '../../components/campo-de-busca';
+import CampoDeBusca from '../../../components/campo-de-busca';
 
 function MinhasVagas() {
 

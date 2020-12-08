@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../components/header/index';
-import Footer from '../../components/footer/index';
+import Header from '../../../components/header/index';
+import Footer from '../../../components/footer/index';
 import { Link } from 'react-router-dom';
-import imgCandidato from '../../assets/images/person_110935.png';
-import imgEmpresa from '../../assets/images/work-24px.svg';
-import Button from '../../components/button/index';
+import imgCandidato from '../../../assets/images/person_110935.png';
+import imgEmpresa from '../../../assets/images/work-24px.svg';
+import Button from '../../../components/button/index';
 
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
 function Home() {
     return (

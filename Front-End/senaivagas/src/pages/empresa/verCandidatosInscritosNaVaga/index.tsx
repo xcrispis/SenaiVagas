@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../../components/footer';
+import Footer from '../../../components/footer';
 import './style.css'
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
-import ibmLogo from '../../assets/images/ibmlogo.png';
-import Header from '../../components/header';
+import ibmLogo from '../../../assets/images/ibmlogo.png';
+import Header from '../../../components/header';
 
 function verCandidatos() {
 

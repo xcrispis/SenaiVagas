@@ -1,10 +1,10 @@
 import React from 'react';
-import Footer from '../../components/footer';
-import Header from '../../components/header/index';
-import Input from '../../components/input/index';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header/index';
+import Input from '../../../components/input/index';
 import './style.css';
 import './stylecriardica.css'
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 function CriarDica() {
     return(
     <div>

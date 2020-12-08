@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/footer';
-import Header from '../../components/header/index';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header/index';
 import './style.css';
-import '../../assets/styles/global.css'
-import curriculoImg from '../../assets/images/curriculo.png';
+import '../../../assets/styles/global.css';
+import curriculoImg from '../../../assets/images/curriculo.png';
 function Dicas() {
     return (
         <div>

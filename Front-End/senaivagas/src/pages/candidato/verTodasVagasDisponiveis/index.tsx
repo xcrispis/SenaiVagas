@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
-import Header from '../../components/header/index';
-import Footer from '../../components/footer/index'
+import Header from '../../../components/header/index';
+import Footer from '../../../components/footer/index'
 // import ibmLogo from '../../assets/images/ibmlogo.png';
-import CampoDeBusca from '../../components/campo-de-busca/index';
+import CampoDeBusca from '../../../components/campo-de-busca/index';
 
 
 function VagasGerais() {

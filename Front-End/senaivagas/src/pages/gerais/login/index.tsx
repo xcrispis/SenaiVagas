@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/index';
-import Footer from '../../components/footer/index';
-import Input from '../../components/input/index';
-import Button from '../../components/button/index';
-import Img from '../../assets/images/imgBanner2.png';
-import '../../assets/styles/global.css';
+import Header from '../../../components/header/index';
+import Footer from '../../../components/footer/index';
+import Input from '../../../components/input/index';
+import Button from '../../../components/button/index';
+import Img from '../../../assets/images/imgBanner2.png';
+import '../../../assets/styles/global.css';
 import './style.css';
 import { Link, Switch, useHistory } from 'react-router-dom';
 

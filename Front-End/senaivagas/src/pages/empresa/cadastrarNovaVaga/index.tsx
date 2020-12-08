@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Footer from '../../components/footer';
-import Input from '../../components/input';
-import Header from '../../components/header';
-import Button from '../../components/button';
+import Footer from '../../../components/footer';
+import Input from '../../../components/input';
+import Header from '../../../components/header';
+import Button from '../../../components/button';
 import { useHistory } from 'react-router-dom';
 
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
 
 function Cadastrovaga() {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../components/header/index';
-import Footer from '../../components/footer/index';
-import Logo from '../../assets/images/sn_icon.svg';
-import Button from '../../components/button/index';
+import Header from '../../../components/header/index';
+import Footer from '../../../components/footer/index';
+import Logo from '../../../assets/images/sn_icon.svg';
+import Button from '../../../components/button/index';
 
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 import './style.css';
 
 

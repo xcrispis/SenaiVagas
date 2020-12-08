@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
-import '../../assets/styles/global.css';
-import imb from '../../assets/images/person_110935.png'
-import Footer from '../../components/footer';
-import Header from '../../components/header/index';
-import { parseJwt } from '../../services';
+import '../../../assets/styles/global.css';
+import imb from '../../../assets/images/person_110935.png'
+import Footer from '../../../components/footer';
+import Header from '../../../components/header/index';
+import { parseJwt } from '../../../services';
 
-function Perfil() {
+function PerfilEmpresa() {
 
     const [dadosUsuario, setDadosUsuario] = useState([]);
     let dadosColetados: any = [];
     let idUsuario = parseJwt().jti;
 
+
     useEffect(() => {
-        buscaCandidato();
+        buscaEmpresa();
     }, []);
 
-    function buscaCandidato() {
-        fetch('http://localhost:5000/api/Candidato/' + idUsuario, {
+    function buscaEmpresa() {
+        fetch('http://localhost:5000/api/Empresa/' + idUsuario, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
@@ -103,4 +104,4 @@ function Perfil() {
     )
 }
 
-export default Perfil;
+export default PerfilEmpresa;

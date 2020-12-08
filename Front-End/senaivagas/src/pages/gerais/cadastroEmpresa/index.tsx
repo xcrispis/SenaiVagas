@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/index';
-import Input from '../../components/input/index';
-import Button from '../../components/button/index';
-import Footer from '../../components/footer/index';
+import Header from '../../../components/header/index';
+import Input from '../../../components/input/index';
+import Button from '../../../components/button/index';
+import Footer from '../../../components/footer/index';
 
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 
 const CadastroEmpresa: React.FC = () => {
 

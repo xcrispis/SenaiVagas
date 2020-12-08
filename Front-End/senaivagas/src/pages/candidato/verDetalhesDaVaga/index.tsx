@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Footer from '../../components/footer/index';
-import Logo from '../../assets/images/ibmlogo.png';
-import Button from '../../components/button/index';
-import Header from '../../components/header/index';
+import Footer from '../../../components/footer/index';
+import Logo from '../../../assets/images/ibmlogo.png';
+import Button from '../../../components/button/index';
+import Header from '../../../components/header/index';
 
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
 import './style.css';
-import { parseJwt } from '../../services';
+import { parseJwt } from '../../../services';
 
 function VerVagaCandidato() {
 
