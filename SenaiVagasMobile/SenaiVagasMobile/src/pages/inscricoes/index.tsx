@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import  styles  from './style'
+import  styles  from './style';
+import Header from '../../components/header/index'
 
 
 export default function Inscricoes({ navigation }) {
@@ -29,7 +30,7 @@ export default function Inscricoes({ navigation }) {
 
   function pegaId(item: any) {
     sessionStorage.setItem('id-inscricao', item);
-    navigation.navigate('Details');
+    navigation.navigate('DetalhesInscricao');
   }
 
   console.log(minhasVagas);

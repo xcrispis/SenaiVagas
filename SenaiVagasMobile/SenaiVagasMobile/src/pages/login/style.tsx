@@ -1,6 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  containerGeral: {
+    backgroundColor: '#fff',
+    height:'90vh',
+    width:'100vw'
+    
+  },
     container: {
       flex: 1,
       backgroundColor: '#fff',
@@ -11,13 +17,11 @@ const styles = StyleSheet.create({
       marginTop:10,
       padding:10,
       width:300,
-      backgroundColor:'#fff',
+      backgroundColor:'#e8e8e8',
       fontSize: 16,
       fontWeight: 'bold',
       borderColor:'#000',
       borderRadius: 1
-      
-     
     },
     titulo:{
       fontSize: 25,

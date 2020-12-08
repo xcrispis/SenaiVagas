@@ -1,16 +1,15 @@
+import 'react-native-gesture-handler';
 import * as React from 'react';
-import { Text } from 'react-native';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { DrawerActions, NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import login from './src/pages/login/index'
 import home from './src/pages/home/index'
 import minhasVagas from './src/pages/minhasVagas/index';
 import minhasInscricoes from './src/pages/inscricoes/index';
 import detalheInscricao from './src/pages/detralhesInscricao/index';
-import header from './src/components/header/index';
 
 import sair from './src/pages/sair/index';
 
@@ -18,10 +17,14 @@ import sair from './src/pages/sair/index';
 const Drawer = createDrawerNavigator();
 // const Stack = createStackNavigator();
 
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
+    
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+        <Stack.Screen name="DetalhesInscricao" component={detalheInscricao} />
+      <Drawer.Navigator initialRouteName="Home"> 
         
         <Drawer.Screen name="Home" component={home} /> 
         {
@@ -42,7 +45,6 @@ export default function App() {
           
           
         }
-          <Drawer.Screen name="Details" component={detalheInscricao} />
         {
           //usuario logado
           sessionStorage.getItem('logado') == '1' &&

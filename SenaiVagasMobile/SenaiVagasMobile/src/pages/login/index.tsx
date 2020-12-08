@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import { Text, View, TextInput, TouchableOpacity, Button } from 'react-native';
 import styles from './style'
+import Header from '../../components/header/index'
 
 export default function Login({ navigation }) {
 
@@ -72,29 +73,32 @@ export default function Login({ navigation }) {
       });
   }
   return (
-    <View style={styles.container}>
-      <Button onPress={navigation.openDrawer()}></Button>
-      <Text style={styles.titulo}>Login</Text>
-      <TextInput style={styles.input} 
-      placeholder="Digite seu email" 
-      autoCompleteType="email"
-      textContentType='emailAddress'
-      keyboardType='email-address'
-      onChangeText={(email) => setEmail({ email })}
-       /> 
-      <TextInput style={styles.input} 
-      placeholder="Digite sua senha"
-      secureTextEntry={true} 
-      autoCompleteType="password"
-      onChangeText={(senha) => setSenha({ senha })}
-      />  
-      {
-        erroMensagem != '' &&
-        <Text style={styles.messageError}>{erroMensagem}</Text>
-      }
-      <TouchableOpacity style={styles.botao} onPress={()  => login()}>
-        <Text style={styles.textBotao}>Entrar</Text>
-      </TouchableOpacity> 
+    <View  style={styles.containerGeral}>
+      <Header/>
+      <View style={styles.container}>
+        
+        <Text style={styles.titulo}>Login</Text>
+        <TextInput style={styles.input} 
+        placeholder="Digite seu email" 
+        autoCompleteType="email"
+        textContentType='emailAddress'
+        keyboardType='email-address'
+        onChangeText={(email) => setEmail({ email })}
+        /> 
+        <TextInput style={styles.input} 
+        placeholder="Digite sua senha"
+        secureTextEntry={true} 
+        autoCompleteType="password"
+        onChangeText={(senha) => setSenha({ senha })}
+        />  
+        {
+          erroMensagem != '' &&
+          <Text style={styles.messageError}>{erroMensagem}</Text>
+        }
+        <TouchableOpacity style={styles.botao} onPress={()  => login()}>
+          <Text style={styles.textBotao}>Entrar</Text>
+        </TouchableOpacity> 
+      </View>
     </View>
   );
 }
