@@ -1,11 +1,12 @@
 #main-cadastroVaga {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+/* 
 #permissao{
     width: 400px;
     height: 40px;
@@ -13,32 +14,54 @@
     box-sizing: border-box;
     margin: 20px 0px;
     display: flex;
-}
+} */
 
-.alinhar-cadastroVaga{
-        align-items: center;
-        justify-content: center;
-        display: flex;
-}
-
-.container-all{
+.container-all {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-  
-
-.label-cadastroVaga{
-   height: 2vh;
+    justify-content: center;
 }
 
+#centerBoxCadastroVaga {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 14vw;
+    align-items: center;
+    text-align: center;
+}
 
-.centro h1{
+.input-cadastroVaga {
+    height: 2vw;
+    -webkit-box-shadow: inset -1px 0px 32px -18px rgba(0, 0, 0, 0.24);
+    box-shadow: inset -1px 0px 32px -18px rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    width: 15vw;
+    background-color: white;
+    text-align: center;
+    margin-top: 0.5vw;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+#descricaoCadastroVaga {
+    height: 5vw;
+    word-wrap: break-word;
+}
+
+.centro h1 {
     justify-self: center;
     font-size: 30px;
 }
 
-form h1{
+.botao {
+    margin-top: 2vw;
+}
+
+form h1 {
     margin: 40px;
-    color:#635D5D;
+    color: #635D5D;
 }

@@ -46,7 +46,7 @@ function Perfil() {
                 <li><Link className="link" to="/dicas">Dicas</Link></li>
                 <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
             </Header>
-            <main id="main-perfil">
+            <main id="main-perfilCandidato">
                 <section id="lado-esquerdo">
                     <div className="foto-perfil">
                         <img src={imb} alt="" />
@@ -70,7 +70,7 @@ function Perfil() {
                                     <div key={dadosColetados.idCandidato} id="container-dados-esq-dir">
                                         <div className="lado-direito-direita">
                                             <p className="dado-usuario"><b>Nome:</b> {item.nome} {item.sobrenome}</p>
-                                            <p className="dado-usuario"><b>Telefone: {item.telefone}</b></p>
+                                            <p className="dado-usuario"><b>Telefone:</b> {item.telefone}</p>
                                             <p className="dado-usuario"><b>CPF:</b> {item.cpf}</p>
                                             <p className="dado-usuario"><b>Email:</b> {item.emailContato}</p>
                                         </div>

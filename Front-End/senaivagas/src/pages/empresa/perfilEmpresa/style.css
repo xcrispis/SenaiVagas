@@ -1,84 +1,47 @@
 #main-perfil {
     display: flex;
-    height: 100vh;
-}
-
-#lado-esquerdo {
-    padding: 6vh 5vw 8vh 15vw;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.foto-perfil {
-    width: 8vw;
-    height: 8vw;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-bottom: 5vh;
-    border: 0.5vw solid;
-    border-color: #509BF5;
+    margin: 6vh 0 10vh 0;
+    height: 90vh;
     
 }
 
-
-.foto-perfil img {
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-}
-
-#perfil-psicologico {
+#lado-direitoPerfilEmpresa {
     background-color: #EBEBEB;
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding: 2vh;
-    width: 8vw;
-    height: 20vh;
-}
-
-#perfil-psicologico li {
-    padding: 1vh 0px 1vh 0px;
-    font-size: 20px;
-}
-
-#lado-direito {
-    margin: 6vh 5vw 10vh ;
-    background-color: #EBEBEB;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 25px;
+    font-size: 1.3020833333333333vw;
     width: 50vw;
     border-radius: 4px;
-    padding: 5vw;
+    padding: 2vw;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, inset -1px 0px 32px -18px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, inset -1px 0px 32px -18px rgba(0,0,0,0);
 }
 
-
+#lado-direitoPerfilEmpresa img {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+}
 
 #container-dados-esq-dir {
     display: flex;
     justify-content: space-around;
     width: inherit;
-    margin-bottom: 10vh;
 }
 
 .dado-usuario {
-    margin: 5vh 0vw 5vh 0vw;
+    margin: 4vh 0vw 5vh 0vw;
     width: max-content;
     max-width: 30vw;
-    
 }
 
-#lado-direito-esquerda {
-    margin-left: 1vw;
+#razaoSocial {
+    color: red;
+    font-size: 2vw;
 }
 
 #apresentacao-txt-box {
@@ -91,7 +54,4 @@
 
 #apresentacao-txt-box p {
     width: fit-content;
-    
-
 }
-

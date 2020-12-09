@@ -3,7 +3,7 @@ import Footer from '../../../components/footer';
 import Input from '../../../components/input';
 import Header from '../../../components/header';
 import Button from '../../../components/button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import './style.css';
 import '../../../assets/styles/global.css';
@@ -49,36 +49,42 @@ function Cadastrovaga() {
   }
   return (
     <div>
-      <Header />
+      <Header>
+        <li><Link className="link" to="/cadastro-vaga">Criar Vaga</Link></li>
+        <li><Link className="link" to="/perfil-empresa">Meu Perfil</Link></li>
+      </Header>
       <main id="main-cadastroVaga">
 
 
         <div className="alinhar-cadastroVaga">
 
           <div className="container-all">
-            <div className="centro">
-              <form onSubmit={event => {
-                event.preventDefault();
-                cadastrovaga();
-                alert('Vaga Cadastrada');
-                History.push("/");
-              }}>
-                <h1>Cadastre sua Vaga</h1>
-                <Input type="text" className='label-cadastroVaga' label="Título da Vaga:" name="titulo" placeholder=" Ex: Consultor em segurança da informação " onChange={e => setTitulo(e.target.value)} />
-                <br></br>
+
+            <form onSubmit={event => {
+              event.preventDefault();
+              cadastrovaga();
+              alert('Vaga Cadastrada');
+              History.push("/cadastro-vaga");
+            }}>
+              <h1>Cadastre sua Vaga</h1>
+
+              <div id="centerBoxCadastroVaga">
+                <Input type="text" className='input-cadastroVaga' label="Título da Vaga" name="titulo" placeholder=" Ex: Consultor em segurança da informação " onChange={e => setTitulo(e.target.value)} />
+
                 {/* <Input type="text" label="Area da Vaga:" name="areavaga"  placeholder=" Front-End" onChange={e => setAreaVaga(e.target.value)}/> */}
-                <br></br>
-                <Input type="text" className='label-cadastroVaga' label="Descrição da vaga:" name="descricao" placeholder=" Ex: Vaga de segurança da informação, em São Paulo" onChange={e => setDescricao(e.target.value)} />
-                <br></br>
-                <Input type="text" className='label-cadastroVaga' label="Requisítos e habilidades:" name="habilidade" placeholder=" Ex: Experiência em Java " onChange={e => setHabilidade(e.target.value)} />
-                <br />
-                <div className="botao">
-                  <Button value="Enviar" />
-                </div>
-                <br></br>
-                <br></br>
-              </form>
-            </div>
+
+                <Input type="text" id="descricaoCadastroVaga" className='input-cadastroVaga' label="Descrição da Vaga" name="descricao" placeholder=" Ex: Vaga de segurança da informação, em São Paulo" onChange={e => setDescricao(e.target.value)} />
+
+                <Input type="text" className='input-cadastroVaga' label="Requisítos e Habilidades" name="habilidade" placeholder=" Ex: Experiência em Java " onChange={e => setHabilidade(e.target.value)} />
+              </div>
+
+
+              <div className="botao">
+                <Button value="Enviar" />
+              </div>
+
+
+            </form>
           </div>
         </div>
       </main>
