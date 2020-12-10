@@ -12,6 +12,7 @@ import minhasInscricoes from './src/pages/inscricoes/index';
 import detalheInscricao from './src/pages/detralhesInscricao/index';
 
 import sair from './src/pages/sair/index';
+import { useState } from 'react';
 
 
 const Drawer = createDrawerNavigator();
@@ -20,6 +21,8 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
+  const [logado, setLogado] = useState('');
+  setLogado(sessionStorage.getItem('logado'));
   return (
     
     <NavigationContainer>

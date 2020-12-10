@@ -1,6 +1,7 @@
 import React, { useEffect }  from 'react';
 import { View, Image, Text } from 'react-native';
-import styles from './style'
+import Header from '../../components/header/index';
+import styles from './style';
 
 export default function sair({navigation}){
     useEffect( () => {
@@ -10,10 +11,12 @@ export default function sair({navigation}){
     {
         localStorage.clear();
         sessionStorage.clear();
-        navigation.navigate('Home')}
+        navigation.navigate('Home')
+    }
     return (
     <View style={styles.container}>
-        <Text>Até mais</Text>
+        <Header />
+        <Text>Saindo</Text>
     </View>
     )
 }
