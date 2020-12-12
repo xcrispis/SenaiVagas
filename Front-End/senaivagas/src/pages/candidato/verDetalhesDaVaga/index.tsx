@@ -25,7 +25,7 @@ function VerVagaCandidato() {
             IdVaga: id,
             FkCandidato: idUser
         }
-        
+
         fetch('http://localhost:5000/api/Inscricao', {
             method: 'POST',
             body: JSON.stringify(form),
@@ -37,19 +37,19 @@ function VerVagaCandidato() {
             .then(response => response.json())
             .then(() => {
                 alert('Cadidatado com sucesso');
-                history.push("/vagas");        
+                history.push("/vagas");
             })
     }
 
     useEffect(() => {
         carregaDadosVaga();
-        
+
     }, []);
 
     function carregaDadosVaga() {
         // let idUser = parseJwt().jti;
         console.log(parseJwt());
-        
+
         fetch('http://localhost:5000/api/Vaga/' + id, {
             method: 'GET',
             headers: {
@@ -61,7 +61,7 @@ function VerVagaCandidato() {
             .then(dados => {
                 setDadoVaga(dados);
                 console.log(dados);
-                
+
             })
     }
 
@@ -69,7 +69,13 @@ function VerVagaCandidato() {
     return (
         <div>
 
-            <Header/>
+            <Header>
+                <li><Link className="link" to="/vagas">Vagas Gerais</Link></li>
+                <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/dicas">Dicas</Link></li>
+                <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+            </Header>
+            
             <main id="main-verVagaCandidato">
 
                 <div className="logos">
@@ -81,42 +87,43 @@ function VerVagaCandidato() {
                 </div>
                 <div className="view-contrato">
                     {
-                        
 
-                           dadoVaga.map((item:any) => {
-                                 return (
-                                    <div >
-                        <div className="dados">
-                            <h2>Descrição da vaga:</h2>
-                                 <p>{item.descricao}</p>
-                        </div>
 
-                        <div className="linha"></div>
+                        dadoVaga.map((item: any) => {
+                            return (
+                                <div >
+                                    <div className="dados">
+                                        <h2>Descrição da vaga:</h2>
+                                        <p>{item.descricao}</p>
+                                    </div>
 
-                        <div className="dados">
-                            <h2>Requisitos e Skills</h2>
-                                 <p>{item.habilidades}</p>
-                        </div>
+                                    <div className="linha"></div>
 
-                        <div className="linha"></div>
+                                    <div className="dados">
+                                        <h2>Requisitos e Skills</h2>
+                                        <p>{item.habilidades}</p>
+                                    </div>
 
-                        <div className="dados">
-                            <h2>Sobre a empresa</h2>
-                                 <p> {item.fkEmpresaNavigation.apresentacao}</p>
-                        </div>
+                                    <div className="linha"></div>
 
-                        <div className="linha"></div>
+                                    <div className="dados">
+                                        <h2>Sobre a empresa</h2>
+                                        <p> {item.fkEmpresaNavigation.apresentacao}</p>
+                                    </div>
 
-                        <div className="dados">
-                            <h2>Contato:</h2>
-                            <p>Envie currículo para {item.fkEmpresaNavigation.emailContato}  </p>
-                           
-                        </div>
+                                    <div className="linha"></div>
 
-                        <div className="linha"></div>
-                    </div>
-                                 )}
-                             )
+                                    <div className="dados">
+                                        <h2>Contato:</h2>
+                                        <p>Envie currículo para {item.fkEmpresaNavigation.emailContato}  </p>
+
+                                    </div>
+
+                                    <div className="linha"></div>
+                                </div>
+                            )
+                        }
+                        )
                     }
 
 
@@ -124,10 +131,10 @@ function VerVagaCandidato() {
 
                 <div className="botao-editar">
                     <form onSubmit={event => {
-                    event.preventDefault();
-                    candidatar();
+                        event.preventDefault();
+                        candidatar();
                     }}>
-                        <Button value="CANDIDATAR-SE"/>
+                        <Button value="CANDIDATAR-SE" />
                     </form>
                 </div>
 

@@ -40,12 +40,18 @@ function Login() {
           
           // convert o token em uma string
           var tokenstring =  window.atob(base64);
+          
           // busca o campo "Role" na string e devolve seu valor
           var tipoUser = tokenstring.split(',')[2].split(':')[2];
+          let idUser = tokenstring.split(",")[1].split(":")[1];
           //retira as aspas duplas da string
-          tipoUser = tipoUser.slice(1, -1);
+          tipoUser = tipoUser.slice(1, -1);        
+          idUser = idUser.slice(1, -1);
+
           
           localStorage.setItem('permicao', tipoUser);
+          localStorage.setItem('idUser', idUser);
+
 
           setIsloading(false);
           switch(tipoUser){

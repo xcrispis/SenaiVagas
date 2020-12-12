@@ -76,6 +76,25 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
+        [HttpGet("candidato/{id}")]
+        public IActionResult GetByCandidato(int id)
+        {
+            try
+            {
+                List<Inscricao> inscricaoBuscada = _inscricaoRepository.BuscarPorCandidato(id);
+                if (inscricaoBuscada != null)
+                {
+                    return Ok(inscricaoBuscada);
+                }
+
+                return NotFound("Nenhuma vaga  encontrada para o ID informado de usuario");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
         [HttpPost]
         public IActionResult Post(Inscricao novaInscricao)
         {

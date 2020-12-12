@@ -41,7 +41,7 @@ namespace SenaiVagasAPI.Repositories
             inscricao.StatusIncricao = statusInscricao;
         }
 
-        Inscricao BuscarPorId(int id)
+        public Inscricao BuscarPorId(int id)
         {
             return ctx.Inscricao
          .Include(e => e.FkcandidatoNavigation)
@@ -55,11 +55,10 @@ namespace SenaiVagasAPI.Repositories
          .Include(e => e.IdVagaNavigation).Where(i => i.IdVaga == id).ToList();
         }
 
-        Inscricao IInscricaoRepository.BuscarPorId(int id)
+        List<Inscricao> IInscricaoRepository.BuscarPorCandidato(int id)
         {
-            return ctx.Inscricao
-        .Include(e => e.FkcandidatoNavigation)
-        .FirstOrDefault(i => i.IdVaga == id);
+        return ctx.Inscricao
+         .Include(V => V.IdVagaNavigation.FkEmpresaNavigation).Where(i => i.FkcandidatoNavigation.FkUsuario == id).ToList();
         }
     }
 }

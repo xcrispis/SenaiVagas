@@ -10,13 +10,19 @@ import CampoDeBusca from '../../../components/campo-de-busca';
 function MinhasVagas() {
 
     const [minhasVagas, setMinhasVagas] = useState([]);
+    let idUser = localStorage.getItem("idUser")
 
     useEffect(() => {
         buscaMinhasVagas();
     }, []);
 
+    function pegaId(item: any) {
+        localStorage.setItem('id-vaga-inscrita', item);
+        //navigation.navigate('Details')
+    }
+
     function buscaMinhasVagas() {
-        fetch('http://localhost:5000/api/Inscricao', {
+        fetch('http://localhost:5000/api/Inscricao/candidato/'+ idUser, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
@@ -45,54 +51,39 @@ function MinhasVagas() {
                 <CampoDeBusca />
                 <section className="container-geral-minhasVagas">
 
+                    {
+                        minhasVagas.map((item: any) => {
+                            return (
 
-                    <div className="alinha-linha">
-                        <div className="container-individual-minhasVagas">
-                            <img src={ibmLogo} alt="" />
-                            <div className="container-2">
-                                <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                            </div>
+                                <div className="alinha-linha" onClick={() => pegaId(item.idVaga)} >
+                                    <div className="container-individual-minhasVagas">
+                                        <img src={ibmLogo} alt="" />
+                                        <div className="container-2">
+                                            <p className="cargo-text">{item.idVagaNavigation.cargo}</p>
+                                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
+                                        </div>
 
-                            <div className="container-4">
-                                <p className="local-title"><b>Status</b></p>
-                                <p className="local-text">Em andamento</p>
-                            </div>
-                        </div>
-                        <div className="blue-div"></div>
-                    </div>
+                                        <div className="container-4">
+                                            <p className="local-title"><b>Status</b></p>
+                                            <p className="local-text"> 
+                                            {
+                                                item.statusIncricao == false &&
+                                                "Em andamento"
+                                            }
+                                            {
+                                                    item.statusIncricao == true &&
+                                                    "Finalizado"
+                                            }</p>
+                                        </div>
+                                    </div>
+                                    <div className="blue-div"></div>
+                                </div>
 
-                    <div className="alinha-linha">
-                        <div className="container-individual-minhasVagas">
-                            <img src={ibmLogo} alt="" />
-                            <div className="container-2">
-                                <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                            </div>
+                            )
+                        }
 
-                            <div className="container-4">
-                                <p className="local-title"><b>Status</b></p>
-                                <p className="local-text">Em andamento</p>
-                            </div>
-                        </div>
-                        <div className="blue-div"></div>
-                    </div>
-
-                    <div className="alinha-linha">
-                        <div className="container-individual-minhasVagas">
-                            <img src={ibmLogo} alt="" />
-                            <div className="container-2">
-                                <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
-                                <p className="nome-empresa-text"> International Business Machines Corporation</p>
-                            </div>
-
-                            <div className="container-4">
-                                <p className="local-title"><b>Status</b></p>
-                                <p className="local-text">Em andamento</p>
-                            </div>
-                        </div>
-                        <div className="blue-div"></div>
-                    </div>
+                        )
+                    }
 
 
 
