@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import  styles  from './style';
 import Header from '../../components/header/index'
+import { useNavigation } from '@react-navigation/native';
 
 
-export default function Inscricoes({ navigation }) {
+export default function Inscricoes() {
+  const navigation = useNavigation();
 
   const [minhasVagas, setMinhasVagas] = useState([]);
 

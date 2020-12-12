@@ -10,6 +10,7 @@ import home from './src/pages/home/index'
 import minhasVagas from './src/pages/minhasVagas/index';
 import minhasInscricoes from './src/pages/inscricoes/index';
 import detalheInscricao from './src/pages/detralhesInscricao/index';
+import Routes from './routes';
 
 import sair from './src/pages/sair/index';
 import { useState } from 'react';
@@ -21,39 +22,37 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [logado, setLogado] = useState('');
-  setLogado(sessionStorage.getItem('logado'));
+  const [logado, setLogado] = useState(sessionStorage.getItem('logado'));
   return (
     
     <NavigationContainer>
-        <Stack.Screen name="DetalhesInscricao" component={detalheInscricao} />
       <Drawer.Navigator initialRouteName="Home"> 
-        
         <Drawer.Screen name="Home" component={home} /> 
         {
           //usuario não logado
-          sessionStorage.getItem('logado') == '0' || sessionStorage.getItem('logado') == null &&
+          logado == '0' || logado == null &&
           <Drawer.Screen name="Login" component={login} />
         }
         {
           //usuario logado
-          sessionStorage.getItem('logado') == '1' && sessionStorage.getItem('permissao') == '1' &&
+          logado == '1' && sessionStorage.getItem('permissao') == '1' &&
           <Drawer.Screen name="Minhas Vagas" component={minhasVagas} />
           
         }
         {
           //usuario logado Empresa
-          sessionStorage.getItem('logado') == '1' && sessionStorage.getItem('permissao') == '2' &&
+          logado == '1' && sessionStorage.getItem('permissao') == '2' &&
           <Drawer.Screen name="Minhas Inscrições" component={minhasInscricoes} />
           
           
         }
         {
           //usuario logado
-          sessionStorage.getItem('logado') == '1' &&
+          logado == '1' &&
           <Drawer.Screen name="Sair" component={sair} />
 
         }
+        {/* <Drawer.Screen name="routes" component={Routes} />  ver como deixar invisivel*/}
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -2,7 +2,6 @@ import React, { useState }  from 'react';
 import { Text, View, TextInput, TouchableOpacity, Button } from 'react-native';
 import styles from './style'
 import Header from '../../components/header/index';
-import App from '../../../App';
 
 export default function Login({ navigation }) {
 
@@ -48,13 +47,11 @@ export default function Login({ navigation }) {
           sessionStorage.setItem('logado', '1');
 
           setIsloading(false);
+          
           switch(tipoUser){
             case '1':
               navigation.navigate('Home')
               console.log('candidato')
-              {
-                App();
-              }
               break;
             case '2' :
               navigation.navigate('Home')
@@ -63,6 +60,7 @@ export default function Login({ navigation }) {
             case '3':
               navigation.navigate('Home') 
               console.log('adm')
+              
               break;
           }
         } else {

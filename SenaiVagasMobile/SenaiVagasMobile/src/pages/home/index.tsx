@@ -3,7 +3,7 @@ import { Text, View, Image, Button } from 'react-native';
 import styles from './style'
 import Header from '../../components/header/index'
 
-export default function Home(){
+export default function Home( ){
   return (
     <View>
       <Header />

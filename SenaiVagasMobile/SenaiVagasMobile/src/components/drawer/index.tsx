@@ -22,13 +22,12 @@ export default function DrawerPage() {
     const [logado, setLogado] = useState(sessionStorage.getItem('logado'));
     const [permissao, setPermissao] = useState(sessionStorage.getItem('permissao'));
     return (
-        <NavigationContainer>
-            <Stack.Screen name="DetalhesInscricao" component={detalheInscricao} />
             <Drawer.Navigator initialRouteName="Home">
+
                 <Drawer.Screen name="Home" component={home} />
                 {
                     //usuario não logado
-                    logado == null &&
+                    logado == '0' || logado == null &&
                     <Drawer.Screen name="Login" component={login} />
                 }
                 {
@@ -51,7 +50,6 @@ export default function DrawerPage() {
 
                 }
             </Drawer.Navigator>
-        </NavigationContainer>
     )
 }
-    
+
