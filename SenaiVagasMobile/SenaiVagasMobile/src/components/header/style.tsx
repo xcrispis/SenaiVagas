@@ -4,7 +4,8 @@ const styles = StyleSheet.create({
     container: {
         width: '100vw',
         height: 60,
-        backgroundColor: '#509BF5'
+        backgroundColor: '#509BF5',
+        marginBottom: '10vw'
     },
     header: {
         width: '80%',

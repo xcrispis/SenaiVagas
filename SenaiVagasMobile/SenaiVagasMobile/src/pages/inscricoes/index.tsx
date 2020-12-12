@@ -41,7 +41,10 @@ export default function Inscricoes() {
 
 
   return (
-    <View style={styles.container}>
+    <View>
+      <Header />
+      <View style={styles.container}>
+      
       <View style={styles.containerGeralMinhasVagas}>
 
 
@@ -87,6 +90,8 @@ export default function Inscricoes() {
 
       </View>
     </View>
+    </View>
+    
   );
 }
 

@@ -5,7 +5,7 @@ import Header from '../../components/header/index'
 
 export default function Home( ){
   return (
-    <View>
+    <View style={{backgroundColor: '#fff'}}>
       <Header />
       <View style={styles.container}>
         <View style={styles.containerHome}>

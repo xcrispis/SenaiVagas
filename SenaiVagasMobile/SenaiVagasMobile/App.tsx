@@ -20,6 +20,22 @@ const Drawer = createDrawerNavigator();
 // const Stack = createStackNavigator();
 
 const Stack = createStackNavigator();
+const screenOptionStyle = {
+  headerStyle: {
+    backgroundColor: "#9AC4F8",
+  },
+  headerTintColor: "white",
+  headerBackTitle: "Back",
+};
+
+const InscricaoNavigator = () => {
+  return (
+    <Stack.Navigator headerMode='none'>
+      <Drawer.Screen name="Minhas Inscrições" component={minhasInscricoes} />
+      <Stack.Screen name="DetalhesInscricao" component={detalheInscricao} />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   const [logado, setLogado] = useState(sessionStorage.getItem('logado'));
@@ -27,6 +43,7 @@ export default function App() {
     
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home"> 
+        
         <Drawer.Screen name="Home" component={home} /> 
         {
           //usuario não logado
@@ -42,7 +59,7 @@ export default function App() {
         {
           //usuario logado Empresa
           logado == '1' && sessionStorage.getItem('permissao') == '2' &&
-          <Drawer.Screen name="Minhas Inscrições" component={minhasInscricoes} />
+          <Drawer.Screen name="Minhas Inscrições" component={InscricaoNavigator} />
           
           
         }
