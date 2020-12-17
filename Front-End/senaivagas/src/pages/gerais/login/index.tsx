@@ -43,7 +43,7 @@ function Login() {
           
           // busca o campo "Role" na string e devolve seu valor
           var tipoUser = tokenstring.split(',')[2].split(':')[2];
-          let idUser = tokenstring.split(",")[1].split(":")[1];
+          var idUser = tokenstring.split(",")[1].split(":")[1];
           //retira as aspas duplas da string
           tipoUser = tipoUser.slice(1, -1);        
           idUser = idUser.slice(1, -1);

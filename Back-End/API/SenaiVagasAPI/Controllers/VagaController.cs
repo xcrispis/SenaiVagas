@@ -64,6 +64,20 @@ namespace SenaiVagasAPI.Controllers
             }
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("empresa/{IdEmpresa}")]
+        public IActionResult GetByIdEmpresa(int IdEmpresa)
+        {
+            try
+            {             
+                return Ok(_vagaRepository.BuscarVagaPorEmpresa(IdEmpresa));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
 
         //Cadastrar uma nova vaga e retorna um status code  
         [ProducesResponseType(StatusCodes.Status201Created)]

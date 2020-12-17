@@ -10,7 +10,7 @@
 }
 
 .linha-central {
-    height: 48px;
+    height: 44px;
     transform: rotate(90);
     border: 1px solid #000;
     margin-bottom: 8vh;
@@ -32,25 +32,26 @@
 }
 
 .contrato .linha-dashboard {
-    border: 6px solid #509BF5;
+    border: 4px solid #000;
 }
 
 .empresas .linha-dashboard {
-    border: 6px solid #ff0000;
+    border: 4px solid #000;
 }
 
 .row-dashboard {
     display: flex;
-    flex-direction: row ;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-dashboard .dados-empresa {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.row-dashboard  .dados-empresa {
-    display: flex;
-    flex-direction: row;
-}
-
-.row-dashboard  .dados-empresa .apresentacao {
+.row-dashboard .dados-empresa .apresentacao {
     width: 344px;
     height: 78px;
     background-color: #EBEBEB;
@@ -62,7 +63,7 @@
 }
 
 .row-dashboard .dados-empresa .contato {
-    width: 134px;
+    width: 10vw;
     height: 78px;
     background-color: #EBEBEB;
     display: flex;
@@ -70,33 +71,42 @@
     flex-direction: column;
     font-size: 12px;
     margin: 0vh 5vh 0vh 5vh;
+    text-align: center;
 }
 
-.row-dashboard  .dados-empresa .contato h3 {
+.row-dashboard .dados-empresa .contato h3 {
     display: flex;
     justify-content: center;
 }
 
-.row-dashboard  .dados-empresa .apresentacao h3 {
+.row-dashboard .dados-empresa .apresentacao h3 {
     display: flex;
     justify-content: center;
 }
 
-.row-dashboard  .dados-empresa .logos-dashboard .logo-dashboard{
-    width: 154px;
-    height: 91px;
+.row-dashboard .dados-empresa .apresentacao p {
+    text-align: center;
+}
+
+.row-dashboard .dados-empresa .logos-dashboard .logo-dashboard {
+    width: 2vw;
+    height: 2vw;
+}
+
+.logo {
+    width: 90%;
 }
 
 .row-dashboard .botoes {
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
     margin-top: -2.8vh;
 }
 
 .row-dashboard .botoes .aceitar .button {
     width: 125px;
-    height: 22px;
+    height: 30px;
     background-color: #509BF5;
     margin-bottom: 1vh;
     letter-spacing: 0px;
@@ -106,7 +116,7 @@
 
 .row-dashboard .botoes .recusar .button {
     width: 125px;
-    height: 22px;
+    height: 30px;
     background-color: #ff0000;
     letter-spacing: 0px;
     font-size: 14px;
@@ -123,26 +133,39 @@
     justify-content: center;
     border: 1px solid #509BF5;
     margin-bottom: 10vh;
-    width: 920px;    
+    width: 920px;
 }
 
 .contrato {
-    cursor: pointer;
     height: 7.5vh;
 }
 
 .contrato:hover {
     cursor: pointer;
-    color: red;
+    color: #509BF5;
+}
+
+.empresas {
+    height: 7.5vh;
+}
+
+.empresas:hover {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /**********************************
             Contrato
 **********************************/
 
-.ahunaoi {
+.flex {
     display: flex;
     justify-content: center;
+    margin-top: -300px;
 }
 
 .contratos {
@@ -165,7 +188,7 @@
     margin-top: 1.2vh;
 }
 
-.contratos .cpf-aluno,.curso,.inicio,.termino,.status {
+.contratos .cpf-aluno, .curso, .inicio, .termino, .status {
     width: 118px;
     height: 76px;
     background-color: #EBEBEB;
@@ -177,4 +200,34 @@
 .contratos .logo-dashboard {
     width: 154px;
     height: 91px;
+}
+
+.botoes .aceitar .button:hover {
+    cursor: pointer;
+    color: #D9B26C;
+}
+
+.botoes .recusar .button:hover {
+    cursor: pointer;
+}
+
+/**********************************
+            Clicked
+**********************************/
+
+.linha-clicked {
+    width: 470px;
+    border: 4px solid #509BF5;
+}
+
+.h2 {
+    color: #509BF5;
+}
+
+.bottom {
+    margin-top: 300px;
+}
+
+.try-it {
+    margin-top: 300px;
 }

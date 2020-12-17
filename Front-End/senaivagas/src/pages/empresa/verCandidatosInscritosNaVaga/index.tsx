@@ -3,15 +3,24 @@ import Footer from '../../../components/footer';
 import './style.css'
 import '../../../assets/styles/global.css';
 
-import ibmLogo from '../../../assets/images/ibmlogo.png';
+import ibmLogo from '../../../assets/images/bandai-namco-logo.png';
 import Header from '../../../components/header';
+import { Link } from 'react-router-dom';
 
 function verCandidatos() {
 
+    
+
     return (
         <div>
-            <Header/>
-            <main id="main-verCandidatos"> 
+            <Header>
+                <li><Link className="link" to="/cadastro-vaga">Cadastrar Vagas</Link></li>
+                <li><Link className="link" to="/minhas-vagas-empresa">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/perfil-Empresa">Meu Perfil</Link></li>
+                <li><Link className="link" to="/">Sair</Link></li>
+            </Header>
+
+            <main id="main-verCandidatos">
                 <h1 id="verVagas-h1-candidatos">CANDIDATOS</h1>
                 <div className="blue-box-title"><b>DESCRIÇÃO</b></div>
                 <div className="alinha-linha-verCandidatos">
@@ -19,7 +28,7 @@ function verCandidatos() {
                         <img src={ibmLogo} alt="" />
                         <div className="container-2-verCandidatos">
                             <p className="cargo-text-verCandidato">Desenvolvedor(a) Front-End Junior.</p>
-                            <p className="nome-empresa-text-verCandidato"> International Business Machines Corporation</p>
+                            <p className="nome-empresa-text-verCandidato"> Bandai Namco</p>
                         </div>
 
                         <div className="container-3-verCandidatos">

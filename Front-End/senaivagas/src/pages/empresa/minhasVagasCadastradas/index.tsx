@@ -9,9 +9,10 @@ import Footer from '../../../components/footer/index'
 import CampoDeBusca from '../../../components/campo-de-busca/index';
 
 
-function VagasGerais() {
+function MinhasVagasCadastradas() {
 
     let history = useHistory();
+    let idUsuario = localStorage.getItem("idUser");
 
 
     const [vagas, setVagas] = useState([]);
@@ -22,7 +23,7 @@ function VagasGerais() {
 
     function buscaVagas() {
         console.log('chegouaqu  n?')
-        fetch('http://localhost:5000/api/Vaga', {
+        fetch('http://localhost:5000/api/Vaga/empresa/' + idUsuario, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
@@ -32,39 +33,40 @@ function VagasGerais() {
             .then(response => response.json())
             .then(dados => {
                 setVagas(dados);
-                console.log('chegouaqu  n?' + dados);
+
             })
             .catch(error => console.log(error))
     }
 
+
+
     function pegaId(item: any) {
         localStorage.setItem('id-vaga', item);
-        history.push('/ver-vaga');
+        history.push('/ver-candidatos');
     }
 
     return (
         <div>
 
             <Header>
-                <li><Link className="link" to="/vagas">Vagas Gerais</Link></li>
-                <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
-                <li><Link className="link" to="/dicas">Dicas</Link></li>
-                <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+                <li><Link className="link" to="/cadastro-vaga">Cadastrar Vagas</Link></li>
+                <li><Link className="link" to="/minhas-vagas-empresa">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/perfil-Empresa">Meu Perfil</Link></li>
                 <li><Link className="link" to="/">Sair</Link></li>
             </Header>
-
             <main id="mainVagasGerais">
                 <CampoDeBusca />
                 <section className="container-geral">
 
                     {
+
                         vagas.map((item: any) => {
                             return (
                                 <div onClick={() => pegaId(item.idVaga)} className="alinha-linha">
                                     <div key={item.idVaga} className="container-individual">
                                     <img src={ibm} alt="" />
                                         <div className="container-2">
-                                            <p className="cargo-text">Desenvolvedor(a) Front-End Junior.</p>
+                                            <p className="cargo-text">{item.cargo}</p>
                                             <p className="nome-empresa-text">{item.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
@@ -84,7 +86,7 @@ function VagasGerais() {
                             )
                         })
                     }
-                    
+
                 </section>
             </main>
             <Footer />
@@ -95,4 +97,4 @@ function VagasGerais() {
 
 
 
-export default VagasGerais;
+export default MinhasVagasCadastradas;

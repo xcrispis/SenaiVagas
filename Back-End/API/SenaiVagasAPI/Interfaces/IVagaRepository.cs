@@ -44,5 +44,7 @@ namespace SenaiVagasAPI.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Vaga BuscarPorId(int id);
+
+        List<Vaga> BuscarVagaPorEmpresa(int IdEmpresa);
     }
 }

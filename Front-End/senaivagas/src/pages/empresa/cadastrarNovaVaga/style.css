@@ -1,67 +1,53 @@
-#main-cadastroVaga {
-    height: 80vh;
+.center-vaga h1 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    margin-top: 8vh;
+    font-size: 24px;
+    font-weight: bold;
+    color: #292929;
 }
 
-/* 
-#permissao{
-    width: 400px;
-    height: 40px;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    margin: 20px 0px;
-    display: flex;
-} */
-
-.container-all {
+.row-vaga {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
 }
 
-#centerBoxCadastroVaga {
+.column-vaga {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 14vw;
-    align-items: center;
-    text-align: center;
+    padding: 8vh;
 }
 
-.input-cadastroVaga {
-    height: 2vw;
-    -webkit-box-shadow: inset -1px 0px 32px -18px rgba(0, 0, 0, 0.24);
-    box-shadow: inset -1px 0px 32px -18px rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    width: 15vw;
-    background-color: white;
-    text-align: center;
-    margin-top: 0.5vw;
+.row-vaga label {
+    font-size: 16px;
 }
 
-input:focus, textarea:focus {
-    outline: none;
+.row-vaga input, select {
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #000;
 }
 
-#descricaoCadastroVaga {
-    height: 5vw;
-    word-wrap: break-word;
+.select {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.1vh;
 }
 
-.centro h1 {
-    justify-self: center;
-    font-size: 30px;
-}
+@media only screen and (max-width: 660px) {
+    .row-vaga {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.botao {
-    margin-top: 2vw;
-}
-
-form h1 {
-    margin: 40px;
-    color: #635D5D;
+    .column-vaga {
+        padding: 0;
+    }
+    
+    .center-vaga h1 {
+        margin-bottom: 6vh;
+    }
 }

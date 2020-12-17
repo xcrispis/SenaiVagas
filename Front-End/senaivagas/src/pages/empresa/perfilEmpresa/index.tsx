@@ -40,8 +40,10 @@ function PerfilEmpresa() {
     return (
         <div>
             <Header>
-                <li><Link className="link" to="/cadastro-vaga">Criar Vaga</Link></li>
-                <li><Link className="link" to="/perfil-empresa">Meu Perfil</Link></li>
+                <li><Link className="link" to="/cadastro-vaga">Cadastrar Vagas</Link></li>
+                <li><Link className="link" to="/minhas-vagas-empresa">Minhas Vagas</Link></li>
+                <li><Link className="link" to="/perfil-Empresa">Meu Perfil</Link></li>
+                <li><Link className="link" to="/">Sair</Link></li>
             </Header>
             <main id="main-perfil">
                 <section>
@@ -50,10 +52,10 @@ function PerfilEmpresa() {
                         dadosUsuario.map((item: any) => {
                             return (
 
-                                <div  id="lado-direitoPerfilEmpresa">                                 
-                                        <img src={ibm} alt="" />
+                                <div id="lado-direitoPerfilEmpresa">
+                                    <img src={ibm} alt="" />
                                     <p className="dado-usuario" id="razaoSocial" ><b>{item.razaoSocial}</b></p>
-                                    
+
 
                                     <div id="apresentacao-txt-box">
                                         <div><b>Sobre Nós</b></div>
@@ -62,16 +64,12 @@ function PerfilEmpresa() {
                                         </p>
                                     </div>
 
-                                 
-                                        <div className="lado-direito-direita">
-                                            <p className="dado-usuario"><b>Telefone:</b> {item.telefone}</p>
-                                            <p className="dado-usuario"><b>CNPJ:</b> {item.cnpj}</p>
-                                            <p className="dado-usuario"><b>Email:</b> {item.emailContato}</p>
-                                        </div>
 
-
-                               
-
+                                    <div className="lado-direito-direita">
+                                        <p className="dado-usuario"><b>Telefone:</b> {item.telefone}</p>
+                                        <p className="dado-usuario"><b>CNPJ:</b> {item.cnpj}</p>
+                                        <p className="dado-usuario"><b>Email:</b> {item.emailContato}</p>
+                                    </div>
 
                                 </div>
 

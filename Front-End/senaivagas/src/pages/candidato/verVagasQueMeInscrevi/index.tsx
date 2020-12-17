@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import '../../../assets/styles/global.css';
 import Footer from '../../../components/footer';
-import ibmLogo from '../../../assets/images/ibmlogo.png';
+import ibmLogo from '../../../assets/images/bandai-namco-logo.png'
 import Header from '../../../components/header/index';
 import { Link } from 'react-router-dom';
 import CampoDeBusca from '../../../components/campo-de-busca';
@@ -44,6 +44,7 @@ function MinhasVagas() {
                 <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
                 <li><Link className="link" to="/dicas">Dicas</Link></li>
                 <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+                <li><Link className="link" to="/">Sair</Link></li>
             </Header>
 
             <main id="mainMinhasVagas">
@@ -60,7 +61,7 @@ function MinhasVagas() {
                                         <img src={ibmLogo} alt="" />
                                         <div className="container-2">
                                             <p className="cargo-text">{item.idVagaNavigation.cargo}</p>
-                                            <p className="nome-empresa-text"> International Business Machines Corporation</p>
+                                            <p className="nome-empresa-text">{item.idVagaNavigation.fkEmpresaNavigation.razaoSocial}</p>
                                         </div>
 
                                         <div className="container-4">

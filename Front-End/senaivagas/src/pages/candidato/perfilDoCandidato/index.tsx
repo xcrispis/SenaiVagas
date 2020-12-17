@@ -45,6 +45,7 @@ function Perfil() {
                 <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
                 <li><Link className="link" to="/dicas">Dicas</Link></li>
                 <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+                <li><Link className="link" to="/">Sair</Link></li>
             </Header>
             <main id="main-perfilCandidato">
                 <section id="lado-esquerdo">

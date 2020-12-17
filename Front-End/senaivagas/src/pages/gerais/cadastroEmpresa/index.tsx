@@ -6,8 +6,10 @@ import Footer from '../../../components/footer/index';
 
 import './style.css';
 import '../../../assets/styles/global.css';
+import { useHistory } from 'react-router-dom';
 
 const CadastroEmpresa: React.FC = () => {
+    let history = useHistory();
 
     // const [idEmpresa, setEmpresa] = useState<IdadosEmpresa>({
     //     RazaoSocial: '',
@@ -59,7 +61,6 @@ const CadastroEmpresa: React.FC = () => {
 
     const salvarUsuario = () => {
 
-        alert('roi');
         const formUsuario = {
             FkTipoUsuario: tipoUsuario,
             Email: email,
@@ -124,7 +125,6 @@ const CadastroEmpresa: React.FC = () => {
 
     const salvar = (idUsuario: any, idEndereco: any) => {
 
-        alert('Empresa cadastrada');
 
         const form = {
             // tipoUsuario: tipoUsuario,
@@ -156,6 +156,7 @@ const CadastroEmpresa: React.FC = () => {
         })
             .then(() => {
                 setIdEmpresa(0);
+                history.push('/');
 
             })
             .catch(erro => console.error(erro));

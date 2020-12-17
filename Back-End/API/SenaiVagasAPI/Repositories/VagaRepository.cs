@@ -74,6 +74,11 @@ namespace SenaiVagasAPI.Repositories
             ctx.SaveChanges();
         }
 
+        public List<Vaga> BuscarVagaPorEmpresa(int IdEmpresa)
+        {
+            return ctx.Vaga.Where(V => V.FkEmpresaNavigation.FkUsuario == IdEmpresa).Include(v => v.FkEmpresaNavigation).ToList();
+        }
+
         /// <summary>
         /// Lista com as vagas
         /// </summary>

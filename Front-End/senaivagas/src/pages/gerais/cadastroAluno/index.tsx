@@ -6,6 +6,7 @@ import Footer from '../../../components/footer/index';
 
 import './style.css';
 import '../../../assets/styles/global.css';
+import { useHistory } from 'react-router-dom';
 
 
 const CadastroAluno: React.FC = () => {
@@ -32,6 +33,8 @@ const CadastroAluno: React.FC = () => {
     const [cidade, setCidade] = useState('');
     const [complemento, setComplemento] = useState('');
     const [numero, setNumero] = useState('');
+
+    let history = useHistory();
 
     const SalvarUsuario = () => {
         const formUsuario = {
@@ -84,8 +87,6 @@ const CadastroAluno: React.FC = () => {
     }
     const salvar = (idUsuario: any, idEndereco: any) => {
 
-        alert('Candidato cadastrado');
-
         const form = {
             // tipoUsuario: tipoUsuario,
             Nome: nome,
@@ -115,6 +116,7 @@ const CadastroAluno: React.FC = () => {
             .then(response => response.json())
             .then(dados => {
                 console.log('Resultado Candidato =' + dados);
+                history.push('/');
             })
             .catch(erro => console.error(erro));
     }
@@ -128,6 +130,7 @@ const CadastroAluno: React.FC = () => {
                 <form onSubmit={event => {
                     event.preventDefault();
                     SalvarUsuario();
+                    history.push('/');
                 }}>
                     <div className="row-cadastrarAluno">
                         <div className="column">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
-import Logo from '../../../assets/images/ibmlogo.png';
+import Logo from '../../../assets/images/bandai-namco-logo.png'
 import Button from '../../../components/button/index';
 import Header from '../../../components/header/index';
 
@@ -74,6 +74,7 @@ function VerVagaCandidato() {
                 <li><Link className="link" to="/minhas-vagas">Minhas Vagas</Link></li>
                 <li><Link className="link" to="/dicas">Dicas</Link></li>
                 <li><Link className="link" to="/perfil">Meu Perfil</Link></li>
+                <li><Link className="link" to="/">Sair</Link></li>
             </Header>
             
             <main id="main-verVagaCandidato">

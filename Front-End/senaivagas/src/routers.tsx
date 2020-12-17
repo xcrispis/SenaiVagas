@@ -15,6 +15,7 @@ import login from './pages/gerais/login/index';
 import CadastroAluno from './pages/gerais/cadastroAluno/index';
 import cadastroVaga from './pages/empresa/cadastrarNovaVaga/index';
 import PerfilEmpresa from './pages/empresa/perfilEmpresa/index'
+import MinhasVagasCadastradas from './pages/empresa/minhasVagasCadastradas/index'
 
 function Routers() {
     return (
@@ -34,6 +35,7 @@ function Routers() {
             <Route path="/cadastro-aluno" component={CadastroAluno} />
             <Route path="/cadastro-vaga" component={cadastroVaga} />
             <Route path="/perfil-Empresa" component={PerfilEmpresa} />
+            <Route path="/minhas-vagas-empresa" component={MinhasVagasCadastradas} />
         </BrowserRouter>
     )
 }

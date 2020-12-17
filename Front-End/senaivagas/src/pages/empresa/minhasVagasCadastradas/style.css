@@ -1,0 +1,124 @@
+#mainVagasGerais {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+h1 {
+    font-size: 50px;
+    color: #404040;
+}
+
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-individual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+}
+
+.container-individual img {
+    width: 12%;
+    margin: 0;
+    padding: 0;
+    margin-right: 5vh;
+}
+
+.cargo-text {
+    background-color: #EBEBEB;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0.4vw 0.4vh 0.4vw 0.4vh;
+    width: 20vw;
+    font-weight: bold;
+}
+
+.nome-empresa-text {
+    background: #000000;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 1vh;
+    padding: 0.4vw 0.4vh 0.4vw 0.4vh;
+    width: 20vw;
+    font-weight: bold;
+}
+
+.container-2 {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vh;
+}
+
+.container-3 {
+    display: flex;
+    background-color: #EBEBEB;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.mini-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1vw 2vh 1vw 2vh;
+    border-radius: 4px;
+}
+
+.local-title {
+    color: #F55050;
+    font-weight: bold;
+    margin: 0;
+}
+
+.local-text {
+    color: black;
+    margin: 0;
+}
+
+.habilidades-title {
+    color: #F55050;
+    font-weight: bold;
+    text-align: start;
+    margin: 0;
+}
+
+.habilidades-text {
+    color: black;
+    margin: 0;
+    width: 12vw;
+}
+
+.alinha-linha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alinha-linha:hover{
+    cursor: pointer;
+}
+
+.blue-div {
+    border: 1px solid #509BF5;
+    padding: 0;
+    margin: 0;
+    width: 55vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
